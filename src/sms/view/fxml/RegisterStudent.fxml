@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.RegisterStudentController">
    <children>
       <Label layoutX="40.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Admission Number :" />
       <TextField fx:id="adNo" layoutX="178.0" layoutY="125.0" prefHeight="25.0" prefWidth="242.0" promptText="Admission Number" />
@@ -29,7 +29,7 @@
       <Label layoutX="40.0" layoutY="316.0" prefHeight="23.0" prefWidth="138.0" text="Date of Admission :" />
       <TextField fx:id="doa" layoutX="178.0" layoutY="315.0" prefHeight="25.0" prefWidth="242.0" promptText="DD/MM/YYYY" />
       <Label layoutX="40.0" layoutY="364.0" prefHeight="23.0" prefWidth="138.0" text="Gender : " />
-      <JFXRadioButton fx:id="gender" layoutX="178.0" layoutY="367.0" text="Male" />
+      <JFXRadioButton fx:id="genderMale" layoutX="178.0" layoutY="367.0" text="Male" />
       <JFXRadioButton fx:id="gender" layoutX="258.0" layoutY="367.0" text="Male" />
       <Label layoutX="40.0" layoutY="408.0" prefHeight="23.0" prefWidth="138.0" text="Grade : " />
       <JFXComboBox fx:id="grade" layoutX="177.0" layoutY="407.0" promptText="Select Grade" />
