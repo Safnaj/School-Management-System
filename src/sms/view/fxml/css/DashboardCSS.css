@@ -1,0 +1,6 @@
+.jfx-button:hover{
+    -fx-background-color: #c62828;
+}
+.jfx-button{
+    -fx-background-image: url("../../../other/img/StudentMgmt.png");
+}
