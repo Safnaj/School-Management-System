@@ -63,7 +63,7 @@
                       <Font name="BebasNeue" size="50.0" />
                   </font>
               </Text>
-            <ImageView fitHeight="74.0" fitWidth="65.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../other/img/AddUser.png" />
                </image>

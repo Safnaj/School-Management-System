@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="studentManagement" prefHeight="600.0" prefWidth="900.0" stylesheets="@css/RegStudent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.StudentManagementController">
+
+    <children>
+        <ImageView fx:id="StaffMgmt" fitHeight="150.0" fitWidth="200.0" layoutX="264.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../other/img/ManageStudent.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="StudentMgmt" fitHeight="150.0" fitWidth="200.0" layoutX="40.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../other/img/RegStudent.png" />
+            </image>
+        </ImageView>
+        <JFXButton fx:id="btnStudentReg" buttonType="RAISED" layoutX="36.0" layoutY="304.0" onAction="#SetBtnStudentReg" prefHeight="38.0" prefWidth="150.0" stylesheets="@css/RegStudent.css" text="Student Registration" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="14.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnStudentMnge" buttonType="RAISED" layoutX="260.0" layoutY="304.0" onAction="#setBtnStudentMnge" prefHeight="38.0" prefWidth="150.0" stylesheets="@css/RegStudent.css" text="Manage Students" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="14.0" />
+            </font>
+        </JFXButton>
+        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
+            <children>
+                <Text fill="WHITE" layoutX="302.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT MANAGEMENT">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+    </children>
+
+</AnchorPane>

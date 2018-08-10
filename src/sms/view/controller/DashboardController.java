@@ -49,13 +49,26 @@ public class DashboardController implements Initializable{
         private JFXButton btnUserMgmt;
 
         @FXML
+        private AnchorPane root;
+
+        @FXML
         void setBtnSchoolInfo(ActionEvent event) {
-            try {
-                AnchorPane RegisterStudent = FXMLLoader.load(getClass().getResource(("sms/view/fxml/RegisterStudent.fxml")));
-//                root.getChildren().setAll(RegisterStudent);
-            }catch(IOException e){
-                System.out.println(e);
-            }
+//                try {
+//                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("")));
+//                        root.getChildren().setAll(dashboard);
+//                }catch(IOException e){
+//                        System.out.println(e);
+//                }
+        }
+
+        @FXML
+        void setBtnStudentMgmt(ActionEvent event) {
+                try {
+                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
+                        root.getChildren().setAll(dashboard);
+                }catch(IOException e){
+                        System.out.println(e);
+                }
         }
 
 }

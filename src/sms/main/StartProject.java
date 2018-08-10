@@ -11,7 +11,7 @@ public class StartProject extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/Dashboard.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Dashboard");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
