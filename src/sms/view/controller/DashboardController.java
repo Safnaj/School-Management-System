@@ -49,23 +49,44 @@ public class DashboardController implements Initializable{
         private JFXButton btnUserMgmt;
 
         @FXML
+        private JFXButton btnUserSettings;
+
+        @FXML
         private AnchorPane root;
 
         @FXML
+        void setBtnUserSettings(ActionEvent event) {
+                try {                                           //Have to set a Pane Here
+                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/RegisterStudent.fxml")));
+                        root.getChildren().setAll(dashboard);
+                }catch(IOException e){
+                        System.out.println(e);
+                }
+        }
+
+        @FXML
         void setBtnSchoolInfo(ActionEvent event) {
-//                try {
-//                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("")));
-//                        root.getChildren().setAll(dashboard);
-//                }catch(IOException e){
-//                        System.out.println(e);
-//                }
+                try {
+                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
+                        root.getChildren().setAll(dashboard);
+                }catch(IOException e){
+                        System.out.println(e);
+                }
         }
 
         @FXML
         void setBtnStudentMgmt(ActionEvent event) {
                 try {
-                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
-                        root.getChildren().setAll(dashboard);
+                        Parent root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/StudentManagement.fxml"));
+                        Stage stage = new Stage();
+                        stage.setTitle("Student Management");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+                        //Below Code for Open FXML in Same Window
+//                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
+//                        root.getChildren().setAll(dashboard);
+
+
                 }catch(IOException e){
                         System.out.println(e);
                 }

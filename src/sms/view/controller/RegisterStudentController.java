@@ -18,7 +18,9 @@ public class RegisterStudentController implements Initializable {
     }
 
     @FXML
-    private void addStudent(){}
+    private void setBtnAddStudent(){
+
+    }
 
     @FXML
     private void cancel(){

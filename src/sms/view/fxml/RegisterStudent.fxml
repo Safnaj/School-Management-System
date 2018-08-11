@@ -5,8 +5,8 @@
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -27,11 +27,13 @@
         <Label layoutX="40.0" layoutY="316.0" prefHeight="23.0" prefWidth="138.0" text="Date of Admission :" />
         <TextField fx:id="doa" layoutX="178.0" layoutY="315.0" prefHeight="25.0" prefWidth="242.0" promptText="DD/MM/YYYY" />
         <Label layoutX="40.0" layoutY="364.0" prefHeight="23.0" prefWidth="138.0" text="Gender : " />
-        <JFXRadioButton fx:id="genderMale" layoutX="178.0" layoutY="367.0" text="Male" />
-        <JFXRadioButton fx:id="gender" layoutX="258.0" layoutY="367.0" text="Male" />
+        <JFXRadioButton fx:id="genderMale" layoutX="178.0" layoutY="367.0" selected="true" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="g" />
+         </toggleGroup></JFXRadioButton>
+        <JFXRadioButton fx:id="gender" layoutX="258.0" layoutY="367.0" text="Male" toggleGroup="$g" />
         <Label layoutX="40.0" layoutY="408.0" prefHeight="23.0" prefWidth="138.0" text="Grade : " />
         <JFXComboBox fx:id="grade" layoutX="177.0" layoutY="407.0" promptText="Select Grade" />
-        <Separator layoutX="447.0" layoutY="125.0" orientation="VERTICAL" prefHeight="305.0" prefWidth="4.0" style="-fx-background-color: black;" />
         <Label layoutX="486.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Parent / Gurdian Name :" />
         <TextField fx:id="parentName" layoutX="624.0" layoutY="125.0" prefHeight="25.0" prefWidth="242.0" promptText="Parent / Gurdian Name" />
         <Label layoutX="486.0" layoutY="171.0" prefHeight="23.0" prefWidth="138.0" text="NIC Number :" />
@@ -40,7 +42,7 @@
         <TextField fx:id="phone" layoutX="624.0" layoutY="217.0" prefHeight="25.0" prefWidth="242.0" promptText="Contact Number" />
         <Label layoutX="486.0" layoutY="266.0" prefHeight="23.0" prefWidth="138.0" text="Address :" />
         <TextField fx:id="address" layoutX="624.0" layoutY="265.0" prefHeight="25.0" prefWidth="242.0" promptText="Address : " />
-        <JFXButton fx:id="addStudent" layoutX="485.0" layoutY="517.0" onAction="#addStudent" text="REGISTER" textFill="WHITE">
+        <JFXButton fx:id="btnAddStudent" layoutX="485.0" layoutY="517.0" onAction="#setBtnAddStudent" text="REGISTER" textFill="WHITE">
             <font>
                 <Font size="25.0" />
             </font>

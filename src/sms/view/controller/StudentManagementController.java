@@ -14,15 +14,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+
 public class StudentManagementController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
-    @FXML
-    private AnchorPane studentMgmt;
 
     @FXML
     private ImageView StaffMgmt;
@@ -51,8 +49,12 @@ public class StudentManagementController implements Initializable {
 
     @FXML
     void setBtnStudentMnge(ActionEvent event) {
-
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/login.fxml")));
+            studentManagement.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
     }
-
 
 }

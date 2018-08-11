@@ -51,20 +51,6 @@
             <Image url="@../../other/img/StudentMgmt.png" />
          </image>
       </ImageView>
-        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
-            <children>
-                <Text fill="WHITE" layoutX="218.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SCHOOL MANAGEMENT SYSTEM">
-                    <font>
-                        <Font name="BebasNeue" size="50.0" />
-                    </font>
-                </Text>
-            <Text fill="WHITE" layoutX="689.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V1.0">
-               <font>
-                  <Font name="BebasNeue" size="20.0" />
-               </font>
-            </Text>
-            </children>
-        </Pane>
       <JFXButton fx:id="btnSchoolInfo" buttonType="RAISED" layoutX="36.0" layoutY="296.0" onAction="#setBtnSchoolInfo" prefHeight="38.0" prefWidth="150.0" stylesheets="@css/RegStudent.css" text="School Information" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
@@ -105,6 +91,32 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </JFXButton>
+        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
+            <children>
+                <Text fill="WHITE" layoutX="218.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SCHOOL MANAGEMENT SYSTEM">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+            <Text fill="WHITE" layoutX="689.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V1.0">
+               <font>
+                  <Font name="BebasNeue" size="20.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="btnUserSettings" layoutX="20.0" layoutY="22.0" onAction="#setBtnUserSettings" prefHeight="40.0" prefWidth="40.0" stylesheets="@css/RegStudent.css" text=" " textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../other/img/Menu_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            </children>
+        </Pane>
     </children>
 
 </AnchorPane>
