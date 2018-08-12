@@ -50,7 +50,7 @@ public class StudentManagementController implements Initializable {
     @FXML
     void setBtnStudentMnge(ActionEvent event) {
         try {
-            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/login.fxml")));
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/ManageStudents.fxml")));
             studentManagement.getChildren().setAll(studentMgmt);
         }catch(IOException e){
             System.out.println(e);

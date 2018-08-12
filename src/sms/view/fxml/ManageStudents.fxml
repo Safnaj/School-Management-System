@@ -56,9 +56,6 @@
                 <URL value="@css/RegStudent.css" />
             </stylesheets>
         </JFXButton>
-      <Label layoutX="40.0" layoutY="114.0" prefHeight="49.0" prefWidth="295.0" style="-fx-background-color: #1976D2;" />
-      <TextField layoutX="45.0" layoutY="120.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Student's Index Number" />
-      <JFXButton fx:id="btnSearchStudent" buttonType="RAISED" layoutX="252.0" layoutY="120.0" prefHeight="37.0" prefWidth="78.0" style="-fx-background-color: white;" text="SEARCH" />
       <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="397.0" layoutY="520.0" onAction="#btnUpdate" text="UPDATE" textFill="WHITE">
          <font>
             <Font size="25.0" />
@@ -76,5 +73,7 @@
                 </Text>
             </children>
         </Pane>
+      <TextField layoutX="40.0" layoutY="118.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Student's Index Number" />
+      <JFXButton id="btnSearch" fx:id="btnSearchStudent" buttonType="RAISED" layoutX="247.0" layoutY="118.0" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
     </children>
 </AnchorPane>

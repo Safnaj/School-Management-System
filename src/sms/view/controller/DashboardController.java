@@ -1,6 +1,8 @@
 package sms.view.controller;
 
 import com.jfoenix.controls.JFXButton;
+
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -51,14 +53,25 @@ public class DashboardController implements Initializable{
         @FXML
         private JFXButton btnUserSettings;
 
+//        @FXML
+//        private TextField username;
+
+
         @FXML
         private AnchorPane root;
 
         @FXML
         void setBtnUserSettings(ActionEvent event) {
-                try {                                           //Have to set a Pane Here
-                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/RegisterStudent.fxml")));
-                        root.getChildren().setAll(dashboard);
+                try {
+                Parent root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/UserAccount.fxml"));
+                Stage stage = new Stage();
+                stage.setTitle("User Account");
+                stage.setScene(new Scene(root));
+                stage.show();
+
+//                                                           //Have to set a Pane Here
+//                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/UserAccount.fxml")));
+//                        root.getChildren().setAll(dashboard);
                 }catch(IOException e){
                         System.out.println(e);
                 }
