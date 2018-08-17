@@ -4,10 +4,14 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
-
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+/**
+ * @author Safnaj on 8/12/2018
+ * @project School Management System
+ **/
 
 public class UserAccountController implements Initializable {
 

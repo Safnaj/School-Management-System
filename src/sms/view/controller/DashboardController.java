@@ -16,7 +16,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-
+/**
+ *
+ * @author Safnaj.MMA
+ */
 public class DashboardController implements Initializable{
 
         @Override

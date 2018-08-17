@@ -13,6 +13,11 @@ import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * @author Safnaj on 8/12/2018
+ * @project School Management System
+ **/
+
 public class ManageStudentsController implements Initializable {
 
     @Override

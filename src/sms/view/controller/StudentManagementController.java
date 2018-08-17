@@ -14,6 +14,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/**
+ * @author Safnaj on 8/12/2018
+ * @project School Management System
+ **/
 
 public class StudentManagementController implements Initializable {
 
