@@ -51,7 +51,7 @@ public class DashboardController implements Initializable{
         private JFXButton btnInventory;
 
         @FXML
-        private JFXButton btnUserMgmt;
+        private JFXButton btnNoticeMgmt;
 
         @FXML
         private JFXButton btnUserSettings;

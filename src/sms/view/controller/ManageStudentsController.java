@@ -40,6 +40,10 @@ public class ManageStudentsController implements Initializable {
 
     }
 
+    @FXML
+    private void btnPrint() {
+
+    }
 
 
 

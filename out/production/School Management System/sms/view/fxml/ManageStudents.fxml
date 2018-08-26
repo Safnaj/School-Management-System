@@ -40,7 +40,7 @@
         <TextField fx:id="phone" layoutX="624.0" layoutY="275.0" prefHeight="25.0" prefWidth="242.0" promptText="Contact Number" />
         <Label layoutX="486.0" layoutY="324.0" prefHeight="23.0" prefWidth="138.0" text="Address :" />
         <TextField fx:id="address" layoutX="624.0" layoutY="323.0" prefHeight="25.0" prefWidth="242.0" promptText="Address : " />
-        <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="594.0" layoutY="520.0" onAction="#btnDelete" text="DELETE" textFill="WHITE">
+        <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="497.0" layoutY="520.0" onAction="#btnDelete" text="DELETE" textFill="WHITE" AnchorPane.rightAnchor="300.0">
             <font>
                 <Font size="25.0" />
             </font>
@@ -48,7 +48,7 @@
                 <URL value="@css/RegStudent.css" />
             </stylesheets>
         </JFXButton>
-        <JFXButton fx:id="cancel" buttonType="RAISED" layoutX="198.0" layoutY="520.0" onAction="#cancel" text="CANCEL" textFill="WHITE">
+        <JFXButton fx:id="cancel" buttonType="RAISED" layoutX="119.0" layoutY="520.0" onAction="#cancel" prefWidth="125.0" text="CANCEL" textFill="WHITE" AnchorPane.leftAnchor="115.0">
             <font>
                 <Font size="25.0" />
             </font>
@@ -56,7 +56,7 @@
                 <URL value="@css/RegStudent.css" />
             </stylesheets>
         </JFXButton>
-      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="397.0" layoutY="520.0" onAction="#btnUpdate" text="UPDATE" textFill="WHITE">
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="307.0" layoutY="520.0" onAction="#btnUpdate" text="UPDATE" textFill="WHITE" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="25.0" />
          </font>
@@ -75,5 +75,10 @@
         </Pane>
       <TextField layoutX="40.0" layoutY="118.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Student's Index Number" />
       <JFXButton id="btnSearch" fx:id="btnSearchStudent" buttonType="RAISED" layoutX="247.0" layoutY="118.0" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
+      <JFXButton fx:id="btnPrint" buttonType="RAISED" layoutX="677.0" layoutY="519.0" onAction="#btnPrint" prefWidth="115.0" stylesheets="@css/RegStudent.css" text="PRINT" textFill="WHITE" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </JFXButton>
     </children>
 </AnchorPane>
