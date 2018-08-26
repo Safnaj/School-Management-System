@@ -73,8 +73,8 @@
       <file leaf-file-name="RegisterStudentController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sms/view/controller/RegisterStudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+            <state relative-caret-position="765">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,7 +102,7 @@
         </entry>
       </file>
       <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Student.java">
+        <entry file="file://$PROJECT_DIR$/src/sms/model/Student.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1020">
               <caret line="86" column="40" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
@@ -114,7 +114,7 @@
         </entry>
       </file>
       <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbController/StudentController.java">
+        <entry file="file://$PROJECT_DIR$/src/sms/dbController/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="31" selection-start-line="31" selection-end-line="31" />
@@ -213,18 +213,6 @@
               <item name="School Management System" type="b2602c69:ProjectViewProjectNode" />
               <item name="School Management System" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbController" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="School Management System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="School Management System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="School Management System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="School Management System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -233,6 +221,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sms" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="School Management System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="School Management System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sms" type="462c0819:PsiDirectoryNode" />
+              <item name="dbController" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="School Management System" type="b2602c69:ProjectViewProjectNode" />
@@ -430,16 +425,15 @@
       <workItem from="1534097335400" duration="1204000" />
       <workItem from="1534566761776" duration="42000" />
       <workItem from="1535189461740" duration="16238000" />
-      <workItem from="1535277886144" duration="2669000" />
+      <workItem from="1535277886144" duration="3298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82043000" />
+    <option name="totallyTimeSpent" value="82672000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -455,7 +449,7 @@
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3290938" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22620791" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22620791" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -811,7 +805,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Student.java">
+    <entry file="file://$PROJECT_DIR$/src/sms/model/Student.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="86" column="40" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
@@ -821,7 +815,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbController/StudentController.java">
+    <entry file="file://$PROJECT_DIR$/src/sms/dbController/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
@@ -840,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/RegisterStudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        <state relative-caret-position="765">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

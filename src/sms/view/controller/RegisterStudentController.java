@@ -1,20 +1,14 @@
 package sms.view.controller;
 
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
-import dbController.StudentController;
-import javafx.beans.value.ObservableStringValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import sms.dbController.StudentController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import model.Student;
+import sms.model.Student;
 import javafx.scene.control.TextField;
 import java.net.URL;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -49,7 +43,7 @@ public class RegisterStudentController implements Initializable {
 
     @FXML
     private ComboBox<String> gradeField;
-    
+
     @FXML
     private TextField parentNameField;
 
