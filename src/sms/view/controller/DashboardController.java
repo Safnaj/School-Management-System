@@ -82,12 +82,18 @@ public class DashboardController implements Initializable{
 
         @FXML
         void setBtnSchoolInfo(ActionEvent event) {
+                Parent root = null;
                 try {
-                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
-                        root.getChildren().setAll(dashboard);
-                }catch(IOException e){
-                        System.out.println(e);
+                        root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/SchoolInfo.fxml"));
+                        Stage stage = new Stage();
+                        stage.setTitle("School Information");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+
+                } catch (IOException e) {
+                        e.printStackTrace();
                 }
+
         }
 
         @FXML
@@ -98,6 +104,7 @@ public class DashboardController implements Initializable{
                         stage.setTitle("Student Management");
                         stage.setScene(new Scene(root));
                         stage.show();
+
                         //Below Code for Open FXML in Same Window
 //                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
 //                        root.getChildren().setAll(dashboard);

@@ -18,6 +18,7 @@ public class Student {
     private int phone;
     private String address;
 
+
     public Student(int adNo, String fullName, String name, String dob, String doa, String gender, String grade, String parentName, String nic, int phone, String address) {
         this.adNo = adNo;
         this.fullName = fullName;
@@ -33,6 +34,7 @@ public class Student {
     }
 
     public int getAdNo() {
+
         return adNo;
     }
 
