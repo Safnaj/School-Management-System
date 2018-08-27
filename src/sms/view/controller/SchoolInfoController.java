@@ -139,7 +139,7 @@ public class SchoolInfoController implements Initializable {
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("School Information");
-                alert.setHeaderText(null);
+                alert.setHeaderText("Success");
                 alert.setContentText("Registered Successfully");
                 alert.showAndWait();
 

@@ -86,7 +86,7 @@ public class RegisterStudentController implements Initializable {
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Student Registration");
-                alert.setHeaderText(null);
+                alert.setHeaderText("Success");
                 alert.setContentText("Student Registered Successfully");
                 alert.showAndWait();
 

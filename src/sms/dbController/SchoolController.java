@@ -2,8 +2,6 @@ package sms.dbController;
 
 import sms.db.DBConnection;
 import sms.model.School;
-import sms.model.Student;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -15,7 +13,7 @@ import java.sql.SQLException;
 public class SchoolController {
 
     public static int AddDetails(School school)throws ClassNotFoundException,SQLException {
-        String SQL="INSERT INTO schoolinfo VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String SQL="INSERT INTO schoolinfo VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         Connection conn = DBConnection.getDBConnection().getConnection();
         PreparedStatement stm = conn.prepareStatement(SQL);
         stm.setObject(1, school.getSchoolName());
