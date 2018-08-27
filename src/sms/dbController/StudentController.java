@@ -3,15 +3,15 @@ package sms.dbController;
 import sms.model.Student;
 import sms.db.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * @author Safnaj on 8/25/2018
  * @project School Management System
  **/
 public class StudentController {
+
 
     public static int AddStudent(Student student)throws ClassNotFoundException,SQLException {
         String SQL="INSERT INTO students VALUES(?,?,?,?,?,?,?,?,?,?,?)";

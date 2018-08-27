@@ -1,6 +1,7 @@
 package sms.view.controller;
 
 import com.jfoenix.controls.JFXRadioButton;
+import sms.db.DBConnection;
 import sms.dbController.StudentController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,10 +10,12 @@ import javafx.scene.control.*;
 import sms.model.Student;
 import javafx.scene.control.TextField;
 import java.net.URL;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 /**
  * @author chamodshehanka on 7/16/2018
@@ -86,14 +89,14 @@ public class RegisterStudentController implements Initializable {
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Student Registration");
-                alert.setHeaderText("Success");
+                alert.setHeaderText(null);
                 alert.setContentText("Student Registered Successfully");
                 alert.showAndWait();
 
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Student Registration");
-                alert.setHeaderText("This is an error dialog");
+                alert.setHeaderText(null);
                 alert.setContentText("OOPs there is an error adding Student");
                 alert.showAndWait();
             }
@@ -107,5 +110,18 @@ public class RegisterStudentController implements Initializable {
     @FXML
     private void cancel(){
 
+    }
+
+    @FXML
+    private void loadGrades(ActionEvent event)throws ClassNotFoundException,SQLException{
+        String SQL="SELECT  grade from grades";
+        Connection conn = DBConnection.getDBConnection().getConnection();
+        PreparedStatement pst = conn.prepareStatement(SQL);
+        ResultSet rs = pst.executeQuery();
+
+        while(rs.next())
+        {
+            String grades = rs.getNString("grade");
+        }
     }
 }
