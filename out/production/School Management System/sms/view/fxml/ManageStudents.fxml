@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -25,13 +25,12 @@
         <Label layoutX="40.0" layoutY="374.0" prefHeight="23.0" prefWidth="138.0" text="Date of Admission :" />
         <TextField fx:id="doa" layoutX="178.0" layoutY="373.0" prefHeight="25.0" prefWidth="242.0" promptText="DD/MM/YYYY" />
         <Label layoutX="40.0" layoutY="422.0" prefHeight="23.0" prefWidth="138.0" text="Gender : " />
-        <JFXRadioButton fx:id="genderMale" layoutX="178.0" layoutY="425.0" selected="true" text="Male">
+        <JFXRadioButton fx:id="genderField" layoutX="178.0" layoutY="425.0" selected="true" text="Male">
             <toggleGroup>
                 <ToggleGroup fx:id="g" />
             </toggleGroup></JFXRadioButton>
-        <JFXRadioButton fx:id="gender" layoutX="258.0" layoutY="425.0" text="Male" toggleGroup="$g" />
+        <JFXRadioButton fx:id="genderField" layoutX="258.0" layoutY="425.0" text="Female" toggleGroup="$g" />
         <Label layoutX="40.0" layoutY="466.0" prefHeight="23.0" prefWidth="138.0" text="Grade : " />
-        <JFXComboBox fx:id="grade" layoutX="177.0" layoutY="465.0" promptText="Select Grade" />
         <Label layoutX="486.0" layoutY="184.0" prefHeight="23.0" prefWidth="138.0" text="Parent / Gurdian Name :" />
         <TextField fx:id="parentName" layoutX="624.0" layoutY="183.0" prefHeight="25.0" prefWidth="242.0" promptText="Parent / Gurdian Name" />
         <Label layoutX="486.0" layoutY="229.0" prefHeight="23.0" prefWidth="138.0" text="NIC Number :" />
@@ -80,5 +79,6 @@
             <Font size="25.0" />
          </font>
       </JFXButton>
+      <ComboBox fx:id="grade" layoutX="178.0" layoutY="465.0" prefWidth="150.0" promptText="Select Grade" />
     </children>
 </AnchorPane>

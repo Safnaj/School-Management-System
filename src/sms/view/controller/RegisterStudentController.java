@@ -85,25 +85,40 @@ public class RegisterStudentController implements Initializable {
             Student s =  new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
             int i = StudentController.AddStudent(s);
 
-            if (i > 0) {
+////                if(adNoField.getText().isEmpty() ||  nameField.getText().isEmpty() || dobField.getText().isEmpty() || doaField.getText().isEmpty() ||
+////                        gradeField.getValue().isEmpty() || parentNameField.getText().isEmpty())
+//
+//                {
+//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                    alert.setTitle("Student Registration");
+//                    alert.setHeaderText(null);
+//                    alert.setContentText("Please Fill Required Fields");
+//                    alert.showAndWait();
+//
+//                }
+//                else{
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Student Registration");
-                alert.setHeaderText(null);
-                alert.setContentText("Student Registered Successfully");
-                alert.showAndWait();
-
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Student Registration");
-                alert.setHeaderText(null);
-                alert.setContentText("OOPs there is an error adding Student");
-                alert.showAndWait();
+            if (i > 0)
+            {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Student Registered Successfully");
+            alert.showAndWait();
             }
+            else
+            {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("OOPs there is an error adding Student");
+            alert.showAndWait();
+            }
+
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
 
     }
 
@@ -112,16 +127,6 @@ public class RegisterStudentController implements Initializable {
 
     }
 
-    @FXML
-    private void loadGrades(ActionEvent event)throws ClassNotFoundException,SQLException{
-        String SQL="SELECT  grade from grades";
-        Connection conn = DBConnection.getDBConnection().getConnection();
-        PreparedStatement pst = conn.prepareStatement(SQL);
-        ResultSet rs = pst.executeQuery();
-
-        while(rs.next())
-        {
-            String grades = rs.getNString("grade");
-        }
-    }
 }
+
+

@@ -40,6 +40,16 @@
                 </Text>
             </children>
         </Pane>
+      <ImageView fx:id="StaffMgmt1" fitHeight="162.0" fitWidth="158.0" layoutX="486.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../other/img/print.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnStudentMnge1" buttonType="RAISED" layoutX="490.0" layoutY="304.0" onAction="#setBtnStudentMnge" prefHeight="38.0" prefWidth="150.0" stylesheets="@css/RegStudent.css" text="Print Students" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
     </children>
 
 </AnchorPane>
