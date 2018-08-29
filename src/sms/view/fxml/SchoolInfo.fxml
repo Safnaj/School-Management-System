@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.SchoolInfoController">
+    <children>
+        <Label layoutX="40.0" layoutY="91.0" prefHeight="23.0" prefWidth="138.0" text="Name of School :" />
+        <TextField fx:id="SchoolNameField" layoutX="178.0" layoutY="90.0" prefHeight="25.0" prefWidth="242.0" promptText="Name of School" />
+        <Label layoutX="40.0" layoutY="132.0" prefHeight="23.0" prefWidth="138.0" text="Address :" />
+        <TextField fx:id="SchoolAddressField" layoutX="178.0" layoutY="131.0" prefHeight="25.0" prefWidth="242.0" promptText="Address" />
+        <Label layoutX="40.0" layoutY="173.0" prefHeight="23.0" prefWidth="138.0" text="Classes Available :" />
+        <TextField fx:id="classAvailableField" layoutX="178.0" layoutY="172.0" prefHeight="25.0" prefWidth="242.0" promptText="Classes Available" />
+        <Label layoutX="40.0" layoutY="216.0" prefHeight="23.0" prefWidth="138.0" text="Type of School :" />
+        <TextField fx:id="schoolTypeField" layoutX="178.0" layoutY="215.0" prefHeight="25.0" prefWidth="242.0" promptText="Type of School" />
+        <Label layoutX="40.0" layoutY="257.0" prefHeight="23.0" prefWidth="138.0" text="DEO, Division" />
+        <TextField fx:id="deoDivisionField" layoutX="178.0" layoutY="256.0" prefHeight="25.0" prefWidth="242.0" promptText="DEO, Division" />
+        <Label layoutX="40.0" layoutY="300.0" prefHeight="23.0" prefWidth="138.0" text="Educational Zone :" />
+        <Label layoutX="40.0" layoutY="342.0" prefHeight="23.0" prefWidth="138.0" text="Educational District :" />
+        <Label layoutX="40.0" layoutY="462.0" prefHeight="23.0" prefWidth="138.0" text="Municipal Council :" />
+        <TextField fx:id="municpalCouncilField" layoutX="178.0" layoutY="461.0" prefHeight="25.0" prefWidth="242.0" promptText="Municipal Council" />
+        <Label layoutX="40.0" layoutY="501.0" prefHeight="23.0" prefWidth="138.0" text="Police Area :" />
+        <TextField fx:id="policeAreaField" layoutX="178.0" layoutY="500.0" prefHeight="25.0" prefWidth="242.0" promptText="Police Area" />
+        <Label layoutX="480.0" layoutY="90.0" prefHeight="23.0" prefWidth="138.0" text="Postal Code :" />
+        <TextField fx:id="postalCodeField" layoutX="618.0" layoutY="89.0" prefHeight="25.0" prefWidth="242.0" promptText="Postal Code" />
+        <Label layoutX="480.0" layoutY="133.0" prefHeight="23.0" prefWidth="138.0" text="G.S Division :" />
+        <TextField fx:id="gsDivisionField" layoutX="618.0" layoutY="132.0" prefHeight="25.0" prefWidth="242.0" promptText="G.S Division :" />
+        <JFXButton fx:id="updateDetails" layoutX="420.0" layoutY="546.0" onAction="#updateDetails" text="UPDATE" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+            <stylesheets>
+                <URL value="@css/RegStudent.css" />
+            </stylesheets>
+        </JFXButton>
+        <JFXButton fx:id="addDetails" layoutX="285.0" layoutY="546.0" onAction="#addDetails" text="ADD" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+            <stylesheets>
+                <URL value="@css/RegStudent.css" />
+            </stylesheets>
+        </JFXButton>
+        <Pane prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
+            <children>
+                <Text fill="WHITE" layoutX="302.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="School Information">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+      <TextField fx:id="eduZoneField" layoutX="178.0" layoutY="297.0" prefHeight="25.0" prefWidth="242.0" promptText="Educational Zone" />
+      <TextField fx:id="eduDistrictField" layoutX="178.0" layoutY="339.0" prefHeight="25.0" prefWidth="242.0" promptText="Educational District" />
+      <Label layoutX="40.0" layoutY="383.0" prefHeight="23.0" prefWidth="138.0" text="Administrative District :" />
+      <TextField fx:id="adminDistrictField" layoutX="178.0" layoutY="380.0" prefHeight="25.0" prefWidth="242.0" promptText="Administrative District" />
+      <Label layoutX="40.0" layoutY="424.0" prefHeight="23.0" prefWidth="138.0" text="Electorate :" />
+      <TextField fx:id="electorateField" layoutX="178.0" layoutY="421.0" prefHeight="25.0" prefWidth="242.0" promptText="Electorate" />
+      <Label layoutX="480.0" layoutY="174.0" prefHeight="23.0" prefWidth="138.0" text="Date of Establishment :" />
+      <TextField fx:id="dateOfEstdField" layoutX="618.0" layoutY="173.0" prefHeight="25.0" prefWidth="242.0" promptText="Date of Establishment" />
+      <Label layoutX="480.0" layoutY="215.0" prefHeight="23.0" prefWidth="138.0" text="School ID No : " />
+      <TextField fx:id="schoolIDField" layoutX="618.0" layoutY="214.0" prefHeight="25.0" prefWidth="242.0" promptText="School ID No " />
+      <Label layoutX="479.0" layoutY="257.0" prefHeight="23.0" prefWidth="138.0" text="School Census No :" />
+      <TextField fx:id="schoolCensusField" layoutX="617.0" layoutY="256.0" prefHeight="25.0" prefWidth="242.0" promptText="School Census No" />
+      <Label layoutX="479.0" layoutY="298.0" prefHeight="23.0" prefWidth="138.0" text="School Exam ID No :" />
+      <TextField fx:id="schoolExamIdField" layoutX="618.0" layoutY="297.0" prefHeight="25.0" prefWidth="242.0" promptText="School Exam ID No" />
+      <Label layoutX="480.0" layoutY="339.0" prefHeight="23.0" prefWidth="138.0" text="Total Land Area :" />
+      <TextField fx:id="totalLandAreaField" layoutX="618.0" layoutY="338.0" prefHeight="25.0" prefWidth="242.0" promptText="Total Land Area " />
+      <Label layoutX="480.0" layoutY="383.0" prefHeight="23.0" prefWidth="138.0" text="Province : " />
+      <TextField fx:id="provinceField" layoutX="618.0" layoutY="382.0" prefHeight="25.0" prefWidth="242.0" promptText="Province : " />
+      <Label layoutX="479.0" layoutY="424.0" prefHeight="23.0" prefWidth="138.0" text="Name of Principal : " />
+      <TextField fx:id="nameOfPrincipalField" layoutX="617.0" layoutY="423.0" prefHeight="25.0" prefWidth="242.0" promptText="Name of Principal : " />
+      <Label layoutX="479.0" layoutY="464.0" prefHeight="23.0" prefWidth="138.0" text="Principal's Contact No :" />
+      <TextField fx:id="pricipalNoField" layoutX="617.0" layoutY="463.0" prefHeight="25.0" prefWidth="242.0" promptText="Principal's Contact No :" />
+      <JFXButton fx:id="printDetails" layoutX="585.0" layoutY="545.0" onAction="#printDetails" text="PRINT" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <stylesheets>
+            <URL value="@css/RegStudent.css" />
+         </stylesheets>
+      </JFXButton>
+    </children>
+</AnchorPane>

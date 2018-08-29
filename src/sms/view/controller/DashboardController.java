@@ -1,75 +1,92 @@
 package sms.view.controller;
 
 import com.jfoenix.controls.JFXButton;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class DashboardController implements Initializable{
+/**
+ * @author Safnaj on 8/28/2018
+ * @project School Management System
+ **/
+public class DashboardController implements Initializable {
 
-        @Override
-        public void initialize(URL location, ResourceBundle resources) {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
-        }
-        @FXML
-        private ImageView StudentMgmt;
+    }
+    @FXML
+    private AnchorPane root;
 
-        @FXML
-        private JFXButton btnSchoolInfo;
+    @FXML
+    private ImageView ExamMgmt;
 
-        @FXML
-        private JFXButton btnStudentMgmt;
+    @FXML
+    private ImageView LibraryMgmt;
 
-        @FXML
-        private JFXButton btnStaffMgmt;
+    @FXML
+    private ImageView EventMgmt;
 
-        @FXML
-        private JFXButton btnExamMgmt;
+    @FXML
+    private ImageView StudentMgmt;
 
-        @FXML
-        private JFXButton btnLibraryMgmt;
+    @FXML
+    private JFXButton btnStudentMgmt;
 
-        @FXML
-        private JFXButton btnEventMgmt;
+    @FXML
+    private JFXButton btnExamMgmt;
 
-        @FXML
-        private JFXButton btnInventory;
+    @FXML
+    private JFXButton btnLibraryMgmt;
 
-        @FXML
-        private JFXButton btnUserMgmt;
+    @FXML
+    private JFXButton btnEventMgmt;
 
-        @FXML
-        private AnchorPane root;
+    @FXML
+    private JFXButton btnUserSettings;
 
-        @FXML
-        void setBtnSchoolInfo(ActionEvent event) {
-//                try {
-//                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("")));
-//                        root.getChildren().setAll(dashboard);
-//                }catch(IOException e){
-//                        System.out.println(e);
-//                }
-        }
+    @FXML
+    private TextField username;
 
-        @FXML
-        void setBtnStudentMgmt(ActionEvent event) {
-                try {
-                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
-                        root.getChildren().setAll(dashboard);
-                }catch(IOException e){
-                        System.out.println(e);
-                }
-        }
+    @FXML
+    void btnEventMgmt(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnExamMgmt(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnLibraryMgmt(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnStudentMgmt(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/StudentManagement.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Student Management");
+        stage.setScene(new Scene(root));
+        stage.show();
+
+    }
+
+    @FXML
+    void setBtnUserSettings(ActionEvent event) {
+
+    }
 
 }
-

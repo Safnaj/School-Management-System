@@ -14,15 +14,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/**
+ * @author Safnaj on 8/12/2018
+ * @project School Management System
+ **/
+
 public class StudentManagementController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
-    @FXML
-    private AnchorPane studentMgmt;
 
     @FXML
     private ImageView StaffMgmt;
@@ -35,6 +37,10 @@ public class StudentManagementController implements Initializable {
 
     @FXML
     private JFXButton btnStudentMnge;
+
+    @FXML
+    private JFXButton btnPrintStudents;
+
 
     @FXML
     private AnchorPane studentManagement;
@@ -51,8 +57,22 @@ public class StudentManagementController implements Initializable {
 
     @FXML
     void setBtnStudentMnge(ActionEvent event) {
-
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/ManageStudents.fxml")));
+            studentManagement.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
     }
 
+    @FXML
+    void btnPrintStudents(ActionEvent event) {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/PrintStudents.fxml")));
+            studentManagement.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
 
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="login" prefHeight="600.0" prefWidth="900.0" stylesheets="@css/RegStudent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.loginController">
+    <children>
+        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;">
+            <children>
+                <Text fill="WHITE" layoutX="218.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SCHOOL MANAGEMENT SYSTEM">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="689.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V1.0">
+                    <font>
+                        <Font name="BebasNeue" size="20.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+      <Label layoutX="241.0" layoutY="133.0" prefHeight="425.0" prefWidth="440.0" style="-fx-background-color: #1976D2;" />
+      <JFXTextField fx:id="username" focusColor="WHITE" layoutX="313.0" layoutY="302.0" prefHeight="38.0" prefWidth="290.0" promptText="Username" style="-fx-text-inner-color: #ffffff; -fx-prompt-text-fill: #ffffff;" unFocusColor="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" focusColor="WHITE" layoutX="313.0" layoutY="384.0" prefHeight="38.0" prefWidth="290.0" promptText="Password" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="388.0" layoutY="478.0" onAction="#btnLogin" prefHeight="56.0" prefWidth="148.0" style="-fx-background-color: #c62828;" text="LOGIN" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="112.0" fitWidth="128.0" layoutX="403.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../other/img/Lock_50px.png" />
+         </image>
+      </ImageView>
+    </children>
+
+</AnchorPane>

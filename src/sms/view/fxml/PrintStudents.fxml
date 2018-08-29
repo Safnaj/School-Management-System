@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.PrintStudentController">
+    <children>
+        <Label layoutX="40.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Admission Number :" />
+        <TextField fx:id="adNo" layoutX="161.0" layoutY="125.0" prefHeight="25.0" prefWidth="94.0" promptText="Index No" />
+        <JFXButton fx:id="printStudents" layoutX="755.0" layoutY="116.0" onAction="#printStudents" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #c62828;" text="Print" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="generate" layoutX="614.0" layoutY="115.0" onAction="#generate" style="-fx-background-color: #1976D2;" text="Generate" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </JFXButton>
+        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
+            <children>
+                <Text fill="WHITE" fontSmoothingType="LCD" layoutX="252.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRINT STUDENT LIST" textAlignment="CENTER">
+                    <font>
+                        <Font name="Calibri" size="50.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <ComboBox fx:id="loadGrades" layoutX="398.0" layoutY="125.0" onAction="#loadGrades" prefWidth="150.0" promptText="Select Grade" />
+      <Label layoutX="312.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Select Grade : " />
+      <TableView layoutX="40.0" layoutY="176.0" prefHeight="401.0" prefWidth="826.0">
+        <columns>
+          <TableColumn prefWidth="56.33332824707031" text="Ad No" />
+          <TableColumn prefWidth="131.6666717529297" text="Name" />
+            <TableColumn prefWidth="66.0" text="DOB" />
+            <TableColumn prefWidth="66.0" text="DOA" />
+            <TableColumn prefWidth="59.66668701171875" text="Gender" />
+            <TableColumn prefWidth="62.333343505859375" text="Grade" />
+            <TableColumn prefWidth="85.66665649414062" text="Parent's Name" />
+            <TableColumn prefWidth="89.66668701171875" text="Parent's NIC" />
+            <TableColumn prefWidth="91.33331298828125" text="Contact No" />
+            <TableColumn prefWidth="118.33331298828125" text="Address" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>
