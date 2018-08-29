@@ -1,5 +1,6 @@
 package sms.view.controller;
 
+
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,7 +51,7 @@ public class RegisterStudentController implements Initializable {
     private ToggleGroup g;
 
     @FXML
-    private ComboBox<String> loadGrades;
+    private ComboBox<String> loadCombo;
 
     @FXML
     private TextField parentNameField;
@@ -64,7 +65,7 @@ public class RegisterStudentController implements Initializable {
     @FXML
     private TextField addressField;
 
-    GradeController ctrlGrades;
+    GradeController gcObject;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -81,43 +82,31 @@ public class RegisterStudentController implements Initializable {
             String doa = doaField.getText();
             RadioButton selectedRadioButton = (RadioButton) g.getSelectedToggle(); //Getting Selected Radio Button
             String gender = selectedRadioButton.getText();
-            String grade = loadGrades.getValue();
+            String grade = loadCombo.getValue();
             String parentName = parentNameField.getText();
             String nic = nicField.getText();
             Integer phone = Integer.parseInt(phoneField.getText());
             String address = addressField.getText();
 
+            if (validateFields() == true ) {
 
-            Student s = new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
-            int i = StudentController.AddStudent(s);
+                Student s = new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
+                int i = StudentController.AddStudent(s);
 
-////                if(adNoField.getText().isEmpty() ||  nameField.getText().isEmpty() || dobField.getText().isEmpty() || doaField.getText().isEmpty() ||
-////                        gradeField.getValue().isEmpty() || parentNameField.getText().isEmpty())
-//
-//                {
-//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                    alert.setTitle("Student Registration");
-//                    alert.setHeaderText(null);
-//                    alert.setContentText("Please Fill Required Fields");
-//                    alert.showAndWait();
-//
-//                }
-//                else{
-
-            if (i > 0) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Student Registration");
-                alert.setHeaderText(null);
-                alert.setContentText("Student Registered Successfully");
-                alert.showAndWait();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Student Registration");
-                alert.setHeaderText(null);
-                alert.setContentText("OOPs there is an error adding Student");
-                alert.showAndWait();
+                if (i > 0) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Student Registration");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Student Registered Successfully");
+                    alert.showAndWait();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Student Registration");
+                    alert.setHeaderText(null);
+                    alert.setContentText("OOPs there is an error adding Student");
+                    alert.showAndWait();
+                }
             }
-
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -130,28 +119,36 @@ public class RegisterStudentController implements Initializable {
 
     }
     @FXML
-    void loadGrades() {
-        methodloadGrades();
+    void loadCombo() {
+        loadGrades();
     }
 
-    public void methodloadGrades() {
+    public void loadGrades() {
         List<String> grades = new ArrayList<>();
 
-        try{
+            String cls = (String)loadCombo.getValue();
+           // grades = gcObject.getGrades(cls);
+            ObservableList<String> list = FXCollections.observableArrayList(grades);
+            ComboBox<String> loadGrades = new ComboBox<String>();
+            loadGrades.setItems(list);
 
-            String cls=(String)loadGrades.getValue();
-            grades = ctrlGrades.getGrades(cls);
-            ObservableList<String> btch=FXCollections.observableArrayList(grades);
-            loadGrades.getItems().clear();
-            for(String b:btch){
-                loadGrades.getItems().add(b);
-            }
+    }
+    private boolean validateFields(){
+        if(adNoField.getText().isEmpty() |  nameField.getText().isEmpty() | dobField.getText().isEmpty() |
+                doaField.getText().isEmpty() | parentNameField.getText().isEmpty() |
+                addressField.getText().isEmpty())
 
-        } catch (SQLException ex) {
-            Logger.getLogger(RegisterStudentController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Please Fill Required Fields");
+            alert.showAndWait();
+
+            return false;
+
         }
+        return true;
     }
 }
 

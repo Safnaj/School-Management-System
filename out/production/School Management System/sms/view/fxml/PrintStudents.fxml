@@ -15,7 +15,7 @@
     <children>
         <Label layoutX="40.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Admission Number :" />
         <TextField fx:id="adNo" layoutX="161.0" layoutY="125.0" prefHeight="25.0" prefWidth="94.0" promptText="Index No" />
-        <JFXButton fx:id="printStudents" layoutX="755.0" layoutY="116.0" onAction="#printStudents" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #DD2C00;" text="Print" textFill="WHITE">
+        <JFXButton fx:id="printStudents" layoutX="755.0" layoutY="116.0" onAction="#printStudents" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #c62828;" text="Print" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
