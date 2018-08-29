@@ -39,6 +39,10 @@ public class StudentManagementController implements Initializable {
     private JFXButton btnStudentMnge;
 
     @FXML
+    private JFXButton btnPrintStudents;
+
+
+    @FXML
     private AnchorPane studentManagement;
 
     @FXML
@@ -55,6 +59,16 @@ public class StudentManagementController implements Initializable {
     void setBtnStudentMnge(ActionEvent event) {
         try {
             AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/ManageStudents.fxml")));
+            studentManagement.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
+
+    @FXML
+    void btnPrintStudents(ActionEvent event) {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/PrintStudents.fxml")));
             studentManagement.getChildren().setAll(studentMgmt);
         }catch(IOException e){
             System.out.println(e);
