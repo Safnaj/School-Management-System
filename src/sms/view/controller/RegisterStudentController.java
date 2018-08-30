@@ -65,13 +65,10 @@ public class RegisterStudentController implements Initializable {
     @FXML
     private TextField addressField;
 
-    GradeController gcObject;
-
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
+    public void initialize(URL location, ResourceBundle resources){
+        loadComboBox();
     }
-
     @FXML
     private void AddStudent(ActionEvent event) {
         try {
@@ -120,21 +117,25 @@ public class RegisterStudentController implements Initializable {
     private void cancel() {
 
     }
+
     @FXML
-    void loadCombo() {
-        loadGrades();
+    private void loadComboBox(){
+        ArrayList arrayList = null;
+        try {
+            arrayList = GradeController.getGrades();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+
+        ObservableList observableArray = FXCollections.observableArrayList();
+        observableArray.addAll(arrayList);
+
+        if (observableArray != null){
+            loadCombo.setItems(observableArray);
+        }
+
     }
 
-    public void loadGrades() {
-        List<String> grades = new ArrayList<>();
-
-            String cls = (String)loadCombo.getValue();
-           // grades = gcObject.getGrades(cls);
-            ObservableList<String> list = FXCollections.observableArrayList(grades);
-            ComboBox<String> loadGrades = new ComboBox<String>();
-            loadGrades.setItems(list);
-
-    }
     private boolean validateFields(){
         if(adNoField.getText().isEmpty() || nameField.getText().isEmpty() || dobField.getText().isEmpty() ||
                 doaField.getText().isEmpty() || parentNameField.getText().isEmpty() || phoneField.getText().isEmpty())
@@ -151,6 +152,7 @@ public class RegisterStudentController implements Initializable {
         }
         return true;
     }
+
 }
 
 

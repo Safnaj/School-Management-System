@@ -90,8 +90,29 @@ public class ManageStudentsController implements Initializable {
 
     @FXML
     void btnDelete(ActionEvent event) {
+        try {
+            String adNo = adNoField.getText();
+            int deleteStudent2 = StudentController.deleteStudent(adNo);
+            if (deleteStudent2 > 0) {
 
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Student Delete");
+                alert.setHeaderText(null);
+                alert.setContentText("Student has being deleted sucessfully!!");
+                alert.showAndWait();
+
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Student Delete");
+                alert.setHeaderText(null);
+                alert.setContentText("There is an error deleting Student");
+                alert.showAndWait();
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
 
     @FXML
     void btnPrint(ActionEvent event) {

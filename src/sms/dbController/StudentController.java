@@ -43,5 +43,16 @@ public class StudentController {
         return null;
     }
 
+    public static int deleteStudent(String adNo) throws ClassNotFoundException, SQLException {
+
+        String sql = "DELETE FROM Students WHERE adNo ='"+adNo+"'";
+        Connection conn = DBConnection.getDBConnection().getConnection();
+        PreparedStatement stm = conn.prepareStatement(sql);
+
+
+        return  stm.executeUpdate();
+
+    }
+
 
 }

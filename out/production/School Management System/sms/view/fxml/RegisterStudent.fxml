@@ -71,6 +71,6 @@
             </ImageView>
          </children>
       </Pane>
-      <ComboBox fx:id="loadCombo" layoutX="178.0" layoutY="407.0" onAction="#loadCombo" prefWidth="150.0" promptText="Select Grade *" />
+      <ComboBox fx:id="loadCombo" layoutX="178.0" layoutY="407.0" onAction="#loadComboBox" prefWidth="150.0" promptText="Select Grade" />
     </children>
 </AnchorPane>

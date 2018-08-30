@@ -17,29 +17,15 @@ import java.util.ArrayList;
  **/
 public class GradeController {
 
-   /* public ArrayList<String> getGrades(String className)throws SQLException, ClassNotFoundException{
-
-        ArrayList<String> grades = new ArrayList<>();
-        String SQL="Select grade From grades";
-        java.sql.Connection conn = DBConnection.getDBConnection().getConnection();
-        PreparedStatement stm = (PreparedStatement) conn.prepareStatement(SQL);
-        stm.setObject(1, className);
-        ResultSet rst=stm.executeQuery();
-        if(rst.next()){
-
-            grades.add(rst.getString(1));
-        }
-        return grades;
-    }*/
-
     public static ArrayList<Grade> getGrades() throws ClassNotFoundException, SQLException{
         Connection conn=DBConnection.getDBConnection().getConnection();
         Statement stm=conn.createStatement();
         ResultSet rst=stm.executeQuery("Select grade From grades");
+
         ArrayList<Grade>gradeList=new ArrayList<>();
         while(rst.next()){
             Grade grade;
-            grade = new Grade(rst.getString(2));
+            grade = new Grade(rst.getString("grade"));
             gradeList.add(grade);
         }
         return gradeList;
