@@ -33,7 +33,7 @@ public class Student {
         this.address = address;
     }
 
-    public int getAdNo() {return adNo;}
+    public Integer getAdNo() {return adNo;}
 
     public void setAdNo(int adNo) {
         this.adNo = adNo;
