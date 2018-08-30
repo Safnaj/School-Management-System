@@ -75,6 +75,8 @@ public class RegisterStudentController implements Initializable {
     @FXML
     private void AddStudent(ActionEvent event) {
         try {
+            if (validateFields() == true ) {
+
             int adNo = Integer.parseInt(adNoField.getText());
             String fullName = fullNameField.getText();
             String name = nameField.getText();
@@ -85,10 +87,10 @@ public class RegisterStudentController implements Initializable {
             String grade = loadCombo.getValue();
             String parentName = parentNameField.getText();
             String nic = nicField.getText();
-            Integer phone = Integer.parseInt(phoneField.getText());
+            String phone = phoneField.getText();
             String address = addressField.getText();
 
-            if (validateFields() == true ) {
+
 
                 Student s = new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
                 int i = StudentController.AddStudent(s);
@@ -134,9 +136,8 @@ public class RegisterStudentController implements Initializable {
 
     }
     private boolean validateFields(){
-        if(adNoField.getText().isEmpty() |  nameField.getText().isEmpty() | dobField.getText().isEmpty() |
-                doaField.getText().isEmpty() | parentNameField.getText().isEmpty() |
-                addressField.getText().isEmpty())
+        if(adNoField.getText().isEmpty() || nameField.getText().isEmpty() || dobField.getText().isEmpty() ||
+                doaField.getText().isEmpty() || parentNameField.getText().isEmpty() || phoneField.getText().isEmpty())
 
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

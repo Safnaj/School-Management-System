@@ -15,11 +15,11 @@ public class Student {
     private String grade;
     private String parentName;
     private String nic;
-    private int phone;
+    private String phone;
     private String address;
 
 
-    public Student(int adNo, String fullName, String name, String dob, String doa, String gender, String grade, String parentName, String nic, int phone, String address) {
+    public Student(int adNo, String fullName, String name, String dob, String doa, String gender, String grade, String parentName, String nic, String phone, String address) {
         this.adNo = adNo;
         this.fullName = fullName;
         this.name = name;
@@ -103,11 +103,11 @@ public class Student {
         this.nic = nic;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

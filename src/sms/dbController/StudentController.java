@@ -12,7 +12,6 @@ import java.util.ArrayList;
  **/
 public class StudentController {
 
-
     public static int AddStudent(Student student)throws ClassNotFoundException,SQLException {
         String SQL="INSERT INTO students VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         Connection conn = DBConnection.getDBConnection().getConnection();
@@ -31,4 +30,18 @@ public class StudentController {
 
         return  stm.executeUpdate();
     }
+    public static Student searchStudent(Integer adNo) throws ClassNotFoundException, SQLException {
+        String sql = "SELECT * FROM students WHERE adNo = ? ";
+        Connection conn = DBConnection.getDBConnection().getConnection();
+        PreparedStatement stm = conn.prepareStatement(sql);
+        stm.setObject(1, adNo);
+        ResultSet rst=stm.executeQuery();
+        if(rst.next()){
+            Student s=new Student(rst.getInt(1),rst.getString(2),rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7), rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11));
+            return s;
+        }
+        return null;
+    }
+
+
 }

@@ -1,15 +1,16 @@
 package sms.view.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,30 +27,78 @@ public class ManageStudentsController implements Initializable {
     }
 
     @FXML
-    private void btnDelete() {
+    private AnchorPane manageStudents;
+
+    @FXML
+    private TextField adNoField;
+
+    @FXML
+    private TextField fullNameField;
+
+    @FXML
+    private TextField nameField;
+
+    @FXML
+    private TextField dobField;
+
+    @FXML
+    private TextField doaField;
+
+    @FXML
+    private JFXRadioButton genderField;
+
+    @FXML
+    private ToggleGroup g;
+
+    @FXML
+    private TextField parentNameField;
+
+    @FXML
+    private TextField nicField;
+
+    @FXML
+    private TextField phoneField;
+
+    @FXML
+    private TextField addressField;
+
+    @FXML
+    private JFXButton btnDelete;
+
+    @FXML
+    private JFXButton btnUpdate;
+
+    @FXML
+    private TextField AdNo;
+
+    @FXML
+    private JFXButton searchStudent;
+
+    @FXML
+    private JFXButton btnPrint;
+
+    @FXML
+    private ComboBox<?> loadCombo;
+
+    @FXML
+    void btnDelete(ActionEvent event) {
 
     }
 
     @FXML
-    private void btnUpdate() {
+    void btnPrint(ActionEvent event) {
 
     }
 
     @FXML
-    private void cancel() {
+    void btnUpdate(ActionEvent event) {
 
     }
 
     @FXML
-    private void btnPrint() {
+    void searchStudent(ActionEvent event) {
 
     }
 
-
-
-    //ActionEvent event - Have to pass this as parameter
-//    @FXML
-//    void setBtnCancel(ActionEvent event) {
-//
-//    }
 }
+
