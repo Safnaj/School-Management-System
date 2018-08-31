@@ -1,5 +1,6 @@
 package sms.view.controller;
 
+
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,7 +51,7 @@ public class RegisterStudentController implements Initializable {
     private ToggleGroup g;
 
     @FXML
-    private ComboBox<String> loadGrades;
+    private ComboBox<String> loadCombo;
 
     @FXML
     private TextField parentNameField;
@@ -64,16 +65,15 @@ public class RegisterStudentController implements Initializable {
     @FXML
     private TextField addressField;
 
-    GradeController ctrlGrades;
-
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
+    public void initialize(URL location, ResourceBundle resources){
+        loadComboBox();
     }
-
     @FXML
     private void AddStudent(ActionEvent event) {
         try {
+            if (validateFields() == true ) {
+
             int adNo = Integer.parseInt(adNoField.getText());
             String fullName = fullNameField.getText();
             String name = nameField.getText();
@@ -81,43 +81,31 @@ public class RegisterStudentController implements Initializable {
             String doa = doaField.getText();
             RadioButton selectedRadioButton = (RadioButton) g.getSelectedToggle(); //Getting Selected Radio Button
             String gender = selectedRadioButton.getText();
-            String grade = loadGrades.getValue();
+            String grade = loadCombo.getValue();
             String parentName = parentNameField.getText();
             String nic = nicField.getText();
-            Integer phone = Integer.parseInt(phoneField.getText());
+            String phone = phoneField.getText();
             String address = addressField.getText();
 
 
-            Student s = new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
-            int i = StudentController.AddStudent(s);
 
-////                if(adNoField.getText().isEmpty() ||  nameField.getText().isEmpty() || dobField.getText().isEmpty() || doaField.getText().isEmpty() ||
-////                        gradeField.getValue().isEmpty() || parentNameField.getText().isEmpty())
-//
-//                {
-//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                    alert.setTitle("Student Registration");
-//                    alert.setHeaderText(null);
-//                    alert.setContentText("Please Fill Required Fields");
-//                    alert.showAndWait();
-//
-//                }
-//                else{
+                Student s = new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
+                int i = StudentController.AddStudent(s);
 
-            if (i > 0) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Student Registration");
-                alert.setHeaderText(null);
-                alert.setContentText("Student Registered Successfully");
-                alert.showAndWait();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Student Registration");
-                alert.setHeaderText(null);
-                alert.setContentText("OOPs there is an error adding Student");
-                alert.showAndWait();
+                if (i > 0) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Student Registration");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Student Registered Successfully");
+                    alert.showAndWait();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Student Registration");
+                    alert.setHeaderText(null);
+                    alert.setContentText("OOPs there is an error adding Student");
+                    alert.showAndWait();
+                }
             }
-
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -129,30 +117,47 @@ public class RegisterStudentController implements Initializable {
     private void cancel() {
 
     }
+
     @FXML
-    void loadGrades() {
-        methodloadGrades();
-    }
-
-    public void methodloadGrades() {
-        List<String> grades = new ArrayList<>();
-
-        try{
-
-            String cls=(String)loadGrades.getValue();
-            grades = ctrlGrades.getGrades(cls);
-            ObservableList<String> btch=FXCollections.observableArrayList(grades);
-            loadGrades.getItems().clear();
-            for(String b:btch){
-                loadGrades.getItems().add(b);
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(RegisterStudentController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException e) {
+    private void loadComboBox(){
+        ArrayList arrayList = null;
+        try {
+            arrayList = GradeController.getGrades();
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+
+        for (Object s: arrayList
+             ) {
+
+        }
+
+        ObservableList observableArray = FXCollections.observableArrayList();
+        observableArray.addAll(arrayList);
+
+        if (observableArray != null){
+            loadCombo.setItems(observableArray);
+        }
+
     }
+
+    private boolean validateFields(){
+        if(adNoField.getText().isEmpty() || nameField.getText().isEmpty() || dobField.getText().isEmpty() ||
+                doaField.getText().isEmpty() || parentNameField.getText().isEmpty() || phoneField.getText().isEmpty())
+
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Please Fill Required Fields");
+            alert.showAndWait();
+
+            return false;
+
+        }
+        return true;
+    }
+
 }
 
 
