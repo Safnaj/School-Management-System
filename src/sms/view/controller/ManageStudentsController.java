@@ -7,10 +7,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import sms.dbController.StudentController;
 import sms.model.Student;
@@ -56,10 +53,10 @@ public class ManageStudentsController implements Initializable {
     private TextField doaField;
 
     @FXML
-    private JFXRadioButton genderField;
+    private TextField genderField;
 
     @FXML
-    private ToggleGroup g;
+    private TextField gradeField;
 
     @FXML
     private TextField parentNameField;
@@ -84,9 +81,9 @@ public class ManageStudentsController implements Initializable {
 
     @FXML
     private JFXButton btnPrint;
-
-    @FXML
-    private ComboBox<?> loadCombo;
+//
+//    @FXML
+//    private ComboBox<String> loadCombo;
 
     @FXML
     void btnDelete(ActionEvent event) {
@@ -98,7 +95,7 @@ public class ManageStudentsController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Student Delete");
                 alert.setHeaderText(null);
-                alert.setContentText("Student has being deleted sucessfully!!");
+                alert.setContentText("Student has been deleted sucessfully!!");
                 alert.showAndWait();
 
             } else {
@@ -119,11 +116,46 @@ public class ManageStudentsController implements Initializable {
 
     }
 
+    //Update Method
     @FXML
-    void btnUpdate(ActionEvent event) {
+    void btnUpdate(ActionEvent event)throws SQLException {
+        try {
+            int adNo = Integer.parseInt(adNoField.getText());
+            String fullName = fullNameField.getText();
+            String name = nameField.getText();
+            String dob = dobField.getText();
+            String doa = doaField.getText();
+            String gender = genderField.getText();
+            String grade = gradeField.getText();
+            String parentName = parentNameField.getText();
+            String nic = nicField.getText();
+            String phone = phoneField.getText();
+            String address = addressField.getText();
 
+            Student s = new Student(adNo,fullName,name,dob,doa,gender,grade,parentName,nic,phone,address);
+            int i = StudentController.updateStudent(s);
+
+            if (i > 0) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Student Management");
+                alert.setHeaderText(null);
+                alert.setContentText("Student Updated Successfully");
+                alert.showAndWait();
+
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Customer Update");
+                alert.setHeaderText("This is an error dialog");
+                alert.setContentText("OOPs there is an error updating customer");
+                alert.showAndWait();
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
+    //Search Method
     @FXML
     void searchStudent(ActionEvent event) {
         try {
@@ -136,7 +168,7 @@ public class ManageStudentsController implements Initializable {
                 dobField.setText(s.getDob());
                 doaField.setText(s.getDoa());
                 genderField.setText(s.getGender());
-             //   loadCombo.setText(s.getGrade());
+                gradeField.setText(s.getGrade());
                 parentNameField.setText(s.getParentName());
                 nicField.setText(s.getNic());
                 phoneField.setText(s.getPhone());

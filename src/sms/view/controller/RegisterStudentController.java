@@ -127,6 +127,11 @@ public class RegisterStudentController implements Initializable {
             e.printStackTrace();
         }
 
+        for (Object s: arrayList
+             ) {
+
+        }
+
         ObservableList observableArray = FXCollections.observableArrayList();
         observableArray.addAll(arrayList);
 
