@@ -24,8 +24,8 @@ public class GradeController {
 
         ArrayList<String>gradeList=new ArrayList<>();
         while(rst.next()){
-            Grade grade;
-            grade = new Grade(rst.getString("grade"));
+            //Grade grade;
+            //grade = new Grade(rst.getString("grade"));
             gradeList.add(rst.getString("grade"));
         }
         return gradeList;

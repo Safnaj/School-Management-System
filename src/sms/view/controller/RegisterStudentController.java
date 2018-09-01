@@ -69,6 +69,8 @@ public class RegisterStudentController implements Initializable {
     public void initialize(URL location, ResourceBundle resources){
         loadComboBox();
     }
+
+
     @FXML
     private void AddStudent(ActionEvent event) {
         try {
@@ -96,8 +98,22 @@ public class RegisterStudentController implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Student Registration");
                     alert.setHeaderText(null);
-                    alert.setContentText("Student Registered Successfully");
+                    alert.setContentText("Student "+adNo+" Registered Successfully");
                     alert.showAndWait();
+
+                    adNoField.setText(null);
+                    fullNameField.setText(null);
+                    nameField.setText(null);
+                    dobField.setText(null);
+                    doaField.setText(null);
+                    loadCombo.setValue(null);
+                    adNoField.setText(null);
+                    parentNameField.setText(null);
+                    nicField.setText(null);
+                    phoneField.setText(null);
+                    fullNameField.setText(null);
+                    addressField.setText(null);
+
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Student Registration");
@@ -126,11 +142,11 @@ public class RegisterStudentController implements Initializable {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
+/*
         for (Object s: arrayList
              ) {
 
-        }
+        }*/
 
         ObservableList observableArray = FXCollections.observableArrayList();
         observableArray.addAll(arrayList);
@@ -153,7 +169,6 @@ public class RegisterStudentController implements Initializable {
             alert.showAndWait();
 
             return false;
-
         }
         return true;
     }

@@ -7,12 +7,12 @@ package sms.model;
 public class School {
     private String SchoolName;
     private String SchoolAddress;
-    private int classAvailable;
+    private String classAvailable;
     private String schoolType;
     private String deoDivision;
     private String municpalCouncil;
     private String policeArea;
-    private int postalCode;
+    private String postalCode;
     private String gsDivision;
     private String eduZone;
     private String eduDistrict;
@@ -25,9 +25,9 @@ public class School {
     private String totalLandArea;
     private String province;
     private String nameOfPrincipal;
-    private int pricipalNo;
+    private String pricipalNo;
 
-    public School(String schoolName, String schoolAddress, int classAvailable, String schoolType, String deoDivision, String municpalCouncil, String policeArea, int postalCode, String gsDivision, String eduZone, String eduDistrict, String adminDistrict, String electorate, String dateOfEstd, String schoolID, String schoolCensus, String schoolExamId, String totalLandArea, String province, String nameOfPrincipal, int pricipalNo) {
+    public School(String schoolName, String schoolAddress, String classAvailable, String schoolType, String deoDivision, String municpalCouncil, String policeArea, String postalCode, String gsDivision, String eduZone, String eduDistrict, String adminDistrict, String electorate, String dateOfEstd, String schoolID, String schoolCensus, String schoolExamId, String totalLandArea, String province, String nameOfPrincipal, String pricipalNo) {
         SchoolName = schoolName;
         SchoolAddress = schoolAddress;
         this.classAvailable = classAvailable;
@@ -67,11 +67,11 @@ public class School {
         SchoolAddress = schoolAddress;
     }
 
-    public int getClassAvailable() {
+    public String getClassAvailable() {
         return classAvailable;
     }
 
-    public void setClassAvailable(int classAvailable) {
+    public void setClassAvailable(String classAvailable) {
         this.classAvailable = classAvailable;
     }
 
@@ -107,11 +107,11 @@ public class School {
         this.policeArea = policeArea;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
@@ -211,11 +211,11 @@ public class School {
         this.nameOfPrincipal = nameOfPrincipal;
     }
 
-    public int getPricipalNo() {
+    public String getPricipalNo() {
         return pricipalNo;
     }
 
-    public void setPricipalNo(int pricipalNo) {
+    public void setPricipalNo(String pricipalNo) {
         this.pricipalNo = pricipalNo;
     }
 }

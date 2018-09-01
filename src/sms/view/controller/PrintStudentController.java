@@ -22,9 +22,6 @@ public class PrintStudentController implements Initializable {
     }
 
     @FXML
-    private TextField adNo;
-
-    @FXML
     private JFXButton printStudents;
 
     @FXML

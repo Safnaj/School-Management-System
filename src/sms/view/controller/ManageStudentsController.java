@@ -81,10 +81,8 @@ public class ManageStudentsController implements Initializable {
 
     @FXML
     private JFXButton btnPrint;
-//
-//    @FXML
-//    private ComboBox<String> loadCombo;
 
+    //Delete Method
     @FXML
     void btnDelete(ActionEvent event) {
         try {
@@ -95,7 +93,7 @@ public class ManageStudentsController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Student Delete");
                 alert.setHeaderText(null);
-                alert.setContentText("Student has been deleted sucessfully!!");
+                alert.setContentText("Student "+adNo+" has been deleted sucessfully...!!");
                 alert.showAndWait();
 
             } else {
@@ -140,14 +138,27 @@ public class ManageStudentsController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Student Management");
                 alert.setHeaderText(null);
-                alert.setContentText("Student Updated Successfully");
+                alert.setContentText("Student "+adNo+" Updated Successfully..!");
                 alert.showAndWait();
+
+                adNoField.setText(null);
+                fullNameField.setText(null);
+                nameField.setText(null);
+                dobField.setText(null);
+                doaField.setText(null);
+                gradeField.setText(null);
+                adNoField.setText(null);
+                parentNameField.setText(null);
+                nicField.setText(null);
+                phoneField.setText(null);
+                fullNameField.setText(null);
+                addressField.setText(null);
 
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Customer Update");
-                alert.setHeaderText("This is an error dialog");
-                alert.setContentText("OOPs there is an error updating customer");
+                alert.setTitle("Student Management");
+                alert.setHeaderText(null);
+                alert.setContentText("OOPs there is an error updating Student..!");
                 alert.showAndWait();
             }
         } catch (ClassNotFoundException | SQLException ex) {

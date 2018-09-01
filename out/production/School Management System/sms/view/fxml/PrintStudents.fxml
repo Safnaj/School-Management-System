@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -13,14 +12,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.PrintStudentController">
     <children>
-        <Label layoutX="40.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Admission Number :" />
-        <TextField fx:id="adNo" layoutX="161.0" layoutY="125.0" prefHeight="25.0" prefWidth="94.0" promptText="Index No" />
         <JFXButton fx:id="printStudents" layoutX="755.0" layoutY="116.0" onAction="#printStudents" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #c62828;" text="Print" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </JFXButton>
-        <JFXButton fx:id="generate" layoutX="614.0" layoutY="115.0" onAction="#generate" style="-fx-background-color: #1976D2;" text="Generate" textFill="WHITE">
+        <JFXButton fx:id="generate" layoutX="619.0" layoutY="116.0" onAction="#generate" style="-fx-background-color: #1976D2;" text="Generate" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
@@ -34,8 +31,12 @@
                 </Text>
             </children>
         </Pane>
-        <ComboBox fx:id="loadGrades" layoutX="398.0" layoutY="125.0" onAction="#loadGrades" prefWidth="150.0" promptText="Select Grade" />
-      <Label layoutX="312.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Select Grade : " />
+        <ComboBox fx:id="loadGrades" layoutX="123.0" layoutY="125.0" onAction="#loadGrades" prefHeight="25.0" prefWidth="109.0" promptText="Select Grade" />
+      <Label layoutX="41.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Select Grade : " />
+      <ComboBox fx:id="loadGrades1" layoutX="325.0" layoutY="125.0" onAction="#loadGrades" prefHeight="25.0" prefWidth="109.0" promptText="Select Year" />
+      <Label layoutX="252.0" layoutY="126.0" prefHeight="23.0" prefWidth="70.0" text="Past Grade : " />
+      <ComboBox fx:id="loadGrades11" layoutX="503.0" layoutY="126.0" onAction="#loadGrades" prefHeight="25.0" prefWidth="83.0" promptText="Gender" />
+      <Label layoutX="448.0" layoutY="127.0" prefHeight="23.0" prefWidth="54.0" text="Gender : " />
       <TableView layoutX="40.0" layoutY="176.0" prefHeight="401.0" prefWidth="826.0">
         <columns>
           <TableColumn prefWidth="56.33332824707031" text="Ad No" />
