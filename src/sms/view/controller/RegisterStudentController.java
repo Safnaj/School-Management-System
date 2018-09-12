@@ -67,6 +67,7 @@ public class RegisterStudentController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
+
         loadComboBox();
     }
 
@@ -74,21 +75,27 @@ public class RegisterStudentController implements Initializable {
     @FXML
     private void AddStudent(ActionEvent event) {
         try {
-            if (validateFields() == true ) {
 
-            int adNo = Integer.parseInt(adNoField.getText());
-            String fullName = fullNameField.getText();
-            String name = nameField.getText();
-            String dob = dobField.getText();
-            String doa = doaField.getText();
-            RadioButton selectedRadioButton = (RadioButton) g.getSelectedToggle(); //Getting Selected Radio Button
-            String gender = selectedRadioButton.getText();
-            String grade = loadCombo.getValue();
-            String parentName = parentNameField.getText();
-            String nic = nicField.getText();
-            String phone = phoneField.getText();
-            String address = addressField.getText();
+            ValidationController v = new ValidationController();
 
+            if (v.validateEmpty(adNoField) && v.validateEmpty(nameField) && v.validateEmpty(dobField) && v.validateEmpty(doaField) &&
+                    v.validateEmpty(parentNameField) && v.validateEmpty(phoneField) && v.validateNIC(nicField) && v.numbersOnly(adNoField)
+                    && v.numbersOnly(phoneField)) {
+
+             //   if(v.validateNIC(nicField) || v.numbersOnly(adNoField) || v.numbersOnly(phoneField)){
+
+                int adNo = Integer.parseInt(adNoField.getText());
+                String fullName = fullNameField.getText();
+                String name = nameField.getText();
+                String dob = dobField.getText();
+                String doa = doaField.getText();
+                RadioButton selectedRadioButton = (RadioButton) g.getSelectedToggle(); //Getting Selected Radio Button
+                String gender = selectedRadioButton.getText();
+                String grade = loadCombo.getValue();
+                String parentName = parentNameField.getText();
+                String nic = nicField.getText();
+                String phone = phoneField.getText();
+                String address = addressField.getText();
 
 
                 Student s = new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
@@ -98,7 +105,7 @@ public class RegisterStudentController implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Student Registration");
                     alert.setHeaderText(null);
-                    alert.setContentText("Student "+adNo+" Registered Successfully");
+                    alert.setContentText("Student ID " + adNo + " Registered Successfully..!");
                     alert.showAndWait();
 
                     adNoField.setText(null);
@@ -123,6 +130,7 @@ public class RegisterStudentController implements Initializable {
                 }
             }
 
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -130,8 +138,20 @@ public class RegisterStudentController implements Initializable {
     }
 
     @FXML
-    private void cancel() {
+    private void reset() {
 
+        adNoField.setText(null);
+        fullNameField.setText(null);
+        nameField.setText(null);
+        dobField.setText(null);
+        doaField.setText(null);
+        loadCombo.setValue(null);
+        adNoField.setText(null);
+        parentNameField.setText(null);
+        nicField.setText(null);
+        phoneField.setText(null);
+        fullNameField.setText(null);
+        addressField.setText(null);
     }
 
     @FXML
@@ -156,7 +176,7 @@ public class RegisterStudentController implements Initializable {
         }
 
     }
-
+/*
     private boolean validateFields(){
         if(adNoField.getText().isEmpty() || nameField.getText().isEmpty() || dobField.getText().isEmpty() ||
                 doaField.getText().isEmpty() || parentNameField.getText().isEmpty() || phoneField.getText().isEmpty())
@@ -171,7 +191,7 @@ public class RegisterStudentController implements Initializable {
             return false;
         }
         return true;
-    }
+    }*/
 
 }
 

@@ -1,5 +1,6 @@
 package sms.view.controller;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
 /**
@@ -8,11 +9,46 @@ import javafx.scene.control.TextField;
  **/
 public class ValidationController {
 
-    public static void validateNIC(TextField txt) {
-        if (txt.getText().matches("^(\\d{9}|\\d{12})[VvXx]$")) {
-            //txt.setId(null);
+    public boolean validateEmpty(TextField txt) {
+        if (txt.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Please Fill Required Fields..!");
+            alert.showAndWait();
+
+            return false;
+        }
+        return true;
+    }
+
+    public boolean validateNIC(TextField txt) {
+        if (txt.getText().matches("^(\\d{9}|\\d{12})[VvXx]$")|| (txt.getText().isEmpty())) {
+
+            return true;
         } else {
-            //txt.setId("txtRed");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid NIC Number..!");
+            alert.showAndWait();
+
+            return false;
+        }
+    }
+
+    public boolean numbersOnly(TextField txt) {
+        if (txt.getText().matches("[0-9]+")) {
+
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Please Enter Numbers Only in "+txt+" Field");
+            alert.showAndWait();
+
+            return false;
         }
     }
 }

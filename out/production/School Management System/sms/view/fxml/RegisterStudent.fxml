@@ -49,7 +49,7 @@
             <URL value="@css/RegStudent.css" />
          </stylesheets>
         </JFXButton>
-        <JFXButton fx:id="cancel" layoutX="299.0" layoutY="517.0" onAction="#cancel" text="CANCEL" textFill="WHITE">
+        <JFXButton fx:id="reset" layoutX="299.0" layoutY="517.0" onAction="#reset" prefWidth="140.0" text="RESET" textFill="WHITE">
             <font>
                 <Font size="25.0" />
             </font>

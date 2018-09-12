@@ -93,8 +93,22 @@ public class ManageStudentsController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Student Delete");
                 alert.setHeaderText(null);
-                alert.setContentText("Student "+adNo+" has been deleted sucessfully...!!");
+                alert.setContentText("Student "+adNo+" has been deleted sucessfully..!");
                 alert.showAndWait();
+
+                adNoField.setText(null);
+                fullNameField.setText(null);
+                nameField.setText(null);
+                dobField.setText(null);
+                doaField.setText(null);
+                gradeField.setText(null);
+                adNoField.setText(null);
+                parentNameField.setText(null);
+                nicField.setText(null);
+                phoneField.setText(null);
+                fullNameField.setText(null);
+                addressField.setText(null);
+
 
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
