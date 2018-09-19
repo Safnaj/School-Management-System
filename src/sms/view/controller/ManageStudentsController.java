@@ -96,6 +96,7 @@ public class ManageStudentsController implements Initializable {
                 alert.setContentText("Student "+adNo+" has been deleted sucessfully..!");
                 alert.showAndWait();
 
+                AdNo.setText(null);
                 adNoField.setText(null);
                 fullNameField.setText(null);
                 nameField.setText(null);
@@ -155,6 +156,7 @@ public class ManageStudentsController implements Initializable {
                 alert.setContentText("Student "+adNo+" Updated Successfully..!");
                 alert.showAndWait();
 
+                AdNo.setText(null);
                 adNoField.setText(null);
                 fullNameField.setText(null);
                 nameField.setText(null);

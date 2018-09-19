@@ -45,7 +45,22 @@ public class ValidationController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Student Registration");
             alert.setHeaderText(null);
-            alert.setContentText("Please Enter Numbers Only in "+txt+" Field");
+            alert.setContentText("You Have Entered Text or Characters in Number Field..!");
+            alert.showAndWait();
+
+            return false;
+        }
+    }
+
+    public boolean validatePhone(TextField txt) {
+        if (txt.getText().matches("^(\\d{10})")) {
+
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid Phone Number..!");
             alert.showAndWait();
 
             return false;

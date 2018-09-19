@@ -80,7 +80,7 @@ public class RegisterStudentController implements Initializable {
 
             if (v.validateEmpty(adNoField) && v.validateEmpty(nameField) && v.validateEmpty(dobField) && v.validateEmpty(doaField) &&
                     v.validateEmpty(parentNameField) && v.validateEmpty(phoneField) && v.validateNIC(nicField) && v.numbersOnly(adNoField)
-                    && v.numbersOnly(phoneField)) {
+                    && v.validatePhone(phoneField)) {
 
              //   if(v.validateNIC(nicField) || v.numbersOnly(adNoField) || v.numbersOnly(phoneField)){
 

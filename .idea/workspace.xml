@@ -88,11 +88,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ManageStudentsController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ManageStudentsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sms/view/controller/ManageStudentsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="101" column="39" lean-forward="true" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+            <state relative-caret-position="490">
+              <caret line="214" column="5" lean-forward="true" selection-start-line="187" selection-start-column="8" selection-end-line="214" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sms/dbController/StudentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="34" column="66" lean-forward="true" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -100,8 +109,8 @@
       <file leaf-file-name="PrintStudentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sms/view/controller/PrintStudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="256">
+              <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -115,20 +124,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterStudentController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sms/view/controller/RegisterStudentController.java">
+      <file leaf-file-name="SchoolInfoController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sms/view/controller/SchoolInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="70" column="7" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+            <state relative-caret-position="2618">
+              <caret line="171" column="72" lean-forward="true" selection-start-line="171" selection-start-column="72" selection-end-line="171" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValidationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sms/view/controller/ValidationController.java">
+      <file leaf-file-name="SchoolController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sms/dbController/SchoolController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="29" column="65" lean-forward="true" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
+            <state relative-caret-position="136">
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,20 +145,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sms/view/controller/DashboardController.java">
+      <file leaf-file-name="School.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sms/model/School.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="306">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainDashboardController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sms/view/controller/MainDashboardController.java">
+      <file leaf-file-name="Grade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sms/model/Grade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="109" column="63" selection-start-line="109" selection-start-column="63" selection-end-line="109" selection-end-column="63" />
+            <state relative-caret-position="680">
+              <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+              <folding>
+                <element signature="e#910#911#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterStudentController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sms/view/controller/RegisterStudentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -188,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/sms/view/fxml/fuck.fxml" />
         <option value="$PROJECT_DIR$/src/sms/view/fxml/UserAccount.fxml" />
         <option value="$PROJECT_DIR$/src/sms/view/controller/loginController.java" />
-        <option value="$PROJECT_DIR$/src/sms/view/controller/UserAccountController.java" />
         <option value="$PROJECT_DIR$/src/dbController/StudentController.java" />
         <option value="$PROJECT_DIR$/src/model/Student.java" />
         <option value="$PROJECT_DIR$/src/sms/view/fxml/SchoolInfo.fxml" />
@@ -206,13 +226,14 @@
         <option value="$PROJECT_DIR$/src/sms/dbController/StudentController.java" />
         <option value="$PROJECT_DIR$/src/sms/dbController/GradeController.java" />
         <option value="$PROJECT_DIR$/src/sms/view/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/sms/view/controller/ManageStudentsController.java" />
         <option value="$PROJECT_DIR$/src/sms/view/controller/PrintStudentController.java" />
-        <option value="$PROJECT_DIR$/src/sms/dbController/SchoolController.java" />
-        <option value="$PROJECT_DIR$/src/sms/model/School.java" />
-        <option value="$PROJECT_DIR$/src/sms/view/controller/SchoolInfoController.java" />
         <option value="$PROJECT_DIR$/src/sms/view/controller/RegisterStudentController.java" />
         <option value="$PROJECT_DIR$/src/sms/view/controller/ValidationController.java" />
-        <option value="$PROJECT_DIR$/src/sms/view/controller/ManageStudentsController.java" />
+        <option value="$PROJECT_DIR$/src/sms/view/controller/UserAccountController.java" />
+        <option value="$PROJECT_DIR$/src/sms/model/School.java" />
+        <option value="$PROJECT_DIR$/src/sms/dbController/SchoolController.java" />
+        <option value="$PROJECT_DIR$/src/sms/view/controller/SchoolInfoController.java" />
       </list>
     </option>
   </component>
@@ -247,6 +268,7 @@
     <panes>
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -324,7 +346,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -485,18 +506,21 @@
       <workItem from="1536494300074" duration="1317000" />
       <workItem from="1536594204856" duration="4580000" />
       <workItem from="1536758463709" duration="8156000" />
+      <workItem from="1536844805414" duration="3666000" />
+      <workItem from="1536916211286" duration="5531000" />
+      <workItem from="1537288558465" duration="3352000" />
+      <workItem from="1537366913679" duration="4829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208905000" />
+    <option name="totallyTimeSpent" value="226283000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.32838285" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
@@ -508,7 +532,7 @@
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32838285" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.25869894" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.27382752" />
       <window_info anchor="right" id="Database" order="1" weight="0.24659607" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24962178" />
@@ -517,6 +541,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990461" />
       <window_info anchor="right" id="JetGradle" order="6" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.32838285" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Database Console" order="16" visible="true" weight="0.3290938" />
@@ -574,21 +599,21 @@
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/fuckController.java" />
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/fuck.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="33" selection-end-line="53" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/UserAccount.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="235" selection-start-line="12" selection-start-column="235" selection-end-line="12" selection-end-column="235" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="uml://JAVA/sms.view.controller.UserAccountController">
       <provider selected="true" editor-type-id="UmlEditorProvider">
@@ -612,13 +637,6 @@
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/test.java" />
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/abc.java" />
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/sas.java" />
-    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/UserAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/loginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -629,12 +647,12 @@
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/javafx.fxml/javafx/fxml/Initializable.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/javafx.controls/javafx/scene/control/Button.java" />
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/SchoolInfo.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/34895b0a-9966-44dd-a734-3ee613859814/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
@@ -654,28 +672,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/StudentManagement.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/ManageStudents.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/Dashboard.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="189" lean-forward="true" selection-start-line="11" selection-start-column="189" selection-end-line="11" selection-end-column="189" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/db/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -685,20 +703,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/PrintStudents.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/MainDashboard.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="4" selection-end-line="129" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/css/RegStudent.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -715,13 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/model/Grade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/School Management System/model/Student.class" />
     <entry file="file://$PROJECT_DIR$/src/sms/main/StartProject.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -731,34 +742,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/sms/dbController/GradeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/model/School.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="139" column="5" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/dbController/SchoolController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/SchoolInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2567">
-          <caret line="168" column="66" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/MainDashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
@@ -773,6 +756,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/RegisterStudent.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="842">
+          <caret line="73" column="89" selection-start-line="73" selection-start-column="77" selection-end-line="73" selection-end-column="89" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/ValidationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/StudentManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/UserAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/model/Grade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+          <folding>
+            <element signature="e#910#911#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/dbController/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="34" column="66" lean-forward="true" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/RegisterStudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/model/Student.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -780,56 +816,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/dbController/StudentController.java">
+    <entry file="file://$PROJECT_DIR$/src/sms/model/School.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
+        <state relative-caret-position="306">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/StudentManagementController.java">
+    <entry file="file://$PROJECT_DIR$/src/sms/dbController/GradeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        <state relative-caret-position="153">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/view/fxml/RegisterStudent.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/sms/dbController/SchoolController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="73" column="89" selection-start-line="73" selection-start-column="77" selection-end-line="73" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/PrintStudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/RegisterStudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="70" column="7" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/ValidationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="29" column="65" lean-forward="true" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
+        <state relative-caret-position="136">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/PrintStudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sms/view/controller/ManageStudentsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="101" column="39" lean-forward="true" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+        <state relative-caret-position="490">
+          <caret line="214" column="5" lean-forward="true" selection-start-line="187" selection-start-column="8" selection-end-line="214" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sms/view/controller/SchoolInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="171" column="72" lean-forward="true" selection-start-line="171" selection-start-column="72" selection-end-line="171" selection-end-column="72" />
         </state>
       </provider>
     </entry>

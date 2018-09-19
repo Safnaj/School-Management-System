@@ -2,8 +2,11 @@ package sms.dbController;
 
 import sms.db.DBConnection;
 import sms.model.School;
+import sms.model.Student;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -11,6 +14,24 @@ import java.sql.SQLException;
  * @project School Management System
  **/
 public class SchoolController {
+
+    public static School schoolInfo() throws ClassNotFoundException, SQLException {
+        String sql = "SELECT * FROM schoolinfo";
+        Connection conn = DBConnection.getDBConnection().getConnection();
+        PreparedStatement stm = conn.prepareStatement(sql);
+        ResultSet rst=stm.executeQuery();
+        if(rst.next()){
+            School s=new School(rst.getString("SchoolName"),rst.getString("SchoolAddress"),rst.getString("classAvailable"),
+                    rst.getString("schoolType"), rst.getString("deoDivision"), rst.getString("muncipalCouncil"), rst.getString("policeArea"),
+                    rst.getString("postalCode"), rst.getString("gsDivision"), rst.getString("eduZone"), rst.getString("eduDistrict"),
+                    rst.getString("adminDistrict"), rst.getString("electorate"), rst.getString("dateOfEstd"), rst.getString("schoolID"),
+                    rst.getString("schoolCensus"), rst.getString("schoolExamId"), rst.getString("totalLandArea"), rst.getString("province"),
+                    rst.getString("nameOfPrincipal"), rst.getString("pricipalNo"));
+
+            return s;
+        }
+        return null;
+    }
 
     public static int AddDetails(School school)throws ClassNotFoundException,SQLException {
         String SQL="INSERT INTO schoolinfo VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
