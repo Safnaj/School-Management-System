@@ -30,19 +30,19 @@
       <Label layoutX="447.0" layoutY="112.0" prefHeight="23.0" prefWidth="54.0" text="Gender : " />
       <JFXCheckBox layoutX="39.0" layoutY="161.0" selected="true" text="Ad No" />
       <Pane layoutX="37.0" layoutY="188.0" prefHeight="400.0" prefWidth="832.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css" />
-      <TableView layoutX="40.0" layoutY="191.0" prefHeight="394.0" prefWidth="826.0">
+      <TableView fx:id="studentTable" layoutX="40.0" layoutY="191.0" prefHeight="394.0" prefWidth="826.0">
         <columns>
-          <TableColumn prefWidth="43.666664123535156" text="Ad No" />
-            <TableColumn prefWidth="131.33333587646484" text="Full Name" />
-          <TableColumn prefWidth="89.33332824707031" text="Name" />
-            <TableColumn prefWidth="66.0" text="DOB" />
-            <TableColumn prefWidth="66.0" text="DOA" />
-            <TableColumn prefWidth="41.33331298828125" text="Gender" />
-            <TableColumn prefWidth="81.66668701171875" text="Grade" />
-            <TableColumn prefWidth="85.66665649414062" text="Parent's Name" />
-            <TableColumn prefWidth="54.0" text="Parent's NIC" />
-            <TableColumn prefWidth="81.0" text="Contact No" />
-            <TableColumn prefWidth="84.0" text="Address" />
+          <TableColumn fx:id="adNoColumn" prefWidth="43.666664123535156" text="Ad No" />
+            <TableColumn fx:id="fullNameColumn" prefWidth="131.33333587646484" text="Full Name" />
+          <TableColumn fx:id="nameColumn" prefWidth="89.33332824707031" text="Name" />
+            <TableColumn fx:id="dobColumn" prefWidth="66.0" text="DOB" />
+            <TableColumn fx:id="doaColumn" prefWidth="66.0" text="DOA" />
+            <TableColumn fx:id="genderColumn" prefWidth="41.33331298828125" text="Gender" />
+            <TableColumn fx:id="gradeColumn" prefWidth="81.66668701171875" text="Grade" />
+            <TableColumn fx:id="parentNameColumn" prefWidth="85.66665649414062" text="Parent's Name" />
+            <TableColumn fx:id="nicColumn" prefWidth="54.0" text="Parent's NIC" />
+            <TableColumn fx:id="contactNoColumn" prefWidth="81.0" text="Contact No" />
+            <TableColumn fx:id="addressColumn" prefWidth="84.0" text="Address" />
         </columns>
       </TableView>
       <JFXCheckBox layoutX="115.0" layoutY="161.0" selected="true" text="Full Name" />

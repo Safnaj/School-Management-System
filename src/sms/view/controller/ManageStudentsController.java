@@ -103,6 +103,7 @@ public class ManageStudentsController implements Initializable {
                 dobField.setText(null);
                 doaField.setText(null);
                 gradeField.setText(null);
+                genderField.setText(null);
                 adNoField.setText(null);
                 parentNameField.setText(null);
                 nicField.setText(null);
@@ -133,54 +134,62 @@ public class ManageStudentsController implements Initializable {
     @FXML
     void btnUpdate(ActionEvent event)throws SQLException {
         try {
-            int adNo = Integer.parseInt(adNoField.getText());
-            String fullName = fullNameField.getText();
-            String name = nameField.getText();
-            String dob = dobField.getText();
-            String doa = doaField.getText();
-            String gender = genderField.getText();
-            String grade = gradeField.getText();
-            String parentName = parentNameField.getText();
-            String nic = nicField.getText();
-            String phone = phoneField.getText();
-            String address = addressField.getText();
 
-            Student s = new Student(adNo,fullName,name,dob,doa,gender,grade,parentName,nic,phone,address);
-            int i = StudentController.updateStudent(s);
+            ValidationController v = new ValidationController();
 
-            if (i > 0) {
+            if(v.validateNIC(nicField) && v.numbersOnly(adNoField) && v.validatePhone(phoneField)) {
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Student Management");
-                alert.setHeaderText(null);
-                alert.setContentText("Student "+adNo+" Updated Successfully..!");
-                alert.showAndWait();
+                int adNo = Integer.parseInt(adNoField.getText());
+                String fullName = fullNameField.getText();
+                String name = nameField.getText();
+                String dob = dobField.getText();
+                String doa = doaField.getText();
+                String gender = genderField.getText();
+                String grade = gradeField.getText();
+                String parentName = parentNameField.getText();
+                String nic = nicField.getText();
+                String phone = phoneField.getText();
+                String address = addressField.getText();
 
-                AdNo.setText(null);
-                adNoField.setText(null);
-                fullNameField.setText(null);
-                nameField.setText(null);
-                dobField.setText(null);
-                doaField.setText(null);
-                gradeField.setText(null);
-                adNoField.setText(null);
-                parentNameField.setText(null);
-                nicField.setText(null);
-                phoneField.setText(null);
-                fullNameField.setText(null);
-                addressField.setText(null);
+                Student s = new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
+                int i = StudentController.updateStudent(s);
 
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Student Management");
-                alert.setHeaderText(null);
-                alert.setContentText("OOPs there is an error updating Student..!");
-                alert.showAndWait();
+                if (i > 0) {
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Student Management");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Student " + adNo + " Updated Successfully..!");
+                    alert.showAndWait();
+
+                    AdNo.setText(null);
+                    adNoField.setText(null);
+                    fullNameField.setText(null);
+                    nameField.setText(null);
+                    dobField.setText(null);
+                    doaField.setText(null);
+                    gradeField.setText(null);
+                    genderField.setText(null);
+                    adNoField.setText(null);
+                    parentNameField.setText(null);
+                    nicField.setText(null);
+                    phoneField.setText(null);
+                    fullNameField.setText(null);
+                    addressField.setText(null);
+
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Student Management");
+                    alert.setHeaderText(null);
+                    alert.setContentText("OOPs there is an error updating Student..!");
+                    alert.showAndWait();
+                }
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 
     //Search Method
     @FXML

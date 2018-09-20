@@ -58,7 +58,7 @@ public class SchoolInfoController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("School Information");
                 alert.setHeaderText(null);
-                alert.setContentText("No Information Founf..!");
+                alert.setContentText("No Information Found..!");
                 alert.showAndWait();
             }
         } catch (ClassNotFoundException | SQLException ex) {
@@ -143,7 +143,7 @@ public class SchoolInfoController implements Initializable {
     private JFXButton printDetails;
 
     @FXML
-    void addDetails(ActionEvent event) {
+    void addDetails(ActionEvent event) {            //This Method Button Removed Due to Unwanted
         try {
 
             ValidationController v = new ValidationController();

@@ -22,7 +22,7 @@ public class SchoolController {
         ResultSet rst=stm.executeQuery();
         if(rst.next()){
             School s=new School(rst.getString("SchoolName"),rst.getString("SchoolAddress"),rst.getString("classAvailable"),
-                    rst.getString("schoolType"), rst.getString("deoDivision"), rst.getString("muncipalCouncil"), rst.getString("policeArea"),
+                    rst.getString("schoolType"), rst.getString("deoDivision"), rst.getString("municpalCouncil"), rst.getString("policeArea"),
                     rst.getString("postalCode"), rst.getString("gsDivision"), rst.getString("eduZone"), rst.getString("eduDistrict"),
                     rst.getString("adminDistrict"), rst.getString("electorate"), rst.getString("dateOfEstd"), rst.getString("schoolID"),
                     rst.getString("schoolCensus"), rst.getString("schoolExamId"), rst.getString("totalLandArea"), rst.getString("province"),
