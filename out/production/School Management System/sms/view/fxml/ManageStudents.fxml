@@ -11,26 +11,26 @@
 
 <AnchorPane fx:id="manageStudents" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.ManageStudentsController">
     <children>
-        <Label layoutX="40.0" layoutY="184.0" prefHeight="23.0" prefWidth="138.0" text="Admission Number :" />
-        <TextField fx:id="adNoField" layoutX="178.0" layoutY="183.0" prefHeight="25.0" prefWidth="242.0" promptText="Admission Number" />
-        <Label layoutX="40.0" layoutY="229.0" prefHeight="23.0" prefWidth="138.0" text="Full Name :" />
-        <TextField fx:id="fullNameField" layoutX="178.0" layoutY="228.0" prefHeight="25.0" prefWidth="242.0" promptText="Full Name" />
-        <Label layoutX="40.0" layoutY="276.0" prefHeight="23.0" prefWidth="138.0" text="Name with Initials :" />
-        <TextField fx:id="nameField" layoutX="178.0" layoutY="275.0" prefHeight="25.0" prefWidth="242.0" promptText="Name with Initials" />
-        <Label layoutX="40.0" layoutY="324.0" prefHeight="23.0" prefWidth="138.0" text="Date of Birth :" />
-        <TextField fx:id="dobField" layoutX="178.0" layoutY="323.0" prefHeight="25.0" prefWidth="242.0" promptText="DD/MM/YYYY" />
-        <Label layoutX="40.0" layoutY="374.0" prefHeight="23.0" prefWidth="138.0" text="Date of Admission :" />
-        <TextField fx:id="doaField" layoutX="178.0" layoutY="373.0" prefHeight="25.0" prefWidth="242.0" promptText="DD/MM/YYYY" />
-        <Label layoutX="40.0" layoutY="422.0" prefHeight="23.0" prefWidth="138.0" text="Gender : " />
-        <Label layoutX="40.0" layoutY="466.0" prefHeight="23.0" prefWidth="138.0" text="Grade : " />
-        <Label layoutX="486.0" layoutY="184.0" prefHeight="23.0" prefWidth="138.0" text="Parent / Gurdian Name :" />
-        <TextField fx:id="parentNameField" layoutX="624.0" layoutY="183.0" prefHeight="25.0" prefWidth="242.0" promptText="Parent / Gurdian Name" />
-        <Label layoutX="486.0" layoutY="229.0" prefHeight="23.0" prefWidth="138.0" text="NIC Number :" />
-        <TextField fx:id="nicField" layoutX="624.0" layoutY="228.0" prefHeight="25.0" prefWidth="242.0" promptText="NIC Number" />
-        <Label layoutX="486.0" layoutY="276.0" prefHeight="23.0" prefWidth="138.0" text="Contact Number :" />
-        <TextField fx:id="phoneField" layoutX="624.0" layoutY="275.0" prefHeight="25.0" prefWidth="242.0" promptText="Contact Number" />
-        <Label layoutX="486.0" layoutY="324.0" prefHeight="23.0" prefWidth="138.0" text="Address :" />
-        <TextField fx:id="addressField" layoutX="624.0" layoutY="323.0" prefHeight="25.0" prefWidth="242.0" promptText="Address : " />
+        <Label layoutX="40.0" layoutY="187.0" prefHeight="23.0" prefWidth="138.0" text="Admission Number :" />
+        <TextField fx:id="adNoField" layoutX="178.0" layoutY="186.0" prefHeight="25.0" prefWidth="242.0" promptText="Admission Number" />
+        <Label layoutX="40.0" layoutY="232.0" prefHeight="23.0" prefWidth="138.0" text="Full Name :" />
+        <TextField fx:id="fullNameField" layoutX="178.0" layoutY="231.0" prefHeight="25.0" prefWidth="242.0" promptText="Full Name" />
+        <Label layoutX="40.0" layoutY="279.0" prefHeight="23.0" prefWidth="138.0" text="Name with Initials :" />
+        <TextField fx:id="nameField" layoutX="178.0" layoutY="278.0" prefHeight="25.0" prefWidth="242.0" promptText="Name with Initials" />
+        <Label layoutX="40.0" layoutY="327.0" prefHeight="23.0" prefWidth="138.0" text="Date of Birth :" />
+        <TextField fx:id="dobField" layoutX="178.0" layoutY="326.0" prefHeight="25.0" prefWidth="242.0" promptText="DD/MM/YYYY" />
+        <Label layoutX="40.0" layoutY="377.0" prefHeight="23.0" prefWidth="138.0" text="Date of Admission :" />
+        <TextField fx:id="doaField" layoutX="178.0" layoutY="376.0" prefHeight="25.0" prefWidth="242.0" promptText="DD/MM/YYYY" />
+        <Label layoutX="40.0" layoutY="425.0" prefHeight="23.0" prefWidth="138.0" text="Gender : " />
+        <Label layoutX="40.0" layoutY="469.0" prefHeight="23.0" prefWidth="138.0" text="Grade : " />
+        <Label layoutX="486.0" layoutY="187.0" prefHeight="23.0" prefWidth="138.0" text="Parent / Gurdian Name :" />
+        <TextField fx:id="parentNameField" layoutX="624.0" layoutY="186.0" prefHeight="25.0" prefWidth="242.0" promptText="Parent / Gurdian Name" />
+        <Label layoutX="486.0" layoutY="232.0" prefHeight="23.0" prefWidth="138.0" text="NIC Number :" />
+        <TextField fx:id="nicField" layoutX="624.0" layoutY="231.0" prefHeight="25.0" prefWidth="242.0" promptText="NIC Number" />
+        <Label layoutX="486.0" layoutY="279.0" prefHeight="23.0" prefWidth="138.0" text="Contact Number :" />
+        <TextField fx:id="phoneField" layoutX="624.0" layoutY="278.0" prefHeight="25.0" prefWidth="242.0" promptText="Contact Number" />
+        <Label layoutX="486.0" layoutY="327.0" prefHeight="23.0" prefWidth="138.0" text="Address :" />
+        <TextField fx:id="addressField" layoutX="624.0" layoutY="326.0" prefHeight="25.0" prefWidth="242.0" promptText="Address : " />
         <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="401.0" layoutY="529.0" onAction="#btnDelete" text="DELETE" textFill="WHITE" AnchorPane.rightAnchor="384.0">
             <font>
                 <Font size="25.0" />
@@ -56,14 +56,16 @@
                 </Text>
             </children>
         </Pane>
-      <TextField fx:id="AdNo" layoutX="40.0" layoutY="118.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Student's Index Number" />
+      <TextField fx:id="AdNo" layoutX="40.0" layoutY="118.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Current Student ID" />
       <JFXButton id="btnSearch" fx:id="searchStudent" buttonType="RAISED" layoutX="247.0" layoutY="118.0" onAction="#searchStudent" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
       <JFXButton fx:id="btnPrint" buttonType="RAISED" layoutX="581.0" layoutY="528.0" onAction="#btnPrint" prefWidth="115.0" stylesheets="@css/RegStudent.css" text="PRINT" textFill="WHITE" AnchorPane.rightAnchor="204.0">
          <font>
             <Font size="25.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="gradeField" layoutX="178.0" layoutY="465.0" prefHeight="25.0" prefWidth="242.0" promptText="Grade" />
-      <TextField fx:id="genderField" layoutX="178.0" layoutY="420.0" prefHeight="25.0" prefWidth="242.0" promptText="Gender" />
+      <TextField fx:id="gradeField" layoutX="178.0" layoutY="468.0" prefHeight="25.0" prefWidth="242.0" promptText="Grade" />
+      <TextField fx:id="genderField" layoutX="178.0" layoutY="423.0" prefHeight="25.0" prefWidth="242.0" promptText="Gender" />
+      <TextField fx:id="AdNo1" layoutX="574.0" layoutY="117.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Old Student ID" />
+      <JFXButton id="btnSearch" fx:id="searchPastStudent" buttonType="RAISED" layoutX="781.0" layoutY="117.0" onAction="#searchPastStudent" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
     </children>
 </AnchorPane>
