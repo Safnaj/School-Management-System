@@ -31,4 +31,16 @@ public class GradeController {
         return gradeList;
     }
 
+    public static ArrayList<String> getYears() throws ClassNotFoundException, SQLException{
+        Connection conn=DBConnection.getDBConnection().getConnection();
+        Statement stm=conn.createStatement();
+        ResultSet rst=stm.executeQuery("Select distinct year from paststudents");
+
+        ArrayList<String>yearlist=new ArrayList<>();
+        while(rst.next()){
+            yearlist.add(rst.getString("year"));
+        }
+        return yearlist;
+    }
+
 }

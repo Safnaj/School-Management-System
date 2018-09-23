@@ -1,6 +1,7 @@
 package sms.view.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -68,7 +69,7 @@ public class PrintStudentController implements Initializable {
     private ComboBox<String> loadGrades;
 
     @FXML
-    private ComboBox<?> loadYears;
+    private ComboBox<String> loadYears;
 
     @FXML
     private ComboBox<String> loadGender;
@@ -79,6 +80,37 @@ public class PrintStudentController implements Initializable {
     @FXML
     private JFXButton printStudents;
 
+    @FXML
+    private JFXCheckBox adNoCheckBox;
+
+    @FXML
+    private JFXCheckBox fullNameCheckBox;
+
+    @FXML
+    private JFXCheckBox nameCheckBox;
+
+    @FXML
+    private JFXCheckBox dobCheckBox;
+
+    @FXML
+    private JFXCheckBox doaCheckBox;
+
+    @FXML
+    private JFXCheckBox genderCheckBox;
+
+    @FXML
+    private JFXCheckBox parentCheckBox;
+
+    @FXML
+    private JFXCheckBox nicCheckBox;
+
+    @FXML
+    private JFXCheckBox contactCheckBox;
+
+    @FXML
+    private JFXCheckBox addressCheckBox;
+
+
 
     ObservableList<StudentTableModel> studentList = FXCollections.observableArrayList();
 
@@ -86,7 +118,9 @@ public class PrintStudentController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadGrades();
+        loadYears();
         loadGender.getItems().addAll("All", "Male", "Female");
+
     }
 
     @FXML
@@ -112,26 +146,98 @@ public class PrintStudentController implements Initializable {
 
 
     @FXML
-    void loadYears(ActionEvent event) {
+    void loadYears() {
+        ArrayList arrayList = null;
+        try {
+            arrayList = GradeController.getYears();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        ObservableList observableArray = FXCollections.observableArrayList();
+        observableArray.addAll(arrayList);
 
+        if (observableArray != null) {
+            loadYears.setItems(observableArray);
+        }
     }
 
     @FXML
     void generate(ActionEvent event) {
 
         try {
+            studentTable.getItems().clear();
+            String grade = loadGrades.getValue();
+            String gender = loadGender.getValue();
+            String year = loadYears.getValue();
+            //Below Code for Assigning Values from CheckBox values
+            String adNo = adNoCheckBox.getText();
+            String fullName = fullNameCheckBox.getText();
+            String name = nameCheckBox.getText();
+            String dob = dobCheckBox.getText();
+            String doa = doaCheckBox.getText();
+            String gen = genderCheckBox.getText();
+            String parent = parentCheckBox.getText();
+            String nic = nicCheckBox.getText();
+            String contact = contactCheckBox.getText();
+            String address = addressCheckBox.getText();
+
+
+
             Connection conn = DBConnection.getDBConnection().getConnection();
-            //String sql = "select * from students where grade = '" + loadGrades + "'";
-            String sql = "select * from students";
-            ResultSet rs = conn.createStatement().executeQuery(sql);
 
-            while (rs.next()) {
-                StudentTableModel s = new StudentTableModel(rs.getInt("adNo"),rs.getString("fullName"),rs.getString("name"),
-                rs.getString("dob"),rs.getString("doa"),rs.getString("gender"),rs.getString("grade"),rs.getString("parentName"),
-                rs.getString("nic"),rs.getString("phone"),rs.getString("address"));
-                studentList.add(s);
+            if(adNoCheckBox.isSelected() || fullNameCheckBox.isSelected() || nameCheckBox.isSelected() || dobCheckBox.isSelected() || doaCheckBox.isSelected() ||
+               genderCheckBox.isSelected() || parentCheckBox.isSelected() || nicCheckBox.isSelected() || contactCheckBox.isSelected() || addressCheckBox.isSelected()) {
+
+                if (loadYears == null) {
+
+                    if (gender == "All") {
+
+                        //String sql = "select * from students where grade = '" + grade + "'";
+                        String sql = "select '"+adNo+"','"+fullName+"','"+name+"','"+dob+"','"+doa+"','"+gen+"','"+parent+"',grade , '"+nic+"','"+contact+"','"+address+"' from students where grade = '" + grade + "'";
+                        ResultSet rs = conn.createStatement().executeQuery(sql);
+
+                        while (rs.next()) {
+                            StudentTableModel s = new StudentTableModel(rs.getInt("adNo"), rs.getString("fullName"), rs.getString("name"),
+                                    rs.getString("dob"), rs.getString("doa"), rs.getString("gender"), rs.getString("grade"), rs.getString("parentName"),
+                                    rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
+                            studentList.add(s);
+                        }
+                    } else {
+                        String sql2 = "select * from students where grade = '" + grade + "' AND gender = '" + gender + "'";
+                        ResultSet rs = conn.createStatement().executeQuery(sql2);
+
+                        while (rs.next()) {
+                            StudentTableModel s = new StudentTableModel(rs.getInt("adNo"), rs.getString("fullName"), rs.getString("name"),
+                                    rs.getString("dob"), rs.getString("doa"), rs.getString("gender"), rs.getString("grade"), rs.getString("parentName"),
+                                    rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
+                            studentList.add(s);
+                        }
+                    }
+                } else {
+
+                    if (gender == "All") {
+                        String sql = "select * from paststudents where year = '" + year + "'";
+                        ResultSet rs = conn.createStatement().executeQuery(sql);
+
+                        while (rs.next()) {
+                            StudentTableModel s = new StudentTableModel(rs.getInt("adNo"), rs.getString("fullName"), rs.getString("name"),
+                                    rs.getString("dob"), rs.getString("doa"), rs.getString("gender"), rs.getString("year"), rs.getString("parentName"),
+                                    rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
+                            studentList.add(s);
+                        }
+                    } else {
+                        String sql2 = "select * from paststudents where year = '" + year + "' AND gender = '" + gender + "'";
+                        ResultSet rs = conn.createStatement().executeQuery(sql2);
+
+                        while (rs.next()) {
+                            StudentTableModel s = new StudentTableModel(rs.getInt("adNo"), rs.getString("fullName"), rs.getString("name"),
+                                    rs.getString("dob"), rs.getString("doa"), rs.getString("gender"), rs.getString("year"), rs.getString("parentName"),
+                                    rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
+                            studentList.add(s);
+                        }
+                    }
+                }
             }
-
             adNoColumn.setCellValueFactory(new PropertyValueFactory<>("adNo"));
             fullNameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -152,7 +258,10 @@ public class PrintStudentController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
+
+
 
     @FXML
     void printStudents(ActionEvent event) {
