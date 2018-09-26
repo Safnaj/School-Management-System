@@ -45,7 +45,7 @@ public class ValidationController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Student Registration");
             alert.setHeaderText(null);
-            alert.setContentText("You Have Entered Text or Characters in Number Field..!");
+            alert.setContentText("Invalid Input Type..!");
             alert.showAndWait();
 
             return false;

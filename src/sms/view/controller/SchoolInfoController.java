@@ -1,10 +1,16 @@
 package sms.view.controller;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import sms.db.DBConnection;
 import sms.dbController.SchoolController;
 import sms.model.School;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -200,6 +206,24 @@ public class SchoolInfoController implements Initializable {
 
     @FXML
     void printDetails(ActionEvent event) {
+
+        try {
+            Connection conn = DBConnection.getDBConnection().getConnection();
+            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\SchoolInfo.jrxml");
+            JRDesignQuery query = new JRDesignQuery();
+            query.setText("select * from schoolinfo");
+            jd.setQuery(query);
+            ReportViewController r = new ReportViewController();
+            r.viewReport(jd);
+
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
 
     }
 

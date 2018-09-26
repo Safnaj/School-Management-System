@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -118,12 +117,6 @@
             </JFXButton>
             </children>
         </Pane>
-      <Text layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome,">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <TextField fx:id="username" layoutX="88.0" layoutY="103.0" promptText="Username" />
     </children>
 
 </AnchorPane>

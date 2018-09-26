@@ -6,20 +6,36 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import sms.main.StartProject;
 import sms.tableModel.StudentTableModel;
 import sms.db.DBConnection;
 import sms.dbController.GradeController;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -111,7 +127,6 @@ public class PrintStudentController implements Initializable {
     private JFXCheckBox addressCheckBox;
 
 
-
     ObservableList<StudentTableModel> studentList = FXCollections.observableArrayList();
 
 
@@ -172,33 +187,34 @@ public class PrintStudentController implements Initializable {
 
             Connection conn = DBConnection.getDBConnection().getConnection();
 
-           // if((loadGrades != null)&&(loadGender != null)){
+            // if((loadGrades != null)&&(loadGender != null)){
 
-                if (gender == "All") {
+            if (gender == "All") {
 
-                    String sql = "select * from students where grade = '" + grade + "'";
-                    ResultSet rs = conn.createStatement().executeQuery(sql);
+                String sql = "select * from students where grade = '" + grade + "'";
+                ResultSet rs = conn.createStatement().executeQuery(sql);
 
-                    while (rs.next()) {
-                        StudentTableModel s = new StudentTableModel(rs.getInt("adNo"), rs.getString("fullName"), rs.getString("name"),
-                                rs.getString("dob"), rs.getString("doa"), rs.getString("gender"), rs.getString("grade"), rs.getString("parentName"),
-                                rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
-                        studentList.add(s);
-                    }
-                } else {
-                    String sql2 = "select * from students where grade = '" + grade + "' AND gender = '" + gender + "'";
-                    ResultSet rs = conn.createStatement().executeQuery(sql2);
+                while (rs.next()) {
+                    StudentTableModel s = new StudentTableModel(rs.getInt("adNo"), rs.getString("fullName"), rs.getString("name"),
+                            rs.getString("dob"), rs.getString("doa"), rs.getString("gender"), rs.getString("grade"), rs.getString("parentName"),
+                            rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
+                    studentList.add(s);
+                }
+            } else {
+                String sql2 = "select * from students where grade = '" + grade + "' AND gender = '" + gender + "'";
+                ResultSet rs = conn.createStatement().executeQuery(sql2);
 
-                    while (rs.next()) {
-                        StudentTableModel s = new StudentTableModel(rs.getInt("adNo"), rs.getString("fullName"), rs.getString("name"),
-                                rs.getString("dob"), rs.getString("doa"), rs.getString("gender"), rs.getString("grade"), rs.getString("parentName"),
-                                rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
-                        studentList.add(s);
-                    }
-            //    }
-            }if(loadGrades != null) {
+                while (rs.next()) {
+                    StudentTableModel s = new StudentTableModel(rs.getInt("adNo"), rs.getString("fullName"), rs.getString("name"),
+                            rs.getString("dob"), rs.getString("doa"), rs.getString("gender"), rs.getString("grade"), rs.getString("parentName"),
+                            rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
+                    studentList.add(s);
+                }
+                //    }
+            }
+            if (loadGrades != null) {
 
-                studentTable.getItems().clear();
+                // studentTable.getItems().clear();
 
                 if (gender == "All") {
                     String sql = "select * from paststudents where year = '" + year + "'";
@@ -227,65 +243,66 @@ public class PrintStudentController implements Initializable {
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if (fullNameCheckBox.isSelected()){
+            }
+            if(fullNameCheckBox.isSelected()){
                 fullNameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if( nameCheckBox.isSelected()){
+            }if( nameCheckBox.isSelected()){
                 nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if(dobCheckBox.isSelected()){
+            }if(dobCheckBox.isSelected()){
                 dobColumn.setCellValueFactory(new PropertyValueFactory<>("dob"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if(doaCheckBox.isSelected()){
+            }if(doaCheckBox.isSelected()){
                 doaColumn.setCellValueFactory(new PropertyValueFactory<>("doa"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if(genderCheckBox.isSelected()){
+            }if(genderCheckBox.isSelected()){
                 genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if(parentCheckBox.isSelected()){
+            }if(parentCheckBox.isSelected()){
                 parentNameColumn.setCellValueFactory(new PropertyValueFactory<>("parentName"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if(nicCheckBox.isSelected()){
+            }if(nicCheckBox.isSelected()){
                 nicColumn.setCellValueFactory(new PropertyValueFactory<>("nic"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if(contactCheckBox.isSelected()){
+            }if(contactCheckBox.isSelected()){
                 contactNoColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
 
-            }else if(addressCheckBox.isSelected()) {
+            }if(addressCheckBox.isSelected()) {
                 addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
             }*/
 
-                adNoColumn.setCellValueFactory(new PropertyValueFactory<>("adNo"));
-                fullNameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
-                nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-                dobColumn.setCellValueFactory(new PropertyValueFactory<>("dob"));
-                doaColumn.setCellValueFactory(new PropertyValueFactory<>("doa"));
-                genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                parentNameColumn.setCellValueFactory(new PropertyValueFactory<>("parentName"));
-                nicColumn.setCellValueFactory(new PropertyValueFactory<>("nic"));
-                contactNoColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
-                addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
+            adNoColumn.setCellValueFactory(new PropertyValueFactory<>("adNo"));
+            fullNameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
+            nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            dobColumn.setCellValueFactory(new PropertyValueFactory<>("dob"));
+            doaColumn.setCellValueFactory(new PropertyValueFactory<>("doa"));
+            genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
+            gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
+            parentNameColumn.setCellValueFactory(new PropertyValueFactory<>("parentName"));
+            nicColumn.setCellValueFactory(new PropertyValueFactory<>("nic"));
+            contactNoColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
+            addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
 
-                studentTable.setItems(studentList);
+            studentTable.setItems(studentList);
 
 
         } catch (ClassNotFoundException e) {
@@ -297,10 +314,70 @@ public class PrintStudentController implements Initializable {
     }
 
 
-
     @FXML
     void printStudents(ActionEvent event) {
 
-    }
+        try {
+            studentTable.getItems().clear();
+            String grade = loadGrades.getValue();
+            String gender = loadGender.getValue();
+            String year = loadYears.getValue();
 
+//            Connection conn = DBConnection.getDBConnection().getConnection();
+//            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
+//            JRDesignQuery query = new JRDesignQuery();
+
+
+            if (gender == "All") {
+
+                Connection conn = DBConnection.getDBConnection().getConnection();
+                JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
+                JRDesignQuery query = new JRDesignQuery();
+                query.setText("select * from students where grade = '"+grade+"'");
+                jd.setQuery(query);
+                ReportViewController r = new ReportViewController();
+                r.viewReport(jd);
+
+              /*  //query.setText("select * from students");
+                query.setText("select * from students where grade = '"+grade+"'");
+                jd.setQuery(query);
+                ReportViewController r = new ReportViewController();
+                r.viewReport(jd);*/
+
+
+            } else {
+               /* query.setText("select * from students where grade = '" + grade + "' AND gender = '" + gender + "'");
+                jd.setQuery(query);
+                ReportViewController r = new ReportViewController();
+                r.viewReport(jd);*/
+
+            }
+            if (loadGrades != null) {
+
+
+                if (gender == "All") {
+                    /*query.setText("select * from paststudents where year = '" + year + "'");
+                    jd.setQuery(query);
+                    ReportViewController r = new ReportViewController();
+                    r.viewReport(jd);*/
+
+
+                } else {
+                    /*query.setText("select * from paststudents where year = '" + year + "' AND gender = '" + gender + "'");
+                    jd.setQuery(query);
+                    ReportViewController r = new ReportViewController();
+                    r.viewReport(jd);*/
+
+                }
+            }
+        }catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
+

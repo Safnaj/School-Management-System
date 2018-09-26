@@ -65,7 +65,8 @@
       </JFXButton>
       <TextField fx:id="gradeField" layoutX="178.0" layoutY="468.0" prefHeight="25.0" prefWidth="242.0" promptText="Grade" />
       <TextField fx:id="genderField" layoutX="178.0" layoutY="423.0" prefHeight="25.0" prefWidth="242.0" promptText="Gender" />
-      <TextField fx:id="AdNo1" layoutX="574.0" layoutY="117.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Old Student ID" />
-      <JFXButton id="btnSearch" fx:id="searchPastStudent" buttonType="RAISED" layoutX="781.0" layoutY="117.0" onAction="#searchPastStudent" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
+      <TextField fx:id="AdNo1" layoutX="579.0" layoutY="117.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Old Student ID" />
+      <JFXButton id="btnSearch" fx:id="searchPastStudent" buttonType="RAISED" layoutX="786.0" layoutY="117.0" onAction="#searchPastStudent" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
+      <Pane layoutX="456.0" layoutY="118.0" prefHeight="35.0" prefWidth="3.0" style="-fx-background-color: #1976D2;" visible="false" />
     </children>
 </AnchorPane>
