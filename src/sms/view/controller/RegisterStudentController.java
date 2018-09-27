@@ -80,9 +80,8 @@ public class RegisterStudentController implements Initializable {
 
             if (v.validateEmpty(adNoField) && v.validateEmpty(nameField) && v.validateEmpty(dobField) && v.validateEmpty(doaField) &&
                     v.validateEmpty(parentNameField) && v.validateEmpty(phoneField) && v.validateNIC(nicField) && v.numbersOnly(adNoField)
-                    && v.validatePhone(phoneField)) {
+                    && v.validatePhone(phoneField) && v.validateDate(doaField) && v.validateDate(dobField)) {
 
-             //   if(v.validateNIC(nicField) || v.numbersOnly(adNoField) || v.numbersOnly(phoneField)){
 
                 int adNo = Integer.parseInt(adNoField.getText());
                 String fullName = fullNameField.getText();

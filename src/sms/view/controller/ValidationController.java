@@ -66,4 +66,19 @@ public class ValidationController {
             return false;
         }
     }
+
+    public boolean validateDate(TextField txt) {
+        if (txt.getText().matches("\\d{4}-\\d{2}-\\d{2}")) {
+
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid Date..!");
+            alert.showAndWait();
+
+            return false;
+        }
+    }
 }
