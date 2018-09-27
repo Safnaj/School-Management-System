@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="login" prefHeight="600.0" prefWidth="900.0" stylesheets="@css/RegStudent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.loginController">
+<AnchorPane fx:id="login" prefHeight="600.0" prefWidth="900.0" stylesheets="@css/RegStudent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.LoginFormController">
     <children>
         <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;">
             <children>
@@ -28,17 +28,17 @@
             </children>
         </Pane>
       <Label layoutX="241.0" layoutY="133.0" prefHeight="425.0" prefWidth="440.0" style="-fx-background-color: #1976D2;" />
-      <JFXTextField fx:id="username" focusColor="WHITE" layoutX="313.0" layoutY="302.0" prefHeight="38.0" prefWidth="290.0" promptText="Username" style="-fx-text-inner-color: #ffffff; -fx-prompt-text-fill: #ffffff;" unFocusColor="WHITE">
+      <JFXTextField fx:id="usernameField" focusColor="WHITE" layoutX="313.0" layoutY="302.0" prefHeight="38.0" prefWidth="290.0" promptText="Username" style="-fx-text-inner-color: #ffffff; -fx-prompt-text-fill: #ffffff;" unFocusColor="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="password" focusColor="WHITE" layoutX="313.0" layoutY="384.0" prefHeight="38.0" prefWidth="290.0" promptText="Password" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+      <JFXPasswordField fx:id="pwdField" focusColor="WHITE" layoutX="313.0" layoutY="384.0" prefHeight="38.0" prefWidth="290.0" promptText="Password" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="388.0" layoutY="478.0" onAction="#btnLogin" prefHeight="56.0" prefWidth="148.0" style="-fx-background-color: #c62828;" text="LOGIN" textAlignment="CENTER">
+      <JFXButton fx:id="Login" buttonType="RAISED" layoutX="388.0" layoutY="478.0" onAction="#Login" prefHeight="56.0" prefWidth="148.0" style="-fx-background-color: #c62828;" text="LOGIN" textAlignment="CENTER">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>

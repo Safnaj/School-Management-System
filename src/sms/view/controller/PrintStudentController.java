@@ -313,7 +313,6 @@ public class PrintStudentController implements Initializable {
 
     }
 
-
     @FXML
     void printStudents(ActionEvent event) {
 
@@ -323,22 +322,22 @@ public class PrintStudentController implements Initializable {
             String gender = loadGender.getValue();
             String year = loadYears.getValue();
 
-//            Connection conn = DBConnection.getDBConnection().getConnection();
-//            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
-//            JRDesignQuery query = new JRDesignQuery();
+            Connection conn = DBConnection.getDBConnection().getConnection();
+            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
+            JasperDesign jd2 = JRXmlLoader.load("src\\sms\\Reports\\StudentListGender.jrxml");
+            JRDesignQuery query = new JRDesignQuery();
 
 
             if (gender == "All") {
-
-                Connection conn = DBConnection.getDBConnection().getConnection();
-                JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
-                JRDesignQuery query = new JRDesignQuery();
                 query.setText("select * from students where grade = '"+grade+"'");
                 jd.setQuery(query);
                 ReportViewController r = new ReportViewController();
                 r.viewReport(jd);
 
-              /*  //query.setText("select * from students");
+                /*Connection conn = DBConnection.getDBConnection().getConnection();
+                JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
+                JRDesignQuery query = new JRDesignQuery();
+                query.setText("select * from students");
                 query.setText("select * from students where grade = '"+grade+"'");
                 jd.setQuery(query);
                 ReportViewController r = new ReportViewController();
@@ -346,12 +345,12 @@ public class PrintStudentController implements Initializable {
 
 
             } else {
-               /* query.setText("select * from students where grade = '" + grade + "' AND gender = '" + gender + "'");
-                jd.setQuery(query);
+                query.setText("select * from students where grade = '" + grade + "' AND gender = '" + gender + "'");
+                jd2.setQuery(query);
                 ReportViewController r = new ReportViewController();
-                r.viewReport(jd);*/
+                r.viewReport(jd2);
 
-            }
+            }   //Have to Do Past Students Report
             if (loadGrades != null) {
 
 

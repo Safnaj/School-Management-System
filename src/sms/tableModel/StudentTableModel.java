@@ -43,9 +43,7 @@ public class StudentTableModel {
         this.adNo = adNo;
     }
 
-    public String getFullName() {
-        return fullName;
-    }
+    public String getFullName() { return fullName; }
 
     public void setFullName(String fullName) {
         this.fullName = fullName;

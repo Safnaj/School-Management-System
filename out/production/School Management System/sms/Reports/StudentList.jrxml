@@ -90,49 +90,49 @@ FROM students where grade = $P{grade}]]>
 				<reportElement x="0" y="0" width="40" height="30" uuid="1f993d8a-688c-49ac-96d4-8c485e73a622">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7dfbe05-de07-4c4c-8ef9-fbd85ef68b2a"/>
 				</reportElement>
-				<text><![CDATA[adNo]]></text>
+				<text><![CDATA[Ad. No]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="40" y="0" width="130" height="30" uuid="86234f37-8fff-4be0-b12c-ddaddbaeff6c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3de716ea-399b-4bbf-951f-518e623adcf8"/>
 				</reportElement>
-				<text><![CDATA[fullName]]></text>
+				<text><![CDATA[Full Name]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="170" y="0" width="55" height="30" uuid="2d33e371-109b-48ef-ab94-bb9d54e43c6d">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b8a60d09-7f21-4fcf-bbaa-7929d857a1e5"/>
 				</reportElement>
-				<text><![CDATA[dob]]></text>
+				<text><![CDATA[DOB]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="229" y="0" width="35" height="30" uuid="ea2d5c66-9228-472c-9571-802f20868256">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9786731a-f1f1-49ae-992e-c1cf1791a1ac"/>
 				</reportElement>
-				<text><![CDATA[gender]]></text>
+				<text><![CDATA[Gender]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="270" y="0" width="50" height="30" uuid="6c66bfae-056a-4aac-8bf9-2da3832a3371">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="92ad77ae-3664-41f6-8978-83bfb096d2c8"/>
 				</reportElement>
-				<text><![CDATA[grade]]></text>
+				<text><![CDATA[Grade]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="320" y="0" width="80" height="30" uuid="be627ce0-689c-4d18-9238-753b022c70e6">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a54ffcad-9d9c-466e-af71-d909636fb729"/>
 				</reportElement>
-				<text><![CDATA[parentName]]></text>
+				<text><![CDATA[Parent's Name]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="400" y="0" width="60" height="30" uuid="8db23910-61ee-46ea-983b-94ccc85b22b3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f430e87f-e21e-40dc-b373-3778bb284f9c"/>
 				</reportElement>
-				<text><![CDATA[phone]]></text>
+				<text><![CDATA[Contact No]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="460" y="0" width="95" height="30" uuid="2fdc33b8-5670-4507-b472-8055cdc4d180">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8064474b-2ff5-4942-8022-78329397fc66"/>
 				</reportElement>
-				<text><![CDATA[address]]></text>
+				<text><![CDATA[Address]]></text>
 			</staticText>
 			<line>
 				<reportElement x="0" y="32" width="555" height="1" uuid="28cb688b-a051-4cc2-b4b1-32b7abdb4754"/>

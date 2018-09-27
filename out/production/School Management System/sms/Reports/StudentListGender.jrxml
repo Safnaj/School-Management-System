@@ -4,9 +4,10 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SMS"/>
 	<parameter name="grade" class="java.lang.String"/>
+	<parameter name="gender" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT *
-FROM students where grade = $P{grade}]]>
+FROM students where grade = $P{grade} AND gender = $P{gender}]]>
 	</queryString>
 	<field name="adNo" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.label" value="adNo"/>
@@ -90,7 +91,7 @@ FROM students where grade = $P{grade}]]>
 				<reportElement x="0" y="0" width="40" height="30" uuid="1f993d8a-688c-49ac-96d4-8c485e73a622">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7dfbe05-de07-4c4c-8ef9-fbd85ef68b2a"/>
 				</reportElement>
-				<text><![CDATA[Ad. No]]></text>
+				<text><![CDATA[Ad.No]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="40" y="0" width="130" height="30" uuid="86234f37-8fff-4be0-b12c-ddaddbaeff6c">
