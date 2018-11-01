@@ -109,6 +109,20 @@ public class MainDashboardController implements Initializable{
                         System.out.println(e);
                 }
         }
+        @FXML
+        void btnStaffMgmt(ActionEvent event){
+                Parent root = null;
+                try {
+                        root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/StaffManagement.fxml"));
+                        Stage stage = new Stage();
+                        stage.setTitle("School Information");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+
+                } catch (IOException e) {
+                        e.printStackTrace();
+                }
+        }
 
 }
 

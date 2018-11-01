@@ -38,7 +38,7 @@
             <Font size="16.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton fx:id="Login" buttonType="RAISED" layoutX="388.0" layoutY="478.0" onAction="#Login" prefHeight="56.0" prefWidth="148.0" style="-fx-background-color: #c62828;" text="LOGIN" textAlignment="CENTER">
+      <JFXButton fx:id="Login" buttonType="RAISED" layoutX="388.0" layoutY="478.0" onAction="#Login" onKeyPressed="#Login" prefHeight="56.0" prefWidth="148.0" style="-fx-background-color: #c62828;" text="LOGIN" textAlignment="CENTER">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>
