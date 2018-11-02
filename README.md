@@ -8,11 +8,11 @@ And also used UI and UX concepts and  [jfoenix](http://www.jfoenix.com/)
 [![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/v/9630-a8translate.svg)](https://plugins.jetbrains.com/)
 
 ## Technologies Used
-*JavaFX
-*Jfoenix Materical Design
-*Jasper Reports
-*MySQL
-*IntelliJ Idea Ultimate (IDE)
+* JavaFX
+* Jfoenix Materical Design
+* Jasper Reports
+* MySQL
+* IntelliJ Idea Ultimate (IDE)
 
 ## Used Design Patterns
 * MVC 
