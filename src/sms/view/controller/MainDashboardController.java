@@ -65,19 +65,14 @@ public class MainDashboardController implements Initializable{
 
         @FXML
         void setBtnUserSettings(ActionEvent event) {
-                try {
-                Parent root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/UserAccount.fxml"));
-                Stage stage = new Stage();
-                stage.setTitle("User Account");
-                stage.setScene(new Scene(root));
-                stage.show();
 
-//                                                           //Have to set a Pane Here
-//                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/UserAccount.fxml")));
-//                        root.getChildren().setAll(dashboard);
+                try {
+                        AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/UserAccount.fxml")));
+                        root.getChildren().setAll(user);
                 }catch(IOException e){
                         System.out.println(e);
                 }
+
         }
 
         @FXML
@@ -112,6 +107,20 @@ public class MainDashboardController implements Initializable{
 
                 }catch(IOException e){
                         System.out.println(e);
+                }
+        }
+        @FXML
+        void btnStaffMgmt(ActionEvent event){
+                Parent root = null;
+                try {
+                        root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/StaffManagement.fxml"));
+                        Stage stage = new Stage();
+                        stage.setTitle("School Information");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+
+                } catch (IOException e) {
+                        e.printStackTrace();
                 }
         }
 

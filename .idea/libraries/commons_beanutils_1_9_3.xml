@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="commons-beanutils-1.9.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jasper/commons-beanutils-1.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/commons-digester-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/jasperreports-6.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/jasperreports-javaflow-6.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

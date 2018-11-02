@@ -45,7 +45,37 @@ public class ValidationController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Student Registration");
             alert.setHeaderText(null);
-            alert.setContentText("Please Enter Numbers Only in "+txt+" Field");
+            alert.setContentText("Invalid Input Type..!");
+            alert.showAndWait();
+
+            return false;
+        }
+    }
+
+    public boolean validatePhone(TextField txt) {
+        if (txt.getText().matches("^(\\d{10})")) {
+
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid Phone Number..!");
+            alert.showAndWait();
+
+            return false;
+        }
+    }
+
+    public boolean validateDate(TextField txt) {
+        if (txt.getText().matches("\\d{4}-\\d{2}-\\d{2}")) {
+
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Student Registration");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid Date..!");
             alert.showAndWait();
 
             return false;

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.ManageStaffsController">
+    <children>
+        <Label layoutX="28.0" layoutY="214.0" prefHeight="23.0" prefWidth="138.0" text="Employee Number :" />
+        <TextField fx:id="empNoField" layoutX="166.0" layoutY="213.0" prefHeight="25.0" prefWidth="242.0" promptText="Employee Number *" />
+        <Label layoutX="28.0" layoutY="259.0" prefHeight="23.0" prefWidth="138.0" text="Teacher's Name :" />
+        <TextField fx:id="teacherNameField" layoutX="166.0" layoutY="258.0" prefHeight="25.0" prefWidth="242.0" promptText="Teacher's Name *" />
+        <Label layoutX="28.0" layoutY="306.0" prefHeight="23.0" prefWidth="138.0" text="NIC Number:" />
+        <TextField fx:id="nicField" layoutX="166.0" layoutY="305.0" prefHeight="25.0" prefWidth="242.0" promptText="NIC Number *" />
+        <Label layoutX="28.0" layoutY="354.0" prefHeight="23.0" prefWidth="138.0" text="Date of Birth :" />
+        <TextField fx:id="dobField" layoutX="166.0" layoutY="353.0" prefHeight="25.0" prefWidth="242.0" promptText="YYYY-MM-DD *" />
+        <Label layoutX="28.0" layoutY="400.0" prefHeight="23.0" prefWidth="138.0" text="Date of 1st Appoinment : " />
+        <TextField fx:id="doaField" layoutX="166.0" layoutY="399.0" prefHeight="25.0" prefWidth="242.0" promptText="YYYY-MM-DD *" />
+        <Label layoutX="29.0" layoutY="448.0" prefHeight="23.0" prefWidth="138.0" text="Gender : " />
+        <Label layoutX="484.0" layoutY="212.0" prefHeight="23.0" prefWidth="138.0" text="Contact Number :" />
+        <TextField fx:id="phoneField" layoutX="623.0" layoutY="210.0" prefHeight="25.0" prefWidth="242.0" promptText="Contact Number *" />
+        <Label layoutX="485.0" layoutY="257.0" prefHeight="23.0" prefWidth="138.0" text="Address :" />
+        <TextField fx:id="addressField" layoutX="623.0" layoutY="256.0" prefHeight="25.0" prefWidth="242.0" promptText="Address" />
+        <Label layoutX="485.0" layoutY="304.0" prefHeight="23.0" prefWidth="138.0" text="Email :" />
+        <TextField fx:id="emailField" layoutX="623.0" layoutY="303.0" prefHeight="25.0" prefWidth="242.0" promptText="Email" />
+        <Label layoutX="486.0" layoutY="350.0" prefHeight="23.0" prefWidth="138.0" text="Assumption of Duties :" />
+        <TextField fx:id="asmOfDutyField" layoutX="624.0" layoutY="349.0" prefHeight="25.0" prefWidth="242.0" promptText="YYYY-MM-DD" />
+        <Label layoutX="486.0" layoutY="397.0" prefHeight="23.0" prefWidth="138.0" text="Increment Date : " />
+        <TextField fx:id="incDateField" layoutX="624.0" layoutY="396.0" prefHeight="25.0" prefWidth="242.0" promptText="YYYY-MM-DD" />
+        <Label layoutX="485.0" layoutY="446.0" prefHeight="23.0" prefWidth="138.0" text="Present Grade :" />
+        <TextField fx:id="prsntGradeField" layoutX="623.0" layoutY="445.0" prefHeight="25.0" prefWidth="242.0" promptText="Present Grade" />
+        <JFXButton fx:id="deleteStaff" layoutX="387.0" layoutY="520.0" onAction="#deleteStaff" prefWidth="140.0" text="DELETE" textFill="WHITE">
+            <font>
+                <Font size="25.0" />
+            </font>
+            <stylesheets>
+                <URL value="@css/RegStudent.css" />
+            </stylesheets>
+        </JFXButton>
+        <JFXButton fx:id="update" layoutX="201.0" layoutY="520.0" onAction="#update" prefWidth="140.0" text="UPDATE" textFill="WHITE">
+            <font>
+                <Font size="25.0" />
+            </font>
+            <stylesheets>
+                <URL value="@css/RegStudent.css" />
+            </stylesheets>
+        </JFXButton>
+        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
+            <children>
+                <Text fill="WHITE" layoutX="293.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Management">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+      <TextField fx:id="genderField" layoutX="166.0" layoutY="446.0" prefHeight="25.0" prefWidth="242.0" promptText="Gender" />
+      <TextField fx:id="EmpNo" layoutX="26.0" layoutY="116.0" prefHeight="37.0" prefWidth="153.0" promptText="Enter Staff's Employee No" />
+      <JFXButton id="btnSearch" fx:id="searchStaff" buttonType="RAISED" layoutX="186.0" layoutY="116.0" onAction="#searchStaff" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
+      <TextField fx:id="empName" layoutX="310.0" layoutY="116.0" prefHeight="37.0" prefWidth="168.0" promptText="Search by Name" />
+      <JFXButton id="btnSearch" fx:id="searchByName" buttonType="RAISED" layoutX="485.0" layoutY="116.0" onAction="#searchByName" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
+      <TextField fx:id="empNoOld" layoutX="603.0" layoutY="116.0" prefHeight="37.0" prefWidth="175.0" promptText="Transferred Staff" />
+      <JFXButton id="btnSearch" fx:id="searchOldStaff" buttonType="RAISED" layoutX="785.0" layoutY="116.0" onAction="#searchOldStaff" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
+      <JFXButton fx:id="printStaff" layoutX="573.0" layoutY="520.0" onAction="#printStaff" prefWidth="140.0" text="PRINT" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <stylesheets>
+            <URL value="@css/RegStudent.css" />
+         </stylesheets>
+      </JFXButton>
+    </children>
+</AnchorPane>

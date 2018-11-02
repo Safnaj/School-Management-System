@@ -1,10 +1,16 @@
 package sms.view.controller;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import sms.db.DBConnection;
 import sms.dbController.SchoolController;
 import sms.model.School;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -28,8 +34,44 @@ public class SchoolInfoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            School s = SchoolController.schoolInfo();
+            if (s != null) {
+                SchoolNameField.setText(s.getSchoolName());
+                SchoolAddressField.setText(s.getSchoolAddress());
+                classAvailableField.setText(s.getClassAvailable());
+                schoolTypeField.setText(s.getSchoolType());
+                deoDivisionField.setText(s.getDeoDivision());
+                municpalCouncilField.setText(s.getMunicpalCouncil());
+                policeAreaField.setText(s.getPoliceArea());
+                postalCodeField.setText(s.getPostalCode());
+                gsDivisionField.setText(s.getDeoDivision());
+                eduZoneField.setText(s.getEduZone());
+                eduDistrictField.setText(s.getEduDistrict());
+                adminDistrictField.setText(s.getAdminDistrict());
+                electorateField.setText(s.getElectorate());
+                dateOfEstdField.setText(s.getDateOfEstd());
+                schoolIDField.setText(s.getSchoolID());
+                schoolCensusField.setText(s.getSchoolCensus());
+                schoolExamIdField.setText(s.getSchoolExamId());
+                totalLandAreaField.setText(s.getTotalLandArea());
+                provinceField.setText(s.getProvince());
+                nameOfPrincipalField.setText(s.getNameOfPrincipal());
+                pricipalNoField.setText(s.getPricipalNo());
 
+
+            }else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("School Information");
+                alert.setHeaderText(null);
+                alert.setContentText("No Information Found..!");
+                alert.showAndWait();
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(SchoolController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
 
     @FXML
     private AnchorPane root;
@@ -107,48 +149,54 @@ public class SchoolInfoController implements Initializable {
     private JFXButton printDetails;
 
     @FXML
-    void addDetails(ActionEvent event) {
+    void addDetails(ActionEvent event) {            //This Method Button Removed Due to Unwanted
         try {
-            String SchoolName = SchoolNameField.getText();
-            String SchoolAddress = SchoolAddressField.getText();
-            String classAvailable = classAvailableField.getText();
-            String schoolType = schoolTypeField.getText();
-            String deoDivision = deoDivisionField.getText();
-            String municpalCouncil = municpalCouncilField.getText();
-            String policeArea = policeAreaField.getText();
-            String postalCode = postalCodeField.getText();
-            String gsDivision = gsDivisionField.getText();
-            String eduZone = eduZoneField.getText();
-            String eduDistrict = eduDistrictField.getText();
-            String adminDistrict = adminDistrictField.getText();
-            String electorate = electorateField.getText();
-            String dateOfEstd = dateOfEstdField.getText();
-            String schoolID = schoolIDField.getText();
-            String schoolCensus = schoolCensusField.getText();
-            String schoolExamId = schoolExamIdField.getText();
-            String totalLandArea = totalLandAreaField.getText();
-            String province = provinceField.getText();
-            String nameOfPrincipal = nameOfPrincipalField.getText();
-            String pricipalNo = pricipalNoField.getText();
+
+            ValidationController v = new ValidationController();
+
+            if (v.numbersOnly(classAvailableField)&&(v.numbersOnly(postalCodeField))&&(v.validatePhone(pricipalNoField))) {
+
+                String SchoolName = SchoolNameField.getText();
+                String SchoolAddress = SchoolNameField.getText();
+                String classAvailable = classAvailableField.getText();
+                String schoolType = schoolTypeField.getText();
+                String deoDivision = deoDivisionField.getText();
+                String municpalCouncil = municpalCouncilField.getText();
+                String policeArea = policeAreaField.getText();
+                String postalCode = postalCodeField.getText();
+                String gsDivision = gsDivisionField.getText();
+                String eduZone = eduZoneField.getText();
+                String eduDistrict = eduDistrictField.getText();
+                String adminDistrict = adminDistrictField.getText();
+                String electorate = electorateField.getText();
+                String dateOfEstd = dateOfEstdField.getText();
+                String schoolID = schoolIDField.getText();
+                String schoolCensus = schoolCensusField.getText();
+                String schoolExamId = schoolExamIdField.getText();
+                String totalLandArea = totalLandAreaField.getText();
+                String province = provinceField.getText();
+                String nameOfPrincipal = nameOfPrincipalField.getText();
+                String pricipalNo = pricipalNoField.getText();
 
 
-            School sch = new School(SchoolName,SchoolAddress,classAvailable,schoolType,deoDivision,municpalCouncil,policeArea,postalCode,gsDivision,eduZone,eduDistrict,adminDistrict,electorate,dateOfEstd,schoolID,schoolCensus,schoolExamId,totalLandArea,province,nameOfPrincipal,pricipalNo);
-            int i = SchoolController.AddDetails(sch);
+                School sch = new School(SchoolName, SchoolAddress, classAvailable, schoolType, deoDivision, municpalCouncil, policeArea, postalCode, gsDivision, eduZone, eduDistrict, adminDistrict, electorate, dateOfEstd, schoolID, schoolCensus, schoolExamId, totalLandArea, province, nameOfPrincipal, pricipalNo);
+                int i = SchoolController.AddDetails(sch);
 
-            if (i > 0) {
+                if (i > 0) {
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("School Information");
-                alert.setHeaderText(null);
-                alert.setContentText("Registered Successfully");
-                alert.showAndWait();
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("School Information");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Updated Successfully");
+                    alert.showAndWait();
 
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("School Information");
-                alert.setHeaderText(null);
-                alert.setContentText("OOPs there is an error adding Details");
-                alert.showAndWait();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("School Information");
+                    alert.setHeaderText(null);
+                    alert.setContentText("OOPs there is an error in Updating Details");
+                    alert.showAndWait();
+                }
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -158,6 +206,24 @@ public class SchoolInfoController implements Initializable {
 
     @FXML
     void printDetails(ActionEvent event) {
+
+        try {
+            Connection conn = DBConnection.getDBConnection().getConnection();
+            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\SchoolInfo.jrxml");
+            JRDesignQuery query = new JRDesignQuery();
+            query.setText("select * from schoolinfo");
+            jd.setQuery(query);
+            ReportViewController r = new ReportViewController();
+            r.viewReport(jd);
+
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
 
     }
 

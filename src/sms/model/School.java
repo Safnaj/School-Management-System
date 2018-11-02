@@ -5,8 +5,8 @@ package sms.model;
  * @project School Management System
  **/
 public class School {
-    private String SchoolName;
-    private String SchoolAddress;
+    private String schoolName;
+    private String schoolAddress;
     private String classAvailable;
     private String schoolType;
     private String deoDivision;
@@ -27,9 +27,13 @@ public class School {
     private String nameOfPrincipal;
     private String pricipalNo;
 
+    public School(){
+
+    }
+
     public School(String schoolName, String schoolAddress, String classAvailable, String schoolType, String deoDivision, String municpalCouncil, String policeArea, String postalCode, String gsDivision, String eduZone, String eduDistrict, String adminDistrict, String electorate, String dateOfEstd, String schoolID, String schoolCensus, String schoolExamId, String totalLandArea, String province, String nameOfPrincipal, String pricipalNo) {
-        SchoolName = schoolName;
-        SchoolAddress = schoolAddress;
+        this.schoolName = schoolName;
+        this.schoolAddress = schoolAddress;
         this.classAvailable = classAvailable;
         this.schoolType = schoolType;
         this.deoDivision = deoDivision;
@@ -52,19 +56,19 @@ public class School {
     }
 
     public String getSchoolName() {
-        return SchoolName;
+        return schoolName;
     }
 
     public void setSchoolName(String schoolName) {
-        SchoolName = schoolName;
+        schoolName = schoolName;
     }
 
     public String getSchoolAddress() {
-        return SchoolAddress;
+        return schoolAddress;
     }
 
     public void setSchoolAddress(String schoolAddress) {
-        SchoolAddress = schoolAddress;
+        schoolAddress = schoolAddress;
     }
 
     public String getClassAvailable() {
