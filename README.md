@@ -2,19 +2,19 @@
 
 # School-Management-System
 School Management System using Java FX
-And also moder UI and UX concepts and  [jfoenix](http://www.jfoenix.com/)
+And also used UI and UX concepts and  [jfoenix](http://www.jfoenix.com/)
 
 [![official JetBrains project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/v/9630-a8translate.svg)](https://plugins.jetbrains.com/)
 
-###Technologies Used
-^JavaFX
+##Technologies Used
+*JavaFX
 *Jfoenix Materical Design
 *Jasper Reports
 *MySQL
 *IntelliJ Idea Ultimate (IDE)
 
-###Used Design Patterns
+##Used Design Patterns
 * MVC 
 
 ## Contributing
