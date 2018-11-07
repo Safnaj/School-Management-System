@@ -50,6 +50,16 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </JFXButton>
+      <ImageView fx:id="StaffMgmt11" fitHeight="155.0" fitWidth="151.0" layoutX="709.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../other/img/transfer.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="transfer" buttonType="RAISED" layoutX="711.0" layoutY="304.0" onAction="#transfer" prefHeight="38.0" prefWidth="150.0" stylesheets="@css/RegStudent.css" text="Transfer Students" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
     </children>
 
 </AnchorPane>

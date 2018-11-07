@@ -78,6 +78,8 @@ public class RegisterStudentController implements Initializable {
 
             ValidationController v = new ValidationController();
 
+           // if(ValidationController.validateEmpty(adNoField)) //This can be used for Static Methods
+
             if (v.validateEmpty(adNoField) && v.validateEmpty(nameField) && v.validateEmpty(dobField) && v.validateEmpty(doaField) &&
                     v.validateEmpty(parentNameField) && v.validateEmpty(phoneField) && v.validateNIC(nicField) && v.numbersOnly(adNoField)
                     && v.validatePhone(phoneField) && v.validateDate(doaField) && v.validateDate(dobField)) {

@@ -74,5 +74,14 @@ public class StudentManagementController implements Initializable {
             System.out.println(e);
         }
     }
+    @FXML
+    void transfer(ActionEvent event) {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/TransferStudents.fxml")));
+            studentManagement.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
 
 }

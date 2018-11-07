@@ -120,7 +120,7 @@ public class LoginFormController implements Initializable {
 
             }
 
-        }
+    }
 
 }
 

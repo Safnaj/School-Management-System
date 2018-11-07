@@ -194,7 +194,7 @@ public class SchoolInfoController implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("School Information");
                     alert.setHeaderText(null);
-                    alert.setContentText("OOPs there is an error in Updating Details");
+                    alert.setContentText("OOPs there is an error in Updating Details..!");
                     alert.showAndWait();
                 }
             }

@@ -2,8 +2,6 @@ package sms.dbController;
 
 import sms.db.DBConnection;
 import sms.model.Staff;
-import sms.model.Student;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -75,7 +73,7 @@ public class StaffController {
     }
 
     public static int deleteStaff(Integer empNo) throws ClassNotFoundException, SQLException{
-        String sql = "DELETE FROM staffs WHERE adNo ='"+empNo+"'";
+        String sql = "DELETE FROM staffs WHERE empNo ='"+empNo+"'";
         Connection conn = DBConnection.getDBConnection().getConnection();
         PreparedStatement stm = conn.prepareStatement(sql);
 

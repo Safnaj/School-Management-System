@@ -9,6 +9,10 @@ import com.jfoenix.controls.JFXRadioButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import sms.db.DBConnection;
 import sms.dbController.StudentController;
 import sms.model.Student;
@@ -107,7 +111,7 @@ public class ManageStudentsController implements Initializable {
                 if (deleteStudent2 > 0) {
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Student Delete");
+                    alert.setTitle("Delete Student");
                     alert.setHeaderText(null);
                     alert.setContentText("Student " + adNo + " has been deleted sucessfully..!");
                     alert.showAndWait();
@@ -130,7 +134,7 @@ public class ManageStudentsController implements Initializable {
 
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Student Delete");
+                    alert.setTitle("Delete Student");
                     alert.setHeaderText(null);
                     alert.setContentText("There is an error deleting Student");
                     alert.showAndWait();
@@ -144,6 +148,27 @@ public class ManageStudentsController implements Initializable {
 
     @FXML
     void btnPrint(ActionEvent event) {
+
+        String adNo = adNoField.getText();
+
+        try {
+            Connection conn = DBConnection.getDBConnection().getConnection();
+            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentAdmission.jrxml");
+            JRDesignQuery query = new JRDesignQuery();
+
+            query.setText("select * from students where adNo = '" + adNo + "'");
+            jd.setQuery(query);
+            ReportViewController r = new ReportViewController();
+            r.viewReport(jd);
+
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -258,6 +283,21 @@ public class ManageStudentsController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Student Not Found");
                 alert.showAndWait();
+
+                AdNo.setText(null);
+                adNoField.setText(null);
+                fullNameField.setText(null);
+                nameField.setText(null);
+                dobField.setText(null);
+                doaField.setText(null);
+                gradeField.setText(null);
+                genderField.setText(null);
+                adNoField.setText(null);
+                parentNameField.setText(null);
+                nicField.setText(null);
+                phoneField.setText(null);
+                fullNameField.setText(null);
+                addressField.setText(null);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -289,6 +329,21 @@ public class ManageStudentsController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Student Not Found");
                 alert.showAndWait();
+
+                AdNo.setText(null);
+                adNoField.setText(null);
+                fullNameField.setText(null);
+                nameField.setText(null);
+                dobField.setText(null);
+                doaField.setText(null);
+                gradeField.setText(null);
+                genderField.setText(null);
+                adNoField.setText(null);
+                parentNameField.setText(null);
+                nicField.setText(null);
+                phoneField.setText(null);
+                fullNameField.setText(null);
+                addressField.setText(null);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);

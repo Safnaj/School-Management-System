@@ -15,9 +15,9 @@
     <children>
         <Pane prefHeight="85.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
             <children>
-                <Text fill="WHITE" fontSmoothingType="LCD" layoutX="252.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRINT STUDENT LIST" textAlignment="CENTER">
+                <Text fill="WHITE" fontSmoothingType="LCD" layoutX="302.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRINT STUDENTS LIST" textAlignment="CENTER">
                     <font>
-                        <Font name="Calibri" size="50.0" />
+                        <Font name="BebasNeue" size="50.0" />
                     </font>
                 </Text>
             </children>

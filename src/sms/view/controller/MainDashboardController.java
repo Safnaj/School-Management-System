@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -122,6 +123,56 @@ public class MainDashboardController implements Initializable{
                 } catch (IOException e) {
                         e.printStackTrace();
                 }
+        }
+
+        @FXML
+        void btnEventMgmt(ActionEvent event) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("School Management System");
+                alert.setHeaderText(null);
+                alert.setContentText("Sorry..! This feature currently Unavailable for this Version.");
+                alert.showAndWait();
+        }
+
+        @FXML
+        void btnExamMgmt(ActionEvent event) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("School Management System");
+                alert.setHeaderText(null);
+                alert.setContentText("Sorry..! This feature currently Unavailable for this Version.");
+                alert.showAndWait();
+        }
+
+        @FXML
+        void btnInventory(ActionEvent event) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("School Management System");
+                alert.setHeaderText(null);
+                alert.setContentText("Sorry..! This feature currently Unavailable for this Version.");
+                alert.showAndWait();
+        }
+
+        @FXML
+        void btnLibraryMgmt(ActionEvent event) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("School Management System");
+                alert.setHeaderText(null);
+                alert.setContentText("Sorry..! This feature currently Unavailable for this Version.");
+                alert.showAndWait();
+        }
+
+        @FXML
+        void btnNoticeMgmt(ActionEvent event) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("School Management System");
+                alert.setHeaderText(null);
+                alert.setContentText("Sorry..! This feature currently Unavailable for this Version.");
+                alert.showAndWait();
         }
 
 }

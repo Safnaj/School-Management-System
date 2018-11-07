@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
  **/
 public class ValidationController {
 
-    public boolean validateEmpty(TextField txt) {
+    public static boolean validateEmpty(TextField txt) {
         if (txt.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Student Registration");

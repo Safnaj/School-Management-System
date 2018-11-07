@@ -5,13 +5,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import sms.db.DBConnection;
 import sms.dbController.StaffController;
 import sms.dbController.StudentController;
 import sms.model.Staff;
 import sms.model.Student;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -104,7 +111,7 @@ public class ManageStaffsController implements Initializable {
                 dobField.setText(s.getDob());
                 doaField.setText(s.getDoa());
                 genderField.setText(s.getGender());
-                emailField.setText(s.getGender());
+                emailField.setText(s.getEmail());
                 asmOfDutyField.setText(s.getAssumpOfDuties());
                 phoneField.setText(s.getPhone());
                 addressField.setText(s.getAddress());
@@ -150,7 +157,7 @@ public class ManageStaffsController implements Initializable {
                 dobField.setText(s.getDob());
                 doaField.setText(s.getDoa());
                 genderField.setText(s.getGender());
-                emailField.setText(s.getGender());
+                emailField.setText(s.getEmail());
                 asmOfDutyField.setText(s.getAssumpOfDuties());
                 phoneField.setText(s.getPhone());
                 addressField.setText(s.getAddress());
@@ -196,7 +203,7 @@ public class ManageStaffsController implements Initializable {
                 dobField.setText(s.getDob());
                 doaField.setText(s.getDoa());
                 genderField.setText(s.getGender());
-                emailField.setText(s.getGender());
+                emailField.setText(s.getEmail());
                 asmOfDutyField.setText(s.getAssumpOfDuties());
                 phoneField.setText(s.getPhone());
                 addressField.setText(s.getAddress());
@@ -232,16 +239,164 @@ public class ManageStaffsController implements Initializable {
 
     @FXML
     void deleteStaff(ActionEvent event) {
+        try {
+            int empNo = Integer.parseInt(EmpNo.getText());
+            Staff s = new Staff(Integer.parseInt(empNoField.getText()), teacherNameField.getText(), nicField.getText(), dobField.getText(), doaField.getText(),
+                    genderField.getText(), emailField.getText(), asmOfDutyField.getText(), phoneField.getText(), addressField.getText(), incDateField.getText(),prsntGradeField.getText());
 
+            int moveStaff = StaffController.moveStaff(s);
+            if (moveStaff > 0) {
+
+                int deleteStaff = StaffController.deleteStaff(empNo);
+                if (deleteStaff > 0) {
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Staff Management");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Staff " + empNo + " Has Been Deleted Sucessfully..!");
+                    alert.showAndWait();
+
+                    empNoField.setText(null);
+                    teacherNameField.setText(null);
+                    nicField.setText(null);
+                    dobField.setText(null);
+                    doaField.setText(null);
+                    emailField.setText(null);
+                    genderField.setText(null);
+                    asmOfDutyField.setText(null);
+                    nicField.setText(null);
+                    phoneField.setText(null);
+                    addressField.setText(null);
+                    incDateField.setText(null);
+                    prsntGradeField.setText(null);
+
+
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Staff Management");
+                    alert.setHeaderText(null);
+                    alert.setContentText("There is an error deleting Staff..!");
+                    alert.showAndWait();
+                }
+            }
+        } catch(ClassNotFoundException | SQLException ex){
+            Logger.getLogger(StaffController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     void printStaff(ActionEvent event) {
+        try {
+            String empNo = empNoField.getText();
 
+            if(empName == null) {
+
+                Connection conn = DBConnection.getDBConnection().getConnection();
+                JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\SchoolInfo.jrxml");
+                JRDesignQuery query = new JRDesignQuery();
+                query.setText("select * from staff");
+                jd.setQuery(query);
+                ReportViewController r = new ReportViewController();
+                r.viewReport(jd);
+            }
+            else if (empName != null) {
+
+
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void update(ActionEvent event) {
+        try {
 
+            ValidationController v = new ValidationController();
+
+            if(v.validateEmpty(empNoField)&& v.validateEmpty(teacherNameField)&& v.validateEmpty(nicField)&& v.validateEmpty(dobField)
+                    && v.validateEmpty(doaField)&& v.validateEmpty(phoneField)&& v.validateDate(dobField)&& v.validateDate(doaField)&& v.validateDate(asmOfDutyField)
+                    && v.validateDate(incDateField)&& v.validateNIC(nicField)&& v.validatePhone(phoneField)&& v.numbersOnly(empNoField)&& v.numbersOnly(phoneField)){
+
+
+                int empNo = Integer.parseInt(empNoField.getText());
+                String teacherName = teacherNameField.getText();
+                String nic = nicField.getText();
+                String dob = dobField.getText();
+                String doa = doaField.getText();
+                String gender = genderField.getText();
+                String email = emailField.getText();
+                String assumpOfDuties = asmOfDutyField.getText();
+                String phone = phoneField.getText();
+                String address = addressField.getText();
+                String incDate = incDateField.getText();
+                String prsntGrade = prsntGradeField.getText();
+
+                Staff s = new Staff(empNo, teacherName, nic, dob, doa, gender, email, assumpOfDuties, phone, address, incDate, prsntGrade);
+                int i = StaffController.updateStaff(s);
+                int d = StaffController.updateOldStaff(s);
+
+                if (i > 0){
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Staff Management");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Staff Informations Updated Successfully..!");
+                    alert.showAndWait();
+
+                    empNoField.setText(null);
+                    teacherNameField.setText(null);
+                    nicField.setText(null);
+                    dobField.setText(null);
+                    doaField.setText(null);
+                    emailField.setText(null);
+                    genderField.setText(null);
+                    asmOfDutyField.setText(null);
+                    nicField.setText(null);
+                    phoneField.setText(null);
+                    addressField.setText(null);
+                    incDateField.setText(null);
+                    prsntGradeField.setText(null);
+                }
+
+                else if (d > 0) {
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Staff Management");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Staff Informations Updated Successfully..!");
+                    alert.showAndWait();
+
+                    empNoField.setText(null);
+                    teacherNameField.setText(null);
+                    nicField.setText(null);
+                    dobField.setText(null);
+                    doaField.setText(null);
+                    emailField.setText(null);
+                    genderField.setText(null);
+                    asmOfDutyField.setText(null);
+                    nicField.setText(null);
+                    phoneField.setText(null);
+                    addressField.setText(null);
+                    incDateField.setText(null);
+                    prsntGradeField.setText(null);
+
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Staff Management");
+                    alert.setHeaderText(null);
+                    alert.setContentText("OOPS there is an error updating Staff..!");
+                    alert.showAndWait();
+                }
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(StaffController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
 }
+

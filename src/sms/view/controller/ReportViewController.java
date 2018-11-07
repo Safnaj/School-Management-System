@@ -1,14 +1,11 @@
 package sms.view.controller;
 
-import javafx.embed.swing.SwingNode;
+
 
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.swing.JRViewer;
 import net.sf.jasperreports.view.JasperViewer;
 import sms.db.DBConnection;
-import javax.swing.*;
-import java.awt.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 
