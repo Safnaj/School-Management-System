@@ -1,6 +1,8 @@
 package sms.db;
 
 import java.sql.*;
+
+
 public class DBConnection{
     private Connection conn;
     private static DBConnection dbConnection;
@@ -10,6 +12,7 @@ public class DBConnection{
         conn=DriverManager.getConnection("jdbc:mysql://localhost/sms","root","");
     }
     public Connection getConnection(){
+
         return conn;
     }
     public static DBConnection getDBConnection()throws ClassNotFoundException,SQLException{
@@ -20,4 +23,5 @@ public class DBConnection{
     }
 
 }
+
 
