@@ -48,6 +48,11 @@
             <Image url="@../../other/img/Lock_50px.png" />
          </image>
       </ImageView>
+      <Text layoutX="31.0" layoutY="591.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Software Developed By Ahamed Safnaj - 0777 97 42 07   |   Copyright © Al-Hikma Junior School, Maruthamunai" textAlignment="CENTER" wrappingWidth="850.4531478881836">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
     </children>
 
 </AnchorPane>

@@ -32,7 +32,7 @@
             </JFXButton>
             </children>
         </Pane>
-        <ComboBox fx:id="Type" layoutX="122.0" layoutY="110.0" onAction="#Type" prefHeight="25.0" prefWidth="109.0" promptText="Select" />
+        <ComboBox fx:id="Type" layoutX="122.0" layoutY="110.0" onAction="#Type" prefHeight="25.0" prefWidth="150.0" promptText="Select" />
         <Label layoutX="40.0" layoutY="111.0" prefHeight="23.0" prefWidth="138.0" text="Select Type : " />
         <JFXButton fx:id="generate" layoutX="629.0" layoutY="98.0" onAction="#generate" prefHeight="0.0" prefWidth="109.0" style="-fx-background-color: #1976D2;" text="Generate" textFill="WHITE">
             <font>

@@ -128,7 +128,7 @@ public class TransferStudentsController implements Initializable {
             stm.executeUpdate();
 
             Student s = new Student(grade5);
-            int a = TransferController.transferStudent(s);
+            int a = TransferController.transferStudent(s,year);
 
             if (a > 0) {
 

@@ -12,6 +12,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import sms.db.DBConnection;
 import sms.tableModel.StaffTableModel;
 import sms.tableModel.StudentTableModel;
@@ -104,7 +108,7 @@ public class PrintStaffsController implements Initializable {
 
             Connection conn = DBConnection.getDBConnection().getConnection();
 
-            if (type == "Current") {
+            if (type == "Current Staffs") {
 
                 String sql = "select * from staffs";
                 ResultSet rs = conn.createStatement().executeQuery(sql);
@@ -145,14 +149,6 @@ public class PrintStaffsController implements Initializable {
 
             staffTable.setItems(staffList);
 
-
-
-
-
-
-
-
-
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException e) {
@@ -162,6 +158,38 @@ public class PrintStaffsController implements Initializable {
 
     @FXML
     void print(ActionEvent event) {
+
+        staffTable.getItems().clear();
+        String type = Type.getValue();
+
+        try {
+            Connection conn = DBConnection.getDBConnection().getConnection();
+            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StaffList.jrxml");
+            JasperDesign jd2 = JRXmlLoader.load("src\\sms\\Reports\\StaffListPast.jrxml");
+            JRDesignQuery query = new JRDesignQuery();
+
+            if (type == "Current Staffs"){
+
+                query.setText("select * from staffs");
+                jd.setQuery(query);
+                ReportViewController r = new ReportViewController();
+                r.viewReport(jd);
+            }
+            else {
+
+                query.setText("select * from oldstaffs");
+                jd2.setQuery(query);
+                ReportViewController r = new ReportViewController();
+                r.viewReport(jd2);
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
 
     }
 

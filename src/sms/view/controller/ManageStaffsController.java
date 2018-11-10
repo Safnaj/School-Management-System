@@ -139,6 +139,9 @@ public class ManageStaffsController implements Initializable {
                 addressField.setText(null);
                 incDateField.setText(null);
                 prsntGradeField.setText(null);
+                empName.setText(null);
+                empNoOld.setText(null);
+                EmpNo.setText(null);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StaffController.class.getName()).log(Level.SEVERE, null, ex);
@@ -185,6 +188,9 @@ public class ManageStaffsController implements Initializable {
                 addressField.setText(null);
                 incDateField.setText(null);
                 prsntGradeField.setText(null);
+                empName.setText(null);
+                empNoOld.setText(null);
+                EmpNo.setText(null);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StaffController.class.getName()).log(Level.SEVERE, null, ex);
@@ -231,6 +237,9 @@ public class ManageStaffsController implements Initializable {
                 addressField.setText(null);
                 incDateField.setText(null);
                 prsntGradeField.setText(null);
+                empName.setText(null);
+                empNoOld.setText(null);
+                EmpNo.setText(null);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StaffController.class.getName()).log(Level.SEVERE, null, ex);
@@ -240,7 +249,7 @@ public class ManageStaffsController implements Initializable {
     @FXML
     void deleteStaff(ActionEvent event) {
         try {
-            int empNo = Integer.parseInt(EmpNo.getText());
+            int empNo = Integer.parseInt(empNoField.getText());
             Staff s = new Staff(Integer.parseInt(empNoField.getText()), teacherNameField.getText(), nicField.getText(), dobField.getText(), doaField.getText(),
                     genderField.getText(), emailField.getText(), asmOfDutyField.getText(), phoneField.getText(), addressField.getText(), incDateField.getText(),prsntGradeField.getText());
 
@@ -289,19 +298,24 @@ public class ManageStaffsController implements Initializable {
         try {
             String empNo = empNoField.getText();
 
-            if(empName == null) {
+            Connection conn = DBConnection.getDBConnection().getConnection();
+            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StaffInfo.jrxml");
+            JasperDesign jd2 = JRXmlLoader.load("src\\sms\\Reports\\StaffInfopast.jrxml");
+            JRDesignQuery query = new JRDesignQuery();
 
-                Connection conn = DBConnection.getDBConnection().getConnection();
-                JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\SchoolInfo.jrxml");
-                JRDesignQuery query = new JRDesignQuery();
-                query.setText("select * from staff");
+            if(empNoOld.getText().isEmpty()){       //Some Corrections need to be done
+
+                query.setText("select * from staffs where empNo = '" + empNo + "'");
                 jd.setQuery(query);
                 ReportViewController r = new ReportViewController();
                 r.viewReport(jd);
             }
-            else if (empName != null) {
+            else if(empNoOld != null){
 
-
+                query.setText("select * from oldstaffs where empNo = '" + empNo + "'");
+                jd2.setQuery(query);
+                ReportViewController r = new ReportViewController();
+                r.viewReport(jd2);
             }
 
         } catch (ClassNotFoundException e) {
@@ -361,8 +375,8 @@ public class ManageStaffsController implements Initializable {
                     addressField.setText(null);
                     incDateField.setText(null);
                     prsntGradeField.setText(null);
-                }
 
+                }
                 else if (d > 0) {
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);

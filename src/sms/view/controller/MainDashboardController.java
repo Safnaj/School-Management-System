@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -84,6 +85,7 @@ public class MainDashboardController implements Initializable{
                         Stage stage = new Stage();
                         stage.setTitle("School Information");
                         stage.setScene(new Scene(root));
+                        stage.getIcons().add(new Image(getClass().getResourceAsStream("/sms/other/img/HikmaLogo.jpg")));
                         stage.show();
 
                 } catch (IOException e) {
@@ -99,6 +101,7 @@ public class MainDashboardController implements Initializable{
                         Stage stage = new Stage();
                         stage.setTitle("Student Management");
                         stage.setScene(new Scene(root));
+                        stage.getIcons().add(new Image(getClass().getResourceAsStream("/sms/other/img/HikmaLogo.jpg")));
                         stage.show();
 
                         //Below Code for Open FXML in Same Window
@@ -118,6 +121,7 @@ public class MainDashboardController implements Initializable{
                         Stage stage = new Stage();
                         stage.setTitle("School Information");
                         stage.setScene(new Scene(root));
+                        stage.getIcons().add(new Image(getClass().getResourceAsStream("/sms/other/img/HikmaLogo.jpg")));
                         stage.show();
 
                 } catch (IOException e) {

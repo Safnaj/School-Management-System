@@ -13,8 +13,9 @@ import java.sql.SQLException;
  **/
 public class TransferController {
 
-    public static int transferStudent(Student student)throws ClassNotFoundException,SQLException {
-        String SQL="INSERT INTO paststudents VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+    public static int transferStudent(Student student, String grade)throws ClassNotFoundException,SQLException {
+        String SQL=("INSERT INTO paststudents (?,?,?,?,?,?,?,?,?,?,?)" +
+                "SELECT * FROM students WHERE grade = '"+grade+"'");
         Connection conn = DBConnection.getDBConnection().getConnection();
         PreparedStatement stm = conn.prepareStatement(SQL);
         stm.setObject(1, student.getAdNo());
@@ -43,7 +44,7 @@ public class TransferController {
 
     public static int deleteStudent(String grade) throws ClassNotFoundException, SQLException {
 
-        String sql = "DELETE FROM Students WHERE adNo ='"+grade+"'";
+        String sql = "DELETE FROM Students WHERE grade ='"+grade+"'";
         Connection conn = DBConnection.getDBConnection().getConnection();
         PreparedStatement stm = conn.prepareStatement(sql);
 
