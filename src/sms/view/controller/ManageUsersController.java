@@ -110,7 +110,7 @@ public class ManageUsersController implements Initializable {
         }
     }
     @FXML
-    void addUser(ActionEvent event) {
+    void addUser() {
 
         try {
             if(ValidationController.validateEmpty(userNameField) && ValidationController.validateEmpty(passwordField)) {
@@ -121,18 +121,18 @@ public class ManageUsersController implements Initializable {
                 User user = new User(username, password);
                 int i = UserController.addUser(user);
 
-                if(i < 0){
+                if(i > 0){
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("User Management");
                     alert.setHeaderText(null);
                     alert.setContentText("User Registered Successfully..!");
                     alert.showAndWait();
 
-                    userNameField.setText(null);    //Refresh Table
-                    passwordField.setText(null);    //Refresh Table
+                    userNameField.setText(null);
+                    passwordField.setText(null);
                 }
-                data.clear();
-                loadTable();
+                data.clear();               //Refresh Table
+                loadTable();                //Refresh Table
 
             }
         } catch (ClassNotFoundException e) {

@@ -14,7 +14,9 @@ import javafx.scene.media.Track;
 import sms.db.DBConnection;
 import sms.dbController.GradeController;
 import sms.dbController.TransferController;
+import sms.dbController.UserController;
 import sms.model.Student;
+import sms.model.User;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -123,21 +125,32 @@ public class TransferStudentsController implements Initializable {
 
             Connection conn = DBConnection.getDBConnection().getConnection();
 
-            String sql = "UPDATE students SET grade= '"+year+"' WHERE grade= '" +grade5+ "'";
+            String sql ="INSERT INTO paststudents (adNo,fullName,name,dob,doa,gender,year,parentName,nic,phone,address) " +
+                        "SELECT * FROM students where grade = 'Grade 5'";
             PreparedStatement stm = conn.prepareStatement(sql);
             stm.executeUpdate();
 
-            Student s = new Student(grade5);
-            int a = TransferController.transferStudent(s,year);
+            int a = TransferController.deleteStudent(grade5);
+            int b = TransferController.updateGrade(year);
 
             if (a > 0) {
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                if(b > 0) {
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Transfer Students");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Updated..!");
+                    alert.showAndWait();
+                }
+
+            }else {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Transfer Students");
                 alert.setHeaderText(null);
-                alert.setContentText("Updated..!");
+                alert.setContentText("Oops..! There is an Error in Transfering Students..!");
                 alert.showAndWait();
-
             }
 
         } catch (ClassNotFoundException e) {

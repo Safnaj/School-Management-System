@@ -233,7 +233,15 @@
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="102" y="10" width="350" height="20" uuid="052ca7b0-56a8-44dd-bb9e-65a7df226ff2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Software Developed By Ahamed Safnaj - 0777 97 42 07   |   Copyright © Al-Hikma Junior School, Maruthamunai]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>

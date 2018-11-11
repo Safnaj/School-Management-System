@@ -87,7 +87,7 @@ public class DashboardController implements Initializable {
     @FXML
     void setBtnUserSettings(ActionEvent event) {
         try {
-            AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/UserAccount.fxml")));
+            AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/UserAccount2.fxml")));
             root.getChildren().setAll(user);
         }catch(IOException e){
             System.out.println(e);
