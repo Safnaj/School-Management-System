@@ -3,10 +3,12 @@ package sms.view.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
@@ -17,6 +19,7 @@ import sms.dbController.StudentController;
 import sms.model.Staff;
 import sms.model.Student;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -34,6 +37,9 @@ public class ManageStaffsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
+    @FXML
+    private AnchorPane root;
 
     @FXML
     private TextField empNoField;
@@ -98,6 +104,18 @@ public class ManageStaffsController implements Initializable {
     @FXML
     private JFXButton printStaff;
 
+    @FXML
+    private JFXButton Back;
+
+    @FXML
+    void Back(ActionEvent event) {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StaffManagement.fxml")));
+            root.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
 
     @FXML
     void searchByName(ActionEvent event) {

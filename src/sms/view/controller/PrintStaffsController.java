@@ -5,25 +5,28 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import net.sf.jasperreports.engine.JRException;
+import javafx.scene.layout.AnchorPane;
+import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import sms.db.DBConnection;
 import sms.tableModel.StaffTableModel;
-import sms.tableModel.StudentTableModel;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -37,16 +40,19 @@ public class PrintStaffsController implements Initializable {
         Type.getItems().addAll("Current Staffs", "Old Staffs");
     }
     @FXML
-    private ImageView Back;
+    private AnchorPane root;
 
     @FXML
     private ComboBox<String> Type;
 
     @FXML
+    private JFXButton print;
+
+    @FXML
     private JFXButton generate;
 
     @FXML
-    private JFXButton print;
+    private JFXButton Back;
 
     @FXML
     private TableView<StaffTableModel> staffTable;
@@ -90,17 +96,32 @@ public class PrintStaffsController implements Initializable {
     ObservableList<StaffTableModel> staffList = FXCollections.observableArrayList();
 
     @FXML
-    void Back(MouseEvent event) {
-
+    void Back() {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StaffManagement.fxml")));
+            root.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
     }
 
     @FXML
     void Type(ActionEvent event) {
 
     }
+    //Below code for On key press methods..
+
+    /*@FXML
+    void gen(KeyEvent event){
+        generate.setOnKeyTyped((e)->{
+            if (e.getCode() == KeyCode.G){
+                generate();
+            }
+        });
+    }*/
 
     @FXML
-    void generate(ActionEvent event) {
+    void generate() {
 
         try{
             staffTable.getItems().clear();
@@ -140,6 +161,7 @@ public class PrintStaffsController implements Initializable {
             nicColumn.setCellValueFactory(new PropertyValueFactory<>("nic"));
             dobColumn.setCellValueFactory(new PropertyValueFactory<>("dob"));
             doaColumn.setCellValueFactory(new PropertyValueFactory<>("doa"));
+            emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
             genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
             assmpDutyColumn.setCellValueFactory(new PropertyValueFactory<>("assumpOfDuties"));
             phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
@@ -168,6 +190,11 @@ public class PrintStaffsController implements Initializable {
             JasperDesign jd2 = JRXmlLoader.load("src\\sms\\Reports\\StaffListPast.jrxml");
             JRDesignQuery query = new JRDesignQuery();
 
+          /*  HashMap<String,Object> Logo = new HashMap<String, Object>();
+
+            URL url = this.getClass().getClassLoader().getResource("sms/other/img/HikmaLogo.jpg");
+            Logo.put("logo", url);*/
+
             if (type == "Current Staffs"){
 
                 query.setText("select * from staffs");
@@ -182,15 +209,13 @@ public class PrintStaffsController implements Initializable {
                 ReportViewController r = new ReportViewController();
                 r.viewReport(jd2);
             }
-
-        } catch (ClassNotFoundException e) {
+        } catch (JRException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (JRException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 
 }

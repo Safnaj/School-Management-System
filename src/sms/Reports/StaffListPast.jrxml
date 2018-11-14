@@ -3,6 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StaffList" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bba487a2-2625-4e41-9791-ae8a2bde7f15">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SMS"/>
+	<parameter name="Logo" class="java.net.URL"/>
 	<queryString language="SQL">
 		<![CDATA[select * from oldstaffs]]>
 	</queryString>
@@ -50,33 +51,33 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="80" splitType="Stretch">
+		<band height="70" splitType="Stretch">
 			<image>
-				<reportElement x="45" y="-9" width="80" height="80" uuid="da550020-f34e-4982-b0cc-0666c92c18b4"/>
-				<imageExpression><![CDATA["C:/Users/Safnaj/School Management System/src/sms/other/img/HikmaLogo.jpg"]]></imageExpression>
+				<reportElement x="45" y="-13" width="80" height="80" uuid="da550020-f34e-4982-b0cc-0666c92c18b4"/>
+				<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement positionType="FixRelativeToBottom" x="177" y="5" width="490" height="30" uuid="0f523750-d30e-4c5c-89af-22d758f5eb35"/>
+				<reportElement positionType="FixRelativeToBottom" x="182" y="-6" width="490" height="30" uuid="0f523750-d30e-4c5c-89af-22d758f5eb35"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
 				<text><![CDATA[AL-HIKMA JUNIOR SCHOOL, MARUTHAMUNAI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="320" y="41" width="127" height="30" uuid="97339c89-57a6-4f5f-96d8-ee6c2c7a87b6"/>
+				<reportElement x="325" y="27" width="127" height="30" uuid="97339c89-57a6-4f5f-96d8-ee6c2c7a87b6"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
 				<text><![CDATA[OLD STAFF LIST]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="700" y="49" width="100" height="30" uuid="42950d3c-8dc6-4951-a601-efce7646bda1"/>
+				<reportElement x="700" y="39" width="100" height="30" uuid="42950d3c-8dc6-4951-a601-efce7646bda1"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
 	<columnHeader>
-		<band height="50" splitType="Stretch">
+		<band height="40" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="50" height="30" uuid="7e290ce2-50eb-4fb9-bee8-4d4f04fba661">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa843e33-6f73-46d6-ac31-e47826c9a968"/>
@@ -144,7 +145,7 @@
 				<text><![CDATA[Present Grade]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="40" width="802" height="1" uuid="4d71b7ef-a5cf-4e86-8376-460f22d6a128"/>
+				<reportElement x="0" y="32" width="802" height="1" uuid="4d71b7ef-a5cf-4e86-8376-460f22d6a128"/>
 				<graphicElement>
 					<pen lineWidth="2.0"/>
 				</graphicElement>
@@ -184,7 +185,7 @@
 				<reportElement x="311" y="0" width="81" height="25" uuid="8defe87e-be19-4642-ac1d-8e1e312db4f4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bcb33535-5eaa-41e9-a154-81de1b740751"/>
 				</reportElement>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Left">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{doa}]]></textFieldExpression>
@@ -193,7 +194,7 @@
 				<reportElement x="394" y="0" width="80" height="25" uuid="df0811e7-ef68-49c8-ba63-144c77105c60">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7984230e-4b79-4f15-b962-0339401bc9d2"/>
 				</reportElement>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Left">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{assumpOfDuties}]]></textFieldExpression>

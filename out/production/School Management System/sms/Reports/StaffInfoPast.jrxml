@@ -4,6 +4,7 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SMS"/>
 	<parameter name="empNo" class="java.lang.String"/>
+	<parameter name="Logo" class="java.net.URL"/>
 	<queryString language="SQL">
 		<![CDATA[select * from staffs where empNo = $P{empNo}]]>
 	</queryString>
@@ -80,7 +81,7 @@
 			</textField>
 			<image>
 				<reportElement x="0" y="-11" width="80" height="80" uuid="b9c9e6ef-4552-4be2-ad7e-0c2346bb952d"/>
-				<imageExpression><![CDATA["C:/Users/Safnaj/School Management System/src/sms/other/img/HikmaLogo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -233,7 +234,15 @@
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="102" y="10" width="350" height="20" uuid="052ca7b0-56a8-44dd-bb9e-65a7df226ff2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Software Developed By Ahamed Safnaj - 0777 97 42 07   |   Copyright © Al-Hikma Junior School, Maruthamunai]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>

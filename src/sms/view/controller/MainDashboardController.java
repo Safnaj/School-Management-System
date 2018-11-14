@@ -79,24 +79,25 @@ public class MainDashboardController implements Initializable{
 
         @FXML
         void setBtnSchoolInfo(ActionEvent event) {
-                Parent root = null;
                 try {
-                        root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/SchoolInfo.fxml"));
-                        Stage stage = new Stage();
-                        stage.setTitle("School Information");
-                        stage.setScene(new Scene(root));
-                        stage.getIcons().add(new Image(getClass().getResourceAsStream("/sms/other/img/HikmaLogo.jpg")));
-                        stage.show();
-
-                } catch (IOException e) {
-                        e.printStackTrace();
+                        AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/SchoolInfo.fxml")));
+                        root.getChildren().setAll(user);
+                }catch(IOException e){
+                        System.out.println(e);
                 }
-
         }
 
         @FXML
         void setBtnStudentMgmt(ActionEvent event) {
+
                 try {
+                        AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
+                        root.getChildren().setAll(user);
+                }catch(IOException e){
+                        System.out.println(e);
+                }
+
+                /*try {
                         Parent root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/StudentManagement.fxml"));
                         Stage stage = new Stage();
                         stage.setTitle("Student Management");
@@ -104,18 +105,21 @@ public class MainDashboardController implements Initializable{
                         stage.getIcons().add(new Image(getClass().getResourceAsStream("/sms/other/img/HikmaLogo.jpg")));
                         stage.show();
 
-                        //Below Code for Open FXML in Same Window
-//                        AnchorPane dashboard = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
-//                        root.getChildren().setAll(dashboard);
-
-
                 }catch(IOException e){
                         System.out.println(e);
-                }
+                }*/
         }
         @FXML
         void btnStaffMgmt(ActionEvent event){
-                Parent root = null;
+
+                try {
+                        AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StaffManagement.fxml")));
+                        root.getChildren().setAll(user);
+                }catch(IOException e){
+                        System.out.println(e);
+                }
+
+                /*Parent root = null;
                 try {
                         root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/StaffManagement.fxml"));
                         Stage stage = new Stage();
@@ -126,7 +130,7 @@ public class MainDashboardController implements Initializable{
 
                 } catch (IOException e) {
                         e.printStackTrace();
-                }
+                }*/
         }
 
         @FXML

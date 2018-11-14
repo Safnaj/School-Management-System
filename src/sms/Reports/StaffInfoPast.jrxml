@@ -4,6 +4,7 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SMS"/>
 	<parameter name="empNo" class="java.lang.String"/>
+	<parameter name="Logo" class="java.net.URL"/>
 	<queryString language="SQL">
 		<![CDATA[select * from staffs where empNo = $P{empNo}]]>
 	</queryString>
@@ -80,7 +81,7 @@
 			</textField>
 			<image>
 				<reportElement x="0" y="-11" width="80" height="80" uuid="b9c9e6ef-4552-4be2-ad7e-0c2346bb952d"/>
-				<imageExpression><![CDATA["C:/Users/Safnaj/School Management System/src/sms/other/img/HikmaLogo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
 			</image>
 		</band>
 	</title>

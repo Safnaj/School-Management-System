@@ -13,6 +13,7 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="grade" class="java.lang.String"/>
+	<parameter name="Logo" class="java.net.URL"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT *
 FROM students where grade = $P{grade}]]>
@@ -65,31 +66,31 @@ FROM students where grade = $P{grade}]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="70" splitType="Stretch">
+		<band height="60" splitType="Stretch">
 			<staticText>
-				<reportElement positionType="FixRelativeToBottom" x="186" y="-7" width="490" height="30" uuid="988fa170-954b-46ce-b9fc-9f6be68b6cd9"/>
+				<reportElement positionType="FixRelativeToBottom" x="190" y="-7" width="490" height="30" uuid="988fa170-954b-46ce-b9fc-9f6be68b6cd9"/>
 				<textElement>
-					<font size="20"/>
+					<font size="18"/>
 				</textElement>
 				<text><![CDATA[AL-HIKMA JUNIOR SCHOOL, MARUTHAMUNAI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="331" y="30" width="100" height="30" uuid="a4522cbc-0d41-4880-8907-17c06a0c5d5d"/>
+				<reportElement x="331" y="21" width="100" height="30" uuid="a4522cbc-0d41-4880-8907-17c06a0c5d5d"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
 				<text><![CDATA[STUDENT LIST]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="675" y="31" width="100" height="30" uuid="6ad1d35f-9c2e-493a-b958-fb8fc64c78b8"/>
+				<reportElement x="675" y="29" width="100" height="30" uuid="6ad1d35f-9c2e-493a-b958-fb8fc64c78b8"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="85" y="-15" width="80" height="80" uuid="b9c9e6ef-4552-4be2-ad7e-0c2346bb952d"/>
-				<imageExpression><![CDATA["C:/Users/Safnaj/School Management System/src/sms/other/img/HikmaLogo.jpg"]]></imageExpression>
+				<reportElement x="85" y="-17" width="75" height="76" uuid="b9c9e6ef-4552-4be2-ad7e-0c2346bb952d"/>
+				<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="438" y="33" width="58" height="20" uuid="9080058f-a5b6-45b2-ba2e-dbd3656d2caa">
+				<reportElement x="438" y="24" width="58" height="20" uuid="9080058f-a5b6-45b2-ba2e-dbd3656d2caa">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="117aef56-6d14-4869-b544-2b6891cb127f"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
@@ -97,9 +98,9 @@ FROM students where grade = $P{grade}]]>
 		</band>
 	</title>
 	<columnHeader>
-		<band height="40" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<line>
-				<reportElement x="0" y="30" width="801" height="3" uuid="28cb688b-a051-4cc2-b4b1-32b7abdb4754"/>
+				<reportElement x="0" y="24" width="801" height="3" uuid="28cb688b-a051-4cc2-b4b1-32b7abdb4754"/>
 				<graphicElement>
 					<pen lineWidth="2.0"/>
 				</graphicElement>
@@ -120,13 +121,16 @@ FROM students where grade = $P{grade}]]>
 				<reportElement x="216" y="0" width="72" height="30" uuid="8e8b917c-96fe-41a3-b90f-3984263647c0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1827243-c3a9-412c-ade9-5e62bac9ca4d"/>
 				</reportElement>
-				<text><![CDATA[Date of Birth]]></text>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Date of Birth (DD/MM/YYYY)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="297" y="0" width="72" height="30" uuid="684e6d82-4a71-4d44-8bd9-8e76301affc9">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="053e8c17-6c01-46c1-9d85-673a4644956d"/>
 				</reportElement>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Left">
 					<font size="9"/>
 				</textElement>
 				<text><![CDATA[Date of Admission]]></text>
@@ -138,25 +142,25 @@ FROM students where grade = $P{grade}]]>
 				<text><![CDATA[Gender]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="431" y="0" width="58" height="30" uuid="79898597-5d2c-4889-a894-c61fc96f1050">
+				<reportElement x="430" y="0" width="49" height="30" uuid="79898597-5d2c-4889-a894-c61fc96f1050">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="117aef56-6d14-4869-b544-2b6891cb127f"/>
 				</reportElement>
 				<text><![CDATA[Grade]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="494" y="0" width="110" height="30" uuid="df15353b-653e-4529-a987-43be33427e17">
+				<reportElement x="483" y="0" width="114" height="30" uuid="df15353b-653e-4529-a987-43be33427e17">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c432a8d6-92a0-4de2-a263-863de4278bbe"/>
 				</reportElement>
 				<text><![CDATA[Parent/Gurdian]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="610" y="0" width="72" height="30" uuid="262342bb-72c3-45d4-9fe6-d986843171c5">
+				<reportElement x="598" y="0" width="72" height="30" uuid="262342bb-72c3-45d4-9fe6-d986843171c5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="52e13e4e-0d6a-4785-b909-cb0044d5db5d"/>
 				</reportElement>
 				<text><![CDATA[Phone]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="682" y="0" width="120" height="30" uuid="585b8826-2667-4951-9b1a-c0bf0a0acc90">
+				<reportElement x="675" y="0" width="127" height="30" uuid="585b8826-2667-4951-9b1a-c0bf0a0acc90">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="162bdb1d-3ae1-4e41-8416-f9e37efd3d86"/>
 				</reportElement>
 				<text><![CDATA[Address]]></text>
@@ -180,21 +184,21 @@ FROM students where grade = $P{grade}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fullName}]]></textFieldExpression>
 			</textField>
-			<textField pattern="MMMMM dd, yyyy">
+			<textField pattern="dd/MM/yyyy">
 				<reportElement x="216" y="0" width="72" height="20" uuid="4b3d1d1c-14ba-42eb-b048-abe28bbf55d0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1827243-c3a9-412c-ade9-5e62bac9ca4d"/>
 				</reportElement>
 				<textElement>
-					<font size="9"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dob}]]></textFieldExpression>
 			</textField>
-			<textField pattern="MMMMM dd, yyyy">
+			<textField pattern="dd/MM/yyyy">
 				<reportElement x="297" y="0" width="72" height="20" uuid="a2c4def2-27bc-4309-976c-8199b59ef900">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="053e8c17-6c01-46c1-9d85-673a4644956d"/>
 				</reportElement>
 				<textElement textAlignment="Left">
-					<font size="9"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{doa}]]></textFieldExpression>
 			</textField>
@@ -205,25 +209,25 @@ FROM students where grade = $P{grade}]]>
 				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="431" y="0" width="58" height="20" uuid="1b1169a7-688d-4d42-951d-a639d1c0f0b3">
+				<reportElement x="430" y="0" width="49" height="20" uuid="1b1169a7-688d-4d42-951d-a639d1c0f0b3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="117aef56-6d14-4869-b544-2b6891cb127f"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="494" y="0" width="110" height="20" uuid="8d4d3ba8-f867-4aa9-a41a-84284b1ea261">
+				<reportElement x="483" y="0" width="114" height="20" uuid="8d4d3ba8-f867-4aa9-a41a-84284b1ea261">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c432a8d6-92a0-4de2-a263-863de4278bbe"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{parentName}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="610" y="0" width="72" height="20" uuid="a18160a8-a82b-4af3-a39f-b178990df583">
+				<reportElement x="598" y="0" width="72" height="20" uuid="a18160a8-a82b-4af3-a39f-b178990df583">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="52e13e4e-0d6a-4785-b909-cb0044d5db5d"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="682" y="0" width="120" height="20" uuid="23dd089a-08b6-4ebd-b1de-1a5f356e3f2b">
+				<reportElement x="675" y="0" width="127" height="20" uuid="23dd089a-08b6-4ebd-b1de-1a5f356e3f2b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="162bdb1d-3ae1-4e41-8416-f9e37efd3d86"/>
 				</reportElement>
 				<textElement>

@@ -1,4 +1,5 @@
 package sms.view.controller;
+import javafx.fxml.FXMLLoader;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
@@ -9,6 +10,7 @@ import sms.model.School;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -147,6 +149,21 @@ public class SchoolInfoController implements Initializable {
 
     @FXML
     private JFXButton printDetails;
+
+    @FXML
+    private JFXButton Back;
+
+    @FXML
+    void Back(ActionEvent event) {
+
+        try {
+            AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/MainDashboard.fxml")));
+            root.getChildren().setAll(user);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+
+    }
 
     @FXML
     void addDetails(ActionEvent event) {            //This Method Button Removed Due to Unwanted

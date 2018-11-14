@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="studentManagement" prefHeight="600.0" prefWidth="900.0" stylesheets="@css/RegStudent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.StudentManagementController">
+<AnchorPane fx:id="manageStudents" prefHeight="600.0" prefWidth="900.0" stylesheets="@css/RegStudent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.StudentManagementController">
 
     <children>
         <ImageView fx:id="StaffMgmt" fitHeight="150.0" fitWidth="200.0" layoutX="264.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
@@ -33,7 +33,7 @@
         </JFXButton>
         <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
             <children>
-                <Text fill="WHITE" layoutX="302.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT MANAGEMENT">
+                <Text fill="WHITE" layoutX="280.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT MANAGEMENT">
                     <font>
                         <Font name="BebasNeue" size="50.0" />
                     </font>
@@ -59,6 +59,15 @@
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
+      </JFXButton>
+      <JFXButton id="button" fx:id="Back" layoutX="23.0" layoutY="12.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
     </children>
 

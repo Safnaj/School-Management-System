@@ -4,6 +4,8 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -68,5 +70,14 @@
       <TextField fx:id="AdNo1" layoutX="579.0" layoutY="117.0" prefHeight="37.0" prefWidth="200.0" promptText="Enter Old Student ID" />
       <JFXButton id="btnSearch" fx:id="searchPastStudent" buttonType="RAISED" layoutX="786.0" layoutY="117.0" onAction="#searchPastStudent" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
       <Pane layoutX="456.0" layoutY="118.0" prefHeight="35.0" prefWidth="3.0" style="-fx-background-color: #1976D2;" visible="false" />
+      <JFXButton id="button" fx:id="Back" layoutX="25.0" layoutY="11.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
     </children>
 </AnchorPane>

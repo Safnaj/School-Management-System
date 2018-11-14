@@ -3,6 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StaffList" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bba487a2-2625-4e41-9791-ae8a2bde7f15">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SMS"/>
+	<parameter name="Logo" class="java.net.URL"/>
 	<queryString language="SQL">
 		<![CDATA[select * from staffs]]>
 	</queryString>
@@ -50,33 +51,33 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="80" splitType="Stretch">
+		<band height="70" splitType="Stretch">
 			<image>
-				<reportElement x="45" y="-9" width="80" height="80" uuid="da550020-f34e-4982-b0cc-0666c92c18b4"/>
-				<imageExpression><![CDATA["C:/Users/Safnaj/School Management System/src/sms/other/img/HikmaLogo.jpg"]]></imageExpression>
+				<reportElement x="45" y="-13" width="80" height="80" uuid="da550020-f34e-4982-b0cc-0666c92c18b4"/>
+				<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement positionType="FixRelativeToBottom" x="177" y="5" width="490" height="30" uuid="0f523750-d30e-4c5c-89af-22d758f5eb35"/>
+				<reportElement positionType="FixRelativeToBottom" x="177" y="-4" width="490" height="30" uuid="0f523750-d30e-4c5c-89af-22d758f5eb35"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
 				<text><![CDATA[AL-HIKMA JUNIOR SCHOOL, MARUTHAMUNAI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="341" y="43" width="90" height="30" uuid="97339c89-57a6-4f5f-96d8-ee6c2c7a87b6"/>
+				<reportElement x="341" y="31" width="90" height="30" uuid="97339c89-57a6-4f5f-96d8-ee6c2c7a87b6"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
 				<text><![CDATA[STAFF LIST]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="700" y="49" width="100" height="30" uuid="42950d3c-8dc6-4951-a601-efce7646bda1"/>
+				<reportElement x="700" y="40" width="100" height="30" uuid="42950d3c-8dc6-4951-a601-efce7646bda1"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
 	<columnHeader>
-		<band height="50" splitType="Stretch">
+		<band height="40" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="45" height="30" uuid="7e290ce2-50eb-4fb9-bee8-4d4f04fba661">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa843e33-6f73-46d6-ac31-e47826c9a968"/>
@@ -96,7 +97,7 @@
 				<text><![CDATA[NIC]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="248" y="0" width="66" height="30" uuid="344c50d0-a0b8-4ad2-aa07-240ef4a5dd11">
+				<reportElement x="240" y="0" width="74" height="30" uuid="344c50d0-a0b8-4ad2-aa07-240ef4a5dd11">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="151d52ec-390a-463c-8a6d-af840a48f0ca"/>
 				</reportElement>
 				<textElement textAlignment="Center"/>
@@ -144,7 +145,7 @@
 				<text><![CDATA[Present Grade]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="40" width="802" height="1" uuid="4d71b7ef-a5cf-4e86-8376-460f22d6a128"/>
+				<reportElement x="0" y="36" width="802" height="1" uuid="4d71b7ef-a5cf-4e86-8376-460f22d6a128"/>
 				<graphicElement>
 					<pen lineWidth="2.0"/>
 				</graphicElement>
@@ -172,7 +173,7 @@
 				<textFieldExpression><![CDATA[$F{nic}]]></textFieldExpression>
 			</textField>
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="248" y="0" width="66" height="25" uuid="57a62a50-5980-4efb-98f6-bdbec1c71d76">
+				<reportElement x="240" y="0" width="74" height="25" uuid="57a62a50-5980-4efb-98f6-bdbec1c71d76">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="151d52ec-390a-463c-8a6d-af840a48f0ca"/>
 				</reportElement>
 				<textElement textAlignment="Left">
@@ -184,7 +185,7 @@
 				<reportElement x="317" y="0" width="81" height="25" uuid="8defe87e-be19-4642-ac1d-8e1e312db4f4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bcb33535-5eaa-41e9-a154-81de1b740751"/>
 				</reportElement>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Left">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{doa}]]></textFieldExpression>
@@ -193,7 +194,7 @@
 				<reportElement x="398" y="0" width="80" height="25" uuid="df0811e7-ef68-49c8-ba63-144c77105c60">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7984230e-4b79-4f15-b962-0339401bc9d2"/>
 				</reportElement>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Left">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{assumpOfDuties}]]></textFieldExpression>

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import java.net.URL?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="manageStudents" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.TransferStudentsController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.TransferStudentsController">
     <children>
-        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="387.0" layoutY="527.0" onAction="#btnUpdate" text="UPDATE" textFill="WHITE" AnchorPane.leftAnchor="387.0">
+        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="387.0" layoutY="527.0" onAction="#btnUpdate" text="UPDATE" textFill="WHITE" visible="false" AnchorPane.leftAnchor="387.0">
             <font>
                 <Font size="25.0" />
             </font>
@@ -22,7 +25,7 @@
         </JFXButton>
         <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
             <children>
-                <Text fill="WHITE" layoutX="302.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFER STUDENTS" textAlignment="CENTER">
+                <Text fill="WHITE" layoutX="296.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFER STUDENTS" textAlignment="CENTER">
                     <font>
                         <Font name="BebasNeue" size="50.0" />
                     </font>
@@ -58,5 +61,15 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <JFXButton id="button" fx:id="Back" layoutX="24.0" layoutY="11.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXTextArea layoutX="9.0" layoutY="489.0" prefHeight="155.0" prefWidth="464.0" text="Follow the Steps : &#10;* Start Transfering Students form Higher Gades.&#10;1. Transfer Grade 4 to Grade 5&#10;2. Transfer Grade 3 to Grade 4&#10;3. Transfer Grade 2 to Grade 3&#10;4. Transfer Grade 1 to Grade 2&#10;" />
     </children>
 </AnchorPane>

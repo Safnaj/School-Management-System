@@ -1,9 +1,12 @@
 package sms.view.controller;
 
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 import sms.db.DBConnection;
 import sms.dbController.GradeController;
 import sms.dbController.StudentController;
@@ -14,6 +17,8 @@ import javafx.scene.control.*;
 import sms.model.Grade;
 import sms.model.Student;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
@@ -65,12 +70,29 @@ public class RegisterStudentController implements Initializable {
     @FXML
     private TextField addressField;
 
+    @FXML
+    private JFXButton Back;
+
+    @FXML
+    private AnchorPane root;
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources){
 
         loadComboBox();
     }
 
+    @FXML
+    void Back() {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
+            root.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
 
     @FXML
     private void AddStudent(ActionEvent event) {
@@ -97,7 +119,6 @@ public class RegisterStudentController implements Initializable {
                 String nic = nicField.getText();
                 String phone = phoneField.getText();
                 String address = addressField.getText();
-
 
                 Student s = new Student(adNo, fullName, name, dob, doa, gender, grade, parentName, nic, phone, address);
                 int i = StudentController.AddStudent(s);
@@ -131,7 +152,6 @@ public class RegisterStudentController implements Initializable {
                 }
             }
 
-
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -163,12 +183,6 @@ public class RegisterStudentController implements Initializable {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-/*
-        for (Object s: arrayList
-             ) {
-
-        }*/
-
         ObservableList observableArray = FXCollections.observableArrayList();
         observableArray.addAll(arrayList);
 
@@ -177,22 +191,6 @@ public class RegisterStudentController implements Initializable {
         }
 
     }
-/*
-    private boolean validateFields(){
-        if(adNoField.getText().isEmpty() || nameField.getText().isEmpty() || dobField.getText().isEmpty() ||
-                doaField.getText().isEmpty() || parentNameField.getText().isEmpty() || phoneField.getText().isEmpty())
-
-        {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Student Registration");
-            alert.setHeaderText(null);
-            alert.setContentText("Please Fill Required Fields");
-            alert.showAndWait();
-
-            return false;
-        }
-        return true;
-    }*/
 
 }
 

@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.PrintStaffsController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.PrintStaffsController">
     <children>
         <Pane prefHeight="85.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
             <children>
@@ -21,15 +21,7 @@
                         <Font name="BebasNeue" size="50.0" />
                     </font>
                 </Text>
-            <JFXButton id="button" layoutX="24.0" layoutY="6.0" text=" ">
-               <graphic>
-                  <ImageView fx:id="Back" fitHeight="64.0" fitWidth="66.0" onDragDetected="#Back" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
-                     <image>
-                        <Image url="@../../other/img/Back.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
+            <JFXButton id="button" fx:id="Back" layoutX="24.0" layoutY="6.0" onAction="#Back" text=" " />
             </children>
         </Pane>
         <ComboBox fx:id="Type" layoutX="122.0" layoutY="110.0" onAction="#Type" prefHeight="25.0" prefWidth="150.0" promptText="Select" />
@@ -50,16 +42,25 @@
                 <TableColumn fx:id="EmpNoColumn" prefWidth="43.666664123535156" text="Emp No" />
                 <TableColumn fx:id="NameColumn" prefWidth="85.33334350585938" text="Name" />
                 <TableColumn fx:id="nicColumn" prefWidth="94.33331298828125" text="NIC" />
-                <TableColumn fx:id="dobColumn" prefWidth="66.33334350585938" text="DOB" />
-                <TableColumn fx:id="doaColumn" prefWidth="108.66665649414062" text="DOA" />
-                <TableColumn fx:id="genderColumn" minWidth="0.0" prefWidth="0.0" text="Gender" />
-                <TableColumn fx:id="emailColumn" prefWidth="59.0" text="Email" />
-                <TableColumn fx:id="assmpDutyColumn" prefWidth="84.0" text="Assmp of Duties" />
-                <TableColumn fx:id="phoneColumn" minWidth="0.0" prefWidth="92.0" text="Phone" />
-                <TableColumn fx:id="addressColumn" prefWidth="56.0" text="Address" />
-                <TableColumn fx:id="incDateColumn" prefWidth="56.0" text="Inc Date" />
-            <TableColumn fx:id="gradeColumn" prefWidth="82.0" text="Prsnt Grade" />
+                <TableColumn fx:id="dobColumn" prefWidth="84.0" text="DOB" />
+                <TableColumn fx:id="doaColumn" prefWidth="66.0" text="DOA" />
+                <TableColumn fx:id="genderColumn" minWidth="0.0" prefWidth="64.0" text="Gender" />
+                <TableColumn fx:id="emailColumn" prefWidth="52.0" text="Email" />
+                <TableColumn fx:id="assmpDutyColumn" prefWidth="71.0" text="Assmp of Duties" />
+                <TableColumn fx:id="phoneColumn" minWidth="0.0" prefWidth="74.0" text="Phone" />
+                <TableColumn fx:id="addressColumn" prefWidth="77.0" text="Address" />
+                <TableColumn fx:id="incDateColumn" prefWidth="67.0" text="Inc Date" />
+            <TableColumn fx:id="gradeColumn" prefWidth="50.0" text="Prsnt Grade" />
             </columns>
         </TableView>
+      <JFXButton id="button" fx:id="Back" layoutX="24.0" layoutY="6.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
     </children>
 </AnchorPane>

@@ -13,8 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.layout.AnchorPane;
 import sms.dbController.UserController;
 import sms.model.User;
@@ -161,8 +160,8 @@ public class ManageUsersController implements Initializable {
                 userNameField.setText(null);
                 passwordField.setText(null);
 
-                data.clear();
-                loadTable();
+                data.clear();               //Refresh Table
+                loadTable();                //Refresh Table
 
             } else {
 
@@ -184,6 +183,7 @@ public class ManageUsersController implements Initializable {
 
     @FXML
     void searchUser(ActionEvent event) {
+
         String username = userNameField.getText();
 
         try {
@@ -212,11 +212,11 @@ public class ManageUsersController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
     void updateUser(ActionEvent event) {
+
         String username = userNameField.getText();
         String password = passwordField.getText();
 

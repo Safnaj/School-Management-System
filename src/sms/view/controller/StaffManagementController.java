@@ -45,6 +45,19 @@ public class StaffManagementController implements Initializable {
     private JFXButton btnPrintStaff;
 
     @FXML
+    private JFXButton Back;
+
+    @FXML
+    void Back(ActionEvent event) {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/MainDashboard.fxml")));
+            studentManagement.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
+
+    @FXML
     void btnPrintStaff(ActionEvent event) {
         try {
             AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/PrintStaffs.fxml")));

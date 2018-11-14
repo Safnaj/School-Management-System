@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -61,27 +62,40 @@ public class DashboardController implements Initializable {
 
     @FXML
     void btnEventMgmt(ActionEvent event) {
-
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("School Management System");
+        alert.setHeaderText(null);
+        alert.setContentText("Sorry..! This feature currently Unavailable for this Version.");
+        alert.showAndWait();
     }
 
     @FXML
     void btnExamMgmt(ActionEvent event) {
-
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("School Management System");
+        alert.setHeaderText(null);
+        alert.setContentText("Sorry..! This feature currently Unavailable for this Version.");
+        alert.showAndWait();
     }
 
     @FXML
     void btnLibraryMgmt(ActionEvent event) {
-
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("School Management System");
+        alert.setHeaderText(null);
+        alert.setContentText("Sorry..! This feature currently Unavailable for this Version.");
+        alert.showAndWait();
     }
 
     @FXML
     void btnStudentMgmt(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/sms/view/fxml/StudentManagement.fxml"));
-        Stage stage = new Stage();
-        stage.setTitle("Student Management");
-        stage.setScene(new Scene(root));
-        stage.show();
 
+        try {
+            AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagementTr.fxml")));
+            root.getChildren().setAll(user);
+        }catch(IOException e){
+            System.out.println(e);
+        }
     }
 
     @FXML

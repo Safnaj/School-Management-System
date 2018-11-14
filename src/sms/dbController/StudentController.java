@@ -1,5 +1,6 @@
 package sms.dbController;
 
+import javafx.scene.control.Alert;
 import sms.model.Student;
 import sms.db.DBConnection;
 
@@ -59,6 +60,16 @@ public class StudentController {
     public static int deleteStudent(String adNo) throws ClassNotFoundException, SQLException {
 
         String sql = "DELETE FROM Students WHERE adNo ='"+adNo+"'";
+        Connection conn = DBConnection.getDBConnection().getConnection();
+        PreparedStatement stm = conn.prepareStatement(sql);
+
+
+        return  stm.executeUpdate();
+    }
+
+    public static int deleteLeftStudent(String adNo) throws ClassNotFoundException, SQLException {
+
+        String sql = "DELETE FROM leftstudents WHERE adNo ='"+adNo+"'";
         Connection conn = DBConnection.getDBConnection().getConnection();
         PreparedStatement stm = conn.prepareStatement(sql);
 

@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
  * @project School Management System
  **/
 public class UserAccount2Controller implements Initializable {
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -32,7 +33,7 @@ public class UserAccount2Controller implements Initializable {
     @FXML
     void Back(ActionEvent event) {
         try {
-            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/Dashboard.fxml")));
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/PrintStudents2.fxml")));
             userAccount.getChildren().setAll(studentMgmt);
         }catch(IOException e){
             System.out.println(e);

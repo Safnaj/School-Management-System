@@ -43,7 +43,7 @@ import java.util.ResourceBundle;
  * @author Safnaj on 8/29/2018
  * @project School Management System
  **/
-public class PrintStudentController implements Initializable {
+public class PrintStudents2Controller implements Initializable {
 
 
     @FXML
@@ -131,14 +131,17 @@ public class PrintStudentController implements Initializable {
     private AnchorPane root;
 
     @FXML
+    private JFXButton userAccount;
+
+    @FXML
     private JFXButton Back;
 
     ObservableList<StudentTableModel> studentList = FXCollections.observableArrayList();
 
     @FXML
-    void Back(ActionEvent event) {
+    void userAccount(ActionEvent event) {
         try {
-            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/UserAccount2.fxml")));
             root.getChildren().setAll(studentMgmt);
         }catch(IOException e){
             System.out.println(e);
@@ -224,8 +227,8 @@ public class PrintStudentController implements Initializable {
                             rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
                     studentList.add(s);
                 }
+                //    }
             }
-
             if (loadGrades != null) {
 
                 // studentTable.getItems().clear();
@@ -277,6 +280,7 @@ public class PrintStudentController implements Initializable {
             addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
 
             studentTable.setItems(studentList);
+
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
