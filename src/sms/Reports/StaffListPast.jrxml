@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StaffList" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bba487a2-2625-4e41-9791-ae8a2bde7f15">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SMS"/>
+	<parameter name="Logo" class="java.net.URL"/>
+	<queryString language="SQL">
+		<![CDATA[select * from oldstaffs]]>
+	</queryString>
+	<field name="empNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="empNo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="teacherName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="teacherName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="nic" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nic"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="dob" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dob"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="doa" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="doa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="assumpOfDuties" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="assumpOfDuties"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="phone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="incDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="incDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<field name="prsntGrade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prsntGrade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="staffs"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="45" y="-13" width="80" height="80" uuid="da550020-f34e-4982-b0cc-0666c92c18b4"/>
+				<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="182" y="-6" width="490" height="30" uuid="0f523750-d30e-4c5c-89af-22d758f5eb35"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[AL-HIKMA JUNIOR SCHOOL, MARUTHAMUNAI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="27" width="127" height="30" uuid="97339c89-57a6-4f5f-96d8-ee6c2c7a87b6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[OLD STAFF LIST]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="700" y="39" width="100" height="30" uuid="42950d3c-8dc6-4951-a601-efce7646bda1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="30" uuid="7e290ce2-50eb-4fb9-bee8-4d4f04fba661">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa843e33-6f73-46d6-ac31-e47826c9a968"/>
+				</reportElement>
+				<text><![CDATA[Emp No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="0" width="117" height="30" uuid="dea41a67-45cd-4394-abea-c504825346e0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6bb0e979-e9e4-4f14-abd8-0cec9036019e"/>
+				</reportElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="0" width="73" height="30" uuid="c61b8b38-4fc5-4194-859b-4e67079b2774">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bba45fed-3230-410c-9045-a0b566ec2f9d"/>
+				</reportElement>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="0" width="69" height="30" uuid="344c50d0-a0b8-4ad2-aa07-240ef4a5dd11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="151d52ec-390a-463c-8a6d-af840a48f0ca"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="0" width="81" height="30" uuid="79021a35-e827-4fde-af7e-281804e933cd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bcb33535-5eaa-41e9-a154-81de1b740751"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Date of 1st Appointment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="0" width="80" height="30" uuid="801eb223-ea20-4b15-9343-e8650ccb917e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7984230e-4b79-4f15-b962-0339401bc9d2"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Assumption of Duties]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="0" width="80" height="30" uuid="fb1e2cb7-ad03-42d7-9aba-b39d687c9067">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ebf57e2d-307d-4966-bf01-06a230ca8d09"/>
+				</reportElement>
+				<text><![CDATA[Phone No ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="562" y="0" width="80" height="30" uuid="b669f0aa-b2c6-4f4f-b365-6c71234bd65f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b28f6522-3b1c-45b9-9820-799155f6c0ec"/>
+				</reportElement>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="648" y="0" width="82" height="30" uuid="ef165708-b052-406c-aa5e-133d2c3f205f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2dedee9c-2cf1-4d80-8b88-ee7e89f095bf"/>
+				</reportElement>
+				<text><![CDATA[Increment Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="730" y="0" width="72" height="30" uuid="1ea868a0-dda0-4ef3-bca4-cc0ed92fef0b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3257acdc-c75e-4891-9b96-4ed393943751"/>
+				</reportElement>
+				<text><![CDATA[Present Grade]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="32" width="802" height="1" uuid="4d71b7ef-a5cf-4e86-8376-460f22d6a128"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="50" height="25" uuid="09e86332-d9ee-422e-88bb-d7ec88505ad3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa843e33-6f73-46d6-ac31-e47826c9a968"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{empNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="0" width="117" height="25" uuid="39dc9c3b-d84a-4b75-81ec-707c6f956f11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6bb0e979-e9e4-4f14-abd8-0cec9036019e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{teacherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="0" width="73" height="25" uuid="5ca10a75-8d34-4747-953c-2d62521a68b5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bba45fed-3230-410c-9045-a0b566ec2f9d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nic}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="240" y="0" width="69" height="25" uuid="57a62a50-5980-4efb-98f6-bdbec1c71d76">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="151d52ec-390a-463c-8a6d-af840a48f0ca"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="311" y="0" width="81" height="25" uuid="8defe87e-be19-4642-ac1d-8e1e312db4f4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bcb33535-5eaa-41e9-a154-81de1b740751"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doa}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="394" y="0" width="80" height="25" uuid="df0811e7-ef68-49c8-ba63-144c77105c60">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7984230e-4b79-4f15-b962-0339401bc9d2"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assumpOfDuties}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="80" height="25" uuid="16250073-bd0e-4c98-bb9b-1671e411ae87">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ebf57e2d-307d-4966-bf01-06a230ca8d09"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="562" y="0" width="80" height="25" uuid="4c6abcff-a320-4bf7-a4fe-49966b7aa43e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b28f6522-3b1c-45b9-9820-799155f6c0ec"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="648" y="0" width="82" height="25" uuid="ed33ffe9-dbf4-4798-9913-ea0a6629fcdd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2dedee9c-2cf1-4d80-8b88-ee7e89f095bf"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{incDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="72" height="25" uuid="fb61d6cf-b840-457c-9870-f466024eaa22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3257acdc-c75e-4891-9b96-4ed393943751"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{prsntGrade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="0" width="404" height="20" uuid="d32f1ef1-cf1d-412c-a5ba-dd7a70fb9588"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Software Developed By Ahamed Safnaj - 0777 97 42 07   |   Copyright © Al-Hikma Junior School, Maruthamunai]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

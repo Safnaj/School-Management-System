@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.TransferStudentsController">
+    <children>
+        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="387.0" layoutY="527.0" onAction="#btnUpdate" text="UPDATE" textFill="WHITE" visible="false" AnchorPane.leftAnchor="387.0">
+            <font>
+                <Font size="25.0" />
+            </font>
+            <stylesheets>
+                <URL value="@css/RegStudent.css" />
+            </stylesheets>
+        </JFXButton>
+        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
+            <children>
+                <Text fill="WHITE" layoutX="296.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFER STUDENTS" textAlignment="CENTER">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <JFXButton id="btnSearch" fx:id="move1" buttonType="RAISED" layoutX="679.0" layoutY="202.0" onAction="#move1" prefHeight="24.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="MOVE" />
+        <Pane layoutX="456.0" layoutY="118.0" prefHeight="35.0" prefWidth="3.0" style="-fx-background-color: #1976D2;" visible="false" />
+      <Label layoutX="137.0" layoutY="202.0" prefHeight="23.0" prefWidth="138.0" text="Choose Grade : " />
+      <ComboBox fx:id="loadCombo" layoutX="239.0" layoutY="201.0" onAction="#loadComboBox" prefWidth="150.0" promptText="Select Grade" />
+      <TextField fx:id="yearField" layoutX="479.0" layoutY="202.0" prefHeight="25.0" prefWidth="151.0" promptText="Enter Batch Year Here" />
+      <Label layoutX="424.0" layoutY="202.0" prefHeight="23.0" prefWidth="86.0" text="to">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="412.0" prefHeight="23.0" prefWidth="138.0" text="Trasnfer From :" />
+      <ComboBox fx:id="loadCombo1" layoutX="239.0" layoutY="411.0" onAction="#loadCombo1" prefWidth="150.0" promptText="Select Grade" />
+      <Label layoutX="425.0" layoutY="411.0" prefHeight="23.0" prefWidth="86.0" text="to">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="loadCombo2" layoutX="479.0" layoutY="411.0" onAction="#loadCombo2" prefWidth="150.0" promptText="Select Grade" />
+      <JFXButton id="btnSearch" fx:id="move2" buttonType="RAISED" layoutX="678.0" layoutY="411.0" onAction="#move2" prefHeight="24.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="MOVE" />
+      <Label layoutX="317.0" layoutY="129.0" prefHeight="45.0" prefWidth="288.0" text="Transfer Grade 5 Students Here..!">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="320.0" layoutY="343.0" prefHeight="45.0" prefWidth="288.0" text="Transfer other Students Here..!">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton id="button" fx:id="Back" layoutX="24.0" layoutY="11.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXTextArea layoutX="9.0" layoutY="489.0" prefHeight="155.0" prefWidth="464.0" text="Follow the Steps : &#10;* Start Transfering Students form Higher Gades.&#10;1. Transfer Grade 4 to Grade 5&#10;2. Transfer Grade 3 to Grade 4&#10;3. Transfer Grade 2 to Grade 3&#10;4. Transfer Grade 1 to Grade 2&#10;" />
+    </children>
+</AnchorPane>

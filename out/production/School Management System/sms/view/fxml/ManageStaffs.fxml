@@ -3,13 +3,16 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.ManageStaffsController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.ManageStaffsController">
     <children>
         <Label layoutX="28.0" layoutY="214.0" prefHeight="23.0" prefWidth="138.0" text="Employee Number :" />
         <TextField fx:id="empNoField" layoutX="166.0" layoutY="213.0" prefHeight="25.0" prefWidth="242.0" promptText="Employee Number *" />
@@ -64,7 +67,7 @@
       <JFXButton id="btnSearch" fx:id="searchStaff" buttonType="RAISED" layoutX="186.0" layoutY="116.0" onAction="#searchStaff" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
       <TextField fx:id="empName" layoutX="310.0" layoutY="116.0" prefHeight="37.0" prefWidth="168.0" promptText="Search by Name" />
       <JFXButton id="btnSearch" fx:id="searchByName" buttonType="RAISED" layoutX="485.0" layoutY="116.0" onAction="#searchByName" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
-      <TextField fx:id="empNoOld" layoutX="603.0" layoutY="116.0" prefHeight="37.0" prefWidth="175.0" promptText="Transferred Staff" />
+      <TextField fx:id="empNoOld" layoutX="603.0" layoutY="116.0" prefHeight="37.0" prefWidth="175.0" promptText="Transferred Staff Emp No" />
       <JFXButton id="btnSearch" fx:id="searchOldStaff" buttonType="RAISED" layoutX="785.0" layoutY="116.0" onAction="#searchOldStaff" prefHeight="37.0" prefWidth="78.0" stylesheets="@css/RegStudent.css" text="SEARCH" />
       <JFXButton fx:id="printStaff" layoutX="573.0" layoutY="520.0" onAction="#printStaff" prefWidth="140.0" text="PRINT" textFill="WHITE">
          <font>
@@ -73,6 +76,16 @@
          <stylesheets>
             <URL value="@css/RegStudent.css" />
          </stylesheets>
+      </JFXButton>
+      <Separator layoutX="582.0" layoutY="105.0" orientation="VERTICAL" prefHeight="60.0" prefWidth="0.0" />
+      <JFXButton id="button" fx:id="Back" layoutX="19.0" layoutY="11.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
     </children>
 </AnchorPane>

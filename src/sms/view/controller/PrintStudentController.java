@@ -14,6 +14,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -29,6 +30,7 @@ import sms.db.DBConnection;
 import sms.dbController.GradeController;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -126,20 +128,33 @@ public class PrintStudentController implements Initializable {
     @FXML
     private JFXCheckBox addressCheckBox;
 
+    @FXML
+    private AnchorPane root;
+
+    @FXML
+    private JFXButton Back;
 
     ObservableList<StudentTableModel> studentList = FXCollections.observableArrayList();
 
+    @FXML
+    void Back(ActionEvent event) {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StudentManagement.fxml")));
+            root.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadGrades();
         loadYears();
         loadGender.getItems().addAll("All", "Male", "Female");
-
     }
 
     @FXML
-    void loadGender(ActionEvent event) {
+    void loadGender() {
 
     }
 
@@ -210,8 +225,8 @@ public class PrintStudentController implements Initializable {
                             rs.getString("nic"), rs.getString("phone"), rs.getString("address"));
                     studentList.add(s);
                 }
-                //    }
             }
+
             if (loadGrades != null) {
 
                 // studentTable.getItems().clear();
@@ -248,46 +263,6 @@ public class PrintStudentController implements Initializable {
                 fullNameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
                 gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
                 studentTable.setItems(studentList);
-
-            }if( nameCheckBox.isSelected()){
-                nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                studentTable.setItems(studentList);
-
-            }if(dobCheckBox.isSelected()){
-                dobColumn.setCellValueFactory(new PropertyValueFactory<>("dob"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                studentTable.setItems(studentList);
-
-            }if(doaCheckBox.isSelected()){
-                doaColumn.setCellValueFactory(new PropertyValueFactory<>("doa"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                studentTable.setItems(studentList);
-
-            }if(genderCheckBox.isSelected()){
-                genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                studentTable.setItems(studentList);
-
-            }if(parentCheckBox.isSelected()){
-                parentNameColumn.setCellValueFactory(new PropertyValueFactory<>("parentName"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                studentTable.setItems(studentList);
-
-            }if(nicCheckBox.isSelected()){
-                nicColumn.setCellValueFactory(new PropertyValueFactory<>("nic"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                studentTable.setItems(studentList);
-
-            }if(contactCheckBox.isSelected()){
-                contactNoColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                studentTable.setItems(studentList);
-
-            }if(addressCheckBox.isSelected()) {
-                addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
-                gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-                studentTable.setItems(studentList);
             }*/
 
             adNoColumn.setCellValueFactory(new PropertyValueFactory<>("adNo"));
@@ -303,7 +278,6 @@ public class PrintStudentController implements Initializable {
             addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
 
             studentTable.setItems(studentList);
-
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -323,52 +297,59 @@ public class PrintStudentController implements Initializable {
             String year = loadYears.getValue();
 
             Connection conn = DBConnection.getDBConnection().getConnection();
-            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
+            InputStream report1 = getClass().getResourceAsStream("/sms/Reports/StudentList.jrxml");
+            InputStream report2 = getClass().getResourceAsStream("/sms/Reports/StudentListGender.jrxml");
+            InputStream report3 = getClass().getResourceAsStream("/sms/Reports/PastStudentList.jrxml");
+            InputStream report4 = getClass().getResourceAsStream("/sms/Reports/PastStudentListGender.jrxml");
+
+           /* JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
             JasperDesign jd2 = JRXmlLoader.load("src\\sms\\Reports\\StudentListGender.jrxml");
+            JasperDesign jd3 = JRXmlLoader.load("src\\sms\\Reports\\PastStudentList.jrxml");
+            JasperDesign jd4 = JRXmlLoader.load("src\\sms\\Reports\\PastStudentListGender.jrxml");
+            */
             JRDesignQuery query = new JRDesignQuery();
 
+            if(loadYears.getValue()==null) {
 
-            if (gender == "All") {
-                query.setText("select * from students where grade = '"+grade+"'");
-                jd.setQuery(query);
-                ReportViewController r = new ReportViewController();
-                r.viewReport(jd);
+                if (loadGrades != null) {
 
-                /*Connection conn = DBConnection.getDBConnection().getConnection();
-                JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
-                JRDesignQuery query = new JRDesignQuery();
-                query.setText("select * from students");
-                query.setText("select * from students where grade = '"+grade+"'");
-                jd.setQuery(query);
-                ReportViewController r = new ReportViewController();
-                r.viewReport(jd);*/
+                    if (gender == "All") {
 
+                        JasperDesign jd = JRXmlLoader.load(report1);
+                        query.setText("select * from students where grade = '" + grade + "'");
+                        jd.setQuery(query);
+                        ReportViewController r = new ReportViewController();
+                        r.viewReport(jd);
 
-            } else {
-                query.setText("select * from students where grade = '" + grade + "' AND gender = '" + gender + "'");
-                jd2.setQuery(query);
-                ReportViewController r = new ReportViewController();
-                r.viewReport(jd2);
-
-            }   //Have to Do Past Students Report
-            if (loadGrades != null) {
-
-
-                if (gender == "All") {
-                    /*query.setText("select * from paststudents where year = '" + year + "'");
-                    jd.setQuery(query);
-                    ReportViewController r = new ReportViewController();
-                    r.viewReport(jd);*/
-
-
-                } else {
-                    /*query.setText("select * from paststudents where year = '" + year + "' AND gender = '" + gender + "'");
-                    jd.setQuery(query);
-                    ReportViewController r = new ReportViewController();
-                    r.viewReport(jd);*/
-
+                    } else {
+                        JasperDesign jd2 = JRXmlLoader.load(report2);
+                        query.setText("select * from students where grade = '" + grade + "' AND gender = '" + gender + "'");
+                        jd2.setQuery(query);
+                        ReportViewController r = new ReportViewController();
+                        r.viewReport(jd2);
+                    }
                 }
             }
+            if (loadYears.getValue() != null) {
+
+                if (gender == "All") {
+
+                    JasperDesign jd3 = JRXmlLoader.load(report3);
+                    query.setText("select * from paststudents where year = '" + year + "'");
+                    jd3.setQuery(query);
+                    ReportViewController r = new ReportViewController();
+                    r.viewReport(jd3);
+
+                } else {
+
+                    JasperDesign jd4 = JRXmlLoader.load(report4);
+                    query.setText("select * from paststudents where year = '" + year + "' AND gender = '" + gender + "'");
+                    jd4.setQuery(query);
+                    ReportViewController r = new ReportViewController();
+                    r.viewReport(jd4);
+                }
+            }
+
         }catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

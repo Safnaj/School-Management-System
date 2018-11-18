@@ -4,16 +4,19 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import sms.dbController.StaffController;
 import sms.dbController.StudentController;
 import sms.model.Staff;
 import sms.model.Student;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -28,6 +31,8 @@ public class RegisterStaffController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+    @FXML
+    private AnchorPane root;
 
     @FXML
     private TextField empNoField;
@@ -73,6 +78,19 @@ public class RegisterStaffController implements Initializable {
 
     @FXML
     private TextField prsntGradeField;
+
+    @FXML
+    private JFXButton Back;
+
+    @FXML
+    void Back(ActionEvent event) {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/StaffManagement.fxml")));
+            root.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
 
     @FXML
     void AddStaff(ActionEvent event) {
@@ -138,7 +156,6 @@ public class RegisterStaffController implements Initializable {
             e.printStackTrace();
         }
 
-
     }
 
     @FXML
@@ -156,6 +173,6 @@ public class RegisterStaffController implements Initializable {
         phoneField.setText(null);
         incDateField.setText(null);
         prsntGradeField.setText(null);
-    }
 
+    }
 }

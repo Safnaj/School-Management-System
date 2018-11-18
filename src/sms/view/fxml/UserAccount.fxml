@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="userAccount" maxHeight="600.0" maxWidth="900.0" prefHeight="600.0" prefWidth="900.0" stylesheets="@css/RegStudent.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.UserAccountController">
+<AnchorPane fx:id="userAccount" maxHeight="600.0" maxWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.UserAccountController">
     <children>
         <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;">
             <children>
@@ -21,7 +21,7 @@
             </children>
         </Pane>
         <Label layoutY="519.0" prefHeight="84.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" />
-      <JFXButton fx:id="btnAddUser" buttonType="RAISED" layoutX="375.0" layoutY="352.0" onAction="#btnAddUser" prefHeight="63.0" prefWidth="167.0" stylesheets="@css/RegStudent.css" text="MANAGE ACCOUNTS">
+      <JFXButton fx:id="ManageUsers" buttonType="RAISED" layoutX="375.0" layoutY="352.0" onAction="#ManageUsers" prefHeight="63.0" prefWidth="167.0" stylesheets="@css/RegStudent.css" text="MANAGE ACCOUNTS">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>
@@ -31,10 +31,19 @@
             <Image url="@../../other/img/StaffMgmt.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnLogout1" buttonType="RAISED" layoutX="375.0" layoutY="441.0" onAction="#btnLogout" prefHeight="56.0" prefWidth="167.0" style="-fx-background-color: #c62828;" text="LOGOUT" textAlignment="CENTER">
+      <JFXButton fx:id="btnLogout1" buttonType="RAISED" layoutX="375.0" layoutY="441.0" onAction="#btnLogout" prefHeight="56.0" prefWidth="167.0" style="-fx-background-color: #c62828;" stylesheets="@css/RegStudent.css" text="LOGOUT" textAlignment="CENTER">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>
+      </JFXButton>
+      <JFXButton fx:id="Back" layoutX="16.0" layoutY="10.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
     </children>
 

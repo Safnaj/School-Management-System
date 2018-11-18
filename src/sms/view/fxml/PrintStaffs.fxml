@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.PrintStaffsController">
+    <children>
+        <Pane prefHeight="85.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
+            <children>
+                <Text fill="WHITE" fontSmoothingType="LCD" layoutX="302.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRINT STAFFS LIST" textAlignment="CENTER">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+            <JFXButton id="button" fx:id="Back" layoutX="24.0" layoutY="6.0" onAction="#Back" text=" " />
+            </children>
+        </Pane>
+        <ComboBox fx:id="Type" layoutX="122.0" layoutY="110.0" onAction="#Type" prefHeight="25.0" prefWidth="150.0" promptText="Select" />
+        <Label layoutX="40.0" layoutY="111.0" prefHeight="23.0" prefWidth="138.0" text="Select Type : " />
+        <JFXButton fx:id="generate" layoutX="629.0" layoutY="98.0" onAction="#generate" prefHeight="0.0" prefWidth="109.0" style="-fx-background-color: #1976D2;" text="Generate" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="print" layoutX="757.0" layoutY="98.0" onAction="#print" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #c62828;" text="Print" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </JFXButton>
+        <Pane layoutX="37.0" layoutY="151.0" prefHeight="437.0" prefWidth="832.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css" />
+        <TableView fx:id="staffTable" layoutX="40.0" layoutY="154.0" prefHeight="430.0" prefWidth="826.0">
+            <columns>
+                <TableColumn fx:id="EmpNoColumn" prefWidth="43.666664123535156" text="Emp No" />
+                <TableColumn fx:id="NameColumn" prefWidth="85.33334350585938" text="Name" />
+                <TableColumn fx:id="nicColumn" prefWidth="94.33331298828125" text="NIC" />
+                <TableColumn fx:id="dobColumn" prefWidth="84.0" text="DOB" />
+                <TableColumn fx:id="doaColumn" prefWidth="66.0" text="DOA" />
+                <TableColumn fx:id="genderColumn" minWidth="0.0" prefWidth="64.0" text="Gender" />
+                <TableColumn fx:id="emailColumn" prefWidth="52.0" text="Email" />
+                <TableColumn fx:id="assmpDutyColumn" prefWidth="71.0" text="Assmp of Duties" />
+                <TableColumn fx:id="phoneColumn" minWidth="0.0" prefWidth="74.0" text="Phone" />
+                <TableColumn fx:id="addressColumn" prefWidth="77.0" text="Address" />
+                <TableColumn fx:id="incDateColumn" prefWidth="67.0" text="Inc Date" />
+            <TableColumn fx:id="gradeColumn" prefWidth="50.0" text="Prsnt Grade" />
+            </columns>
+        </TableView>
+      <JFXButton id="button" fx:id="Back" layoutX="24.0" layoutY="6.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+    </children>
+</AnchorPane>

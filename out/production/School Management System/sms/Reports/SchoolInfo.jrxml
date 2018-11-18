@@ -3,9 +3,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SchoolInfo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea82f61e-f000-4b2a-87a2-5dd24bb9c3cf">
 	<property name="com.jaspersoft.studio.data.sql.tables" value="c2Nob29saW5mbyAsMTUsMTUsMjRlMjI5MTUtYmQwMC00MGJmLWI1MTUtODJlMTQ0MzkwMDBmOw=="/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SMS"/>
+	<parameter name="Logo" class="java.net.URL"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT *
-FROM schoolinfo]]>
+		<![CDATA[SELECT * FROM schoolinfo]]>
 	</queryString>
 	<field name="SchoolName" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="SchoolName"/>
@@ -98,7 +98,7 @@ FROM schoolinfo]]>
 		<band height="86" splitType="Stretch">
 			<image>
 				<reportElement x="0" y="2" width="80" height="80" uuid="da550020-f34e-4982-b0cc-0666c92c18b4"/>
-				<imageExpression><![CDATA["C:/Users/Safnaj/School Management System/src/sms/other/img/HikmaLogo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" x="86" y="12" width="490" height="30" uuid="0f523750-d30e-4c5c-89af-22d758f5eb35"/>
@@ -232,7 +232,7 @@ FROM schoolinfo]]>
 				<reportElement x="20" y="390" width="100" height="30" uuid="cacd528e-f844-4cba-af9e-bdf27a6434f2"/>
 				<text><![CDATA[Electorate :]]></text>
 			</staticText>
-			<textField>
+			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="140" y="420" width="180" height="30" uuid="e8f3ebef-d76c-4a74-ab8a-e62284e4b3f4"/>
 				<textFieldExpression><![CDATA[$F{dateOfEstd}]]></textFieldExpression>
 			</textField>

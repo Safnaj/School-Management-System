@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.RegisterStaffController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.RegisterStaffController">
     <children>
         <Label layoutX="40.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Employee Number :" />
         <TextField fx:id="empNoField" layoutX="178.0" layoutY="125.0" prefHeight="25.0" prefWidth="242.0" promptText="Employee Number *" />
@@ -66,12 +66,16 @@
                         <Font name="BebasNeue" size="50.0" />
                     </font>
                 </Text>
-                <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../other/img/AddUser.png" />
-                    </image>
-                </ImageView>
             </children>
         </Pane>
+      <JFXButton id="button" fx:id="Back" layoutX="26.0" layoutY="11.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
     </children>
 </AnchorPane>

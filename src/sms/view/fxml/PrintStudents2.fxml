@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.PrintStudents2Controller">
+    <children>
+        <Pane prefHeight="85.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
+            <children>
+                <Text fill="WHITE" fontSmoothingType="LCD" layoutX="298.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRINT STUDENTS LIST" textAlignment="CENTER">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <ComboBox fx:id="loadGrades" layoutX="122.0" layoutY="110.0" onAction="#loadGrades" prefHeight="25.0" prefWidth="109.0" promptText="Select Grade" />
+        <Label layoutX="40.0" layoutY="111.0" prefHeight="23.0" prefWidth="138.0" text="Select Grade : " />
+        <ComboBox fx:id="loadYears" layoutX="324.0" layoutY="110.0" onAction="#loadYears" prefHeight="25.0" prefWidth="109.0" promptText="Select Year" />
+        <Label layoutX="251.0" layoutY="111.0" prefHeight="23.0" prefWidth="70.0" text="Past Grade : " />
+        <ComboBox fx:id="loadGender" layoutX="502.0" layoutY="110.0" onAction="#loadGender" prefHeight="25.0" prefWidth="83.0" promptText="Select" />
+        <Label layoutX="447.0" layoutY="112.0" prefHeight="23.0" prefWidth="54.0" text="Gender : " />
+        <JFXCheckBox fx:id="adNoCheckBox" layoutX="39.0" layoutY="161.0" selected="true" text="Ad No" />
+        <JFXCheckBox fx:id="fullNameCheckBox" layoutX="115.0" layoutY="161.0" selected="true" text="Full Name" />
+        <JFXCheckBox fx:id="nameCheckBox" layoutX="211.0" layoutY="161.0" selected="true" text="Name" />
+        <JFXCheckBox fx:id="dobCheckBox" layoutX="285.0" layoutY="161.0" selected="true" text="DOB" />
+        <JFXCheckBox fx:id="doaCheckBox" layoutX="352.0" layoutY="161.0" selected="true" text="DOA" />
+        <JFXCheckBox fx:id="genderCheckBox" layoutX="422.0" layoutY="161.0" selected="true" text="Gender" />
+        <JFXCheckBox fx:id="parentCheckBox" layoutX="503.0" layoutY="161.0" selected="true" text="Parent's Name" />
+        <JFXCheckBox fx:id="nicCheckBox" layoutX="626.0" layoutY="161.0" selected="true" text="NIC" />
+        <JFXCheckBox fx:id="contactCheckBox" layoutX="690.0" layoutY="161.0" selected="true" text="Contact No" />
+        <JFXCheckBox fx:id="addressCheckBox" layoutX="796.0" layoutY="161.0" selected="true" text="Address" />
+        <JFXButton fx:id="generate" layoutX="629.0" layoutY="98.0" onAction="#generate" prefHeight="0.0" prefWidth="109.0" style="-fx-background-color: #1976D2;" text="Generate" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="printStudents" layoutX="757.0" layoutY="98.0" onAction="#printStudents" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #c62828;" text="Print" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </JFXButton>
+        <Pane layoutX="37.0" layoutY="188.0" prefHeight="400.0" prefWidth="832.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css" />
+        <TableView fx:id="studentTable" layoutX="40.0" layoutY="191.0" prefHeight="394.0" prefWidth="826.0">
+            <columns>
+                <TableColumn fx:id="adNoColumn" prefWidth="43.666664123535156" text="Ad No" />
+                <TableColumn fx:id="fullNameColumn" prefWidth="131.33333587646484" text="Full Name" />
+                <TableColumn fx:id="nameColumn" prefWidth="89.33332824707031" text="Name" />
+                <TableColumn fx:id="dobColumn" prefWidth="66.0" text="DOB" />
+                <TableColumn fx:id="doaColumn" prefWidth="66.0" text="DOA" />
+                <TableColumn fx:id="genderColumn" prefWidth="41.33331298828125" text="Gender" />
+                <TableColumn fx:id="gradeColumn" prefWidth="81.66668701171875" text="Grade" />
+                <TableColumn fx:id="parentNameColumn" prefWidth="85.66665649414062" text="Parent's Name" />
+                <TableColumn fx:id="nicColumn" prefWidth="54.0" text="Parent's NIC" />
+                <TableColumn fx:id="contactNoColumn" prefWidth="81.0" text="Contact No" />
+                <TableColumn fx:id="addressColumn" prefWidth="84.0" text="Address" />
+            </columns>
+        </TableView>
+      <JFXButton fx:id="userAccount" layoutX="25.0" layoutY="17.0" onAction="#userAccount" prefHeight="40.0" prefWidth="40.0" stylesheets="@css/RegStudent.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../other/img/Menu_50px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+    </children>
+</AnchorPane>

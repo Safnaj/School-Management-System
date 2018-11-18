@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
@@ -29,27 +31,29 @@ public class UserAccountController implements Initializable {
     private JFXButton btnLogout;
 
     @FXML
-    private JFXButton btnChangePwd;
+    private JFXButton ManageUsers;
 
     @FXML
-    private JFXButton btnAddUser;
+    private JFXButton Back;
 
     @FXML
-    private JFXButton btnDeleteUser;
-
-    @FXML
-    private void btnAddUser() {
-
+    private void Back() {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/MainDashboard.fxml")));
+            userAccount.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
     }
 
     @FXML
-    private void btnChangePwd() {
-
-    }
-
-    @FXML
-    private void btnDeleteUser() {
-
+    private void ManageUsers() {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/ManageUsers.fxml")));
+            userAccount.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
     }
 
     @FXML

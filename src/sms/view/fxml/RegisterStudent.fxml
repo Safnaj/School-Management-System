@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.RegisterStudentController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.RegisterStudentController">
     <children>
         <Label layoutX="40.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Admission Number :" />
         <TextField fx:id="adNoField" layoutX="178.0" layoutY="125.0" prefHeight="25.0" prefWidth="242.0" promptText="Admission Number *" />
@@ -33,6 +33,7 @@
          </toggleGroup></JFXRadioButton>
         <JFXRadioButton fx:id="genderField" layoutX="258.0" layoutY="367.0" text="Female" toggleGroup="$g" />
         <Label layoutX="40.0" layoutY="408.0" prefHeight="23.0" prefWidth="138.0" text="Grade : " />
+      <ComboBox fx:id="loadCombo" layoutX="178.0" layoutY="407.0" onAction="#loadComboBox" prefWidth="150.0" promptText="Select Grade" />
         <Label layoutX="486.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="Parent / Gurdian Name :" />
         <TextField fx:id="parentNameField" layoutX="624.0" layoutY="125.0" prefHeight="25.0" prefWidth="242.0" promptText="Parent / Gurdian Name *" />
         <Label layoutX="486.0" layoutY="171.0" prefHeight="23.0" prefWidth="138.0" text="NIC Number :" />
@@ -64,13 +65,16 @@
                       <Font name="BebasNeue" size="50.0" />
                   </font>
               </Text>
-            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../other/img/AddUser.png" />
-               </image>
-            </ImageView>
          </children>
       </Pane>
-      <ComboBox fx:id="loadCombo" layoutX="178.0" layoutY="407.0" onAction="#loadComboBox" prefWidth="150.0" promptText="Select Grade" />
+      <JFXButton id="button" fx:id="Back" layoutX="25.0" layoutY="10.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
     </children>
 </AnchorPane>

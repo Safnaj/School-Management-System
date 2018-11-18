@@ -33,7 +33,7 @@
         </JFXButton>
         <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
             <children>
-                <Text fill="WHITE" layoutX="302.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STAFF MANAGEMENT">
+                <Text fill="WHITE" layoutX="295.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STAFF MANAGEMENT">
                     <font>
                         <Font name="BebasNeue" size="50.0" />
                     </font>
@@ -45,6 +45,15 @@
                 <Image url="@../../other/img/print.png" />
             </image>
         </ImageView>
+      <JFXButton id="button" fx:id="Back" layoutX="24.0" layoutY="12.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
         <JFXButton fx:id="btnPrintStaff" buttonType="RAISED" layoutX="490.0" layoutY="304.0" onAction="#btnPrintStaff" prefHeight="38.0" prefWidth="150.0" stylesheets="@css/RegStudent.css" text="Print Staffs" textFill="WHITE">
             <font>
                 <Font name="Calibri Bold" size="14.0" />

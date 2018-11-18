@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="userAccount" maxHeight="600.0" maxWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.view.controller.UserAccount2Controller">
+    <children>
+        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #1976D2;">
+            <children>
+                <Text fill="WHITE" layoutX="357.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER ACCOUNT">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Label layoutY="519.0" prefHeight="84.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" />
+        <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="371.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../other/img/StaffMgmt.png" />
+            </image>
+        </ImageView>
+        <JFXButton fx:id="btnLogout1" buttonType="RAISED" layoutX="375.0" layoutY="441.0" onAction="#btnLogout" prefHeight="56.0" prefWidth="167.0" style="-fx-background-color: #c62828;" stylesheets="@css/RegStudent.css" text="LOGOUT" textAlignment="CENTER">
+            <font>
+                <Font name="Calibri Bold" size="25.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="Back" layoutX="16.0" layoutY="10.0" onAction="#Back" text=" ">
+            <graphic>
+                <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+                    <image>
+                        <Image url="@../../other/img/Back.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+    </children>
+
+</AnchorPane>

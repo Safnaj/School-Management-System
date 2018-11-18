@@ -4,6 +4,8 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -41,7 +43,7 @@
         </JFXButton>
         <Pane prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: #1976D2;" stylesheets="@css/RegStudent.css">
             <children>
-                <Text fill="WHITE" layoutX="302.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="School Information">
+                <Text fill="WHITE" layoutX="289.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="School Information">
                     <font>
                         <Font name="BebasNeue" size="50.0" />
                     </font>
@@ -77,6 +79,15 @@
          <stylesheets>
             <URL value="@css/RegStudent.css" />
          </stylesheets>
+      </JFXButton>
+      <JFXButton id="button" fx:id="Back" layoutX="26.0" layoutY="1.0" onAction="#Back" text=" ">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1976D2;">
+               <image>
+                  <Image url="@../../other/img/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
     </children>
 </AnchorPane>

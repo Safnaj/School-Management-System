@@ -33,6 +33,10 @@ public class Student {
         this.address = address;
     }
 
+    public Student(String grade) {
+        this.grade = grade;
+    }
+
     public Integer getAdNo() {return adNo;}
 
     public void setAdNo(int adNo) {

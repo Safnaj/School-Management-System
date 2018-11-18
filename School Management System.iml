@@ -10,6 +10,6 @@
     <orderEntry type="library" name="jfoenix-9.0.1" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.46" level="project" />
     <orderEntry type="library" name="fontawesomefx-8.9" level="project" />
-    <orderEntry type="library" name="commons-beanutils-1.9.3" level="project" />
+    <orderEntry type="library" name="Jasper" level="project" />
   </component>
 </module>

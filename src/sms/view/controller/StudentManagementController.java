@@ -41,15 +41,27 @@ public class StudentManagementController implements Initializable {
     @FXML
     private JFXButton btnPrintStudents;
 
+    @FXML
+    private AnchorPane manageStudents;
 
     @FXML
-    private AnchorPane studentManagement;
+    private JFXButton Back;
+
+    @FXML
+    void Back() {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/MainDashboard.fxml")));
+            manageStudents.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
 
     @FXML
     void SetBtnStudentReg(ActionEvent event) {
         try {
             AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/RegisterStudent.fxml")));
-            studentManagement.getChildren().setAll(studentMgmt);
+            manageStudents.getChildren().setAll(studentMgmt);
         }catch(IOException e){
             System.out.println(e);
         }
@@ -59,7 +71,7 @@ public class StudentManagementController implements Initializable {
     void setBtnStudentMnge(ActionEvent event) {
         try {
             AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/ManageStudents.fxml")));
-            studentManagement.getChildren().setAll(studentMgmt);
+            manageStudents.getChildren().setAll(studentMgmt);
         }catch(IOException e){
             System.out.println(e);
         }
@@ -69,7 +81,16 @@ public class StudentManagementController implements Initializable {
     void btnPrintStudents(ActionEvent event) {
         try {
             AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/PrintStudents.fxml")));
-            studentManagement.getChildren().setAll(studentMgmt);
+            manageStudents.getChildren().setAll(studentMgmt);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
+    @FXML
+    void transfer(ActionEvent event) {
+        try {
+            AnchorPane studentMgmt = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/TransferStudents.fxml")));
+            manageStudents.getChildren().setAll(studentMgmt);
         }catch(IOException e){
             System.out.println(e);
         }

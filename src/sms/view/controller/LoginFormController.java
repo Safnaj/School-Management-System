@@ -90,7 +90,7 @@ public class LoginFormController implements Initializable {
                 try {
                     if (log.Login(username, password)){
 
-                        AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/Dashboard.fxml")));
+                        AnchorPane user = FXMLLoader.load(getClass().getResource(("/sms/view/fxml/PrintStudents2.fxml")));
                         login.getChildren().setAll(user);
 
                     } else {
@@ -120,7 +120,7 @@ public class LoginFormController implements Initializable {
 
             }
 
-        }
+    }
 
 }
 
