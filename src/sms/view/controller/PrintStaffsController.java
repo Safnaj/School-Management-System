@@ -21,6 +21,7 @@ import sms.db.DBConnection;
 import sms.tableModel.StaffTableModel;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -186,8 +187,10 @@ public class PrintStaffsController implements Initializable {
 
         try {
             Connection conn = DBConnection.getDBConnection().getConnection();
-            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StaffList.jrxml");
-            JasperDesign jd2 = JRXmlLoader.load("src\\sms\\Reports\\StaffListPast.jrxml");
+
+            InputStream report1 = getClass().getResourceAsStream("/sms/Reports/StaffList.jrxml");
+            InputStream report2 = getClass().getResourceAsStream("/sms/Reports/StaffListPast.jrxml");
+
             JRDesignQuery query = new JRDesignQuery();
 
           /*  HashMap<String,Object> Logo = new HashMap<String, Object>();
@@ -197,6 +200,7 @@ public class PrintStaffsController implements Initializable {
 
             if (type == "Current Staffs"){
 
+                JasperDesign jd = JRXmlLoader.load(report1);
                 query.setText("select * from staffs");
                 jd.setQuery(query);
                 ReportViewController r = new ReportViewController();
@@ -204,6 +208,7 @@ public class PrintStaffsController implements Initializable {
             }
             else {
 
+                JasperDesign jd2 = JRXmlLoader.load(report2);
                 query.setText("select * from oldstaffs");
                 jd2.setQuery(query);
                 ReportViewController r = new ReportViewController();

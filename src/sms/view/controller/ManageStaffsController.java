@@ -20,6 +20,7 @@ import sms.model.Staff;
 import sms.model.Student;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -316,13 +317,14 @@ public class ManageStaffsController implements Initializable {
         try {
             String empNo = empNoField.getText();
 
-            Connection conn = DBConnection.getDBConnection().getConnection();
-            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StaffInfo.jrxml");
-            JasperDesign jd2 = JRXmlLoader.load("src\\sms\\Reports\\StaffInfopast.jrxml");
+            InputStream report1 = getClass().getResourceAsStream("/sms/Reports/StaffInfo.jrxml");
+            InputStream report2 = getClass().getResourceAsStream("/sms/Reports/StaffInfoPast.jrxml");
+
             JRDesignQuery query = new JRDesignQuery();
 
             if(empNoOld.getText().isEmpty()){       //Some Corrections need to be done
 
+                JasperDesign jd = JRXmlLoader.load(report1);
                 query.setText("select * from staffs where empNo = '" + empNo + "'");
                 jd.setQuery(query);
                 ReportViewController r = new ReportViewController();
@@ -330,16 +332,13 @@ public class ManageStaffsController implements Initializable {
             }
             else if(empNoOld != null){
 
+                JasperDesign jd2 = JRXmlLoader.load(report2);
                 query.setText("select * from oldstaffs where empNo = '" + empNo + "'");
                 jd2.setQuery(query);
                 ReportViewController r = new ReportViewController();
                 r.viewReport(jd2);
             }
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
         } catch (JRException e) {
             e.printStackTrace();
         }
@@ -374,6 +373,7 @@ public class ManageStaffsController implements Initializable {
                 int d = StaffController.updateOldStaff(s);
 
                 if (i > 0){
+
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Staff Management");
                     alert.setHeaderText(null);

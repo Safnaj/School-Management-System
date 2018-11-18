@@ -1,9 +1,10 @@
 package sms.view.controller;
 import javafx.fxml.FXMLLoader;
-import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import sms.db.DBConnection;
 import sms.dbController.SchoolController;
 import sms.model.School;
@@ -11,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -226,7 +228,8 @@ public class SchoolInfoController implements Initializable {
 
         try {
             Connection conn = DBConnection.getDBConnection().getConnection();
-            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\SchoolInfo.jrxml");
+            InputStream report = getClass().getResourceAsStream("/sms/Reports/SchoolInfo.jrxml");
+            JasperDesign jd = JRXmlLoader.load(report);
             JRDesignQuery query = new JRDesignQuery();
             query.setText("select * from schoolinfo");
             jd.setQuery(query);

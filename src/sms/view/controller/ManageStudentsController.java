@@ -19,6 +19,7 @@ import sms.dbController.StudentController;
 import sms.model.Student;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -204,9 +205,11 @@ public class ManageStudentsController implements Initializable {
 
         try {
             Connection conn = DBConnection.getDBConnection().getConnection();
-            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentAdmission.jrxml");
+            InputStream report1 = getClass().getResourceAsStream("/sms/Reports/StudentAdmission.jrxml");
+
             JRDesignQuery query = new JRDesignQuery();
 
+            JasperDesign jd = JRXmlLoader.load(report1);
             query.setText("select * from students where adNo = '" + adNo + "'");
             jd.setQuery(query);
             ReportViewController r = new ReportViewController();

@@ -30,6 +30,7 @@ import sms.db.DBConnection;
 import sms.dbController.GradeController;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -296,10 +297,16 @@ public class PrintStudentController implements Initializable {
             String year = loadYears.getValue();
 
             Connection conn = DBConnection.getDBConnection().getConnection();
-            JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
+            InputStream report1 = getClass().getResourceAsStream("/sms/Reports/StudentList.jrxml");
+            InputStream report2 = getClass().getResourceAsStream("/sms/Reports/StudentListGender.jrxml");
+            InputStream report3 = getClass().getResourceAsStream("/sms/Reports/PastStudentList.jrxml");
+            InputStream report4 = getClass().getResourceAsStream("/sms/Reports/PastStudentListGender.jrxml");
+
+           /* JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
             JasperDesign jd2 = JRXmlLoader.load("src\\sms\\Reports\\StudentListGender.jrxml");
             JasperDesign jd3 = JRXmlLoader.load("src\\sms\\Reports\\PastStudentList.jrxml");
             JasperDesign jd4 = JRXmlLoader.load("src\\sms\\Reports\\PastStudentListGender.jrxml");
+            */
             JRDesignQuery query = new JRDesignQuery();
 
             if(loadYears.getValue()==null) {
@@ -308,21 +315,14 @@ public class PrintStudentController implements Initializable {
 
                     if (gender == "All") {
 
+                        JasperDesign jd = JRXmlLoader.load(report1);
                         query.setText("select * from students where grade = '" + grade + "'");
                         jd.setQuery(query);
                         ReportViewController r = new ReportViewController();
                         r.viewReport(jd);
 
-                /*Connection conn = DBConnection.getDBConnection().getConnection();
-                JasperDesign jd = JRXmlLoader.load("src\\sms\\Reports\\StudentList.jrxml");
-                JRDesignQuery query = new JRDesignQuery();
-                query.setText("select * from students");
-                query.setText("select * from students where grade = '"+grade+"'");
-                jd.setQuery(query);
-                ReportViewController r = new ReportViewController();
-                r.viewReport(jd);*/
-
                     } else {
+                        JasperDesign jd2 = JRXmlLoader.load(report2);
                         query.setText("select * from students where grade = '" + grade + "' AND gender = '" + gender + "'");
                         jd2.setQuery(query);
                         ReportViewController r = new ReportViewController();
@@ -334,12 +334,15 @@ public class PrintStudentController implements Initializable {
 
                 if (gender == "All") {
 
+                    JasperDesign jd3 = JRXmlLoader.load(report3);
                     query.setText("select * from paststudents where year = '" + year + "'");
                     jd3.setQuery(query);
                     ReportViewController r = new ReportViewController();
                     r.viewReport(jd3);
 
                 } else {
+
+                    JasperDesign jd4 = JRXmlLoader.load(report4);
                     query.setText("select * from paststudents where year = '" + year + "' AND gender = '" + gender + "'");
                     jd4.setQuery(query);
                     ReportViewController r = new ReportViewController();
