@@ -118,13 +118,13 @@ public class ManageStudentsController implements Initializable {
             Student s = new Student(Integer.parseInt(adNoField.getText()), fullNameField.getText(), nameField.getText(), dobField.getText(), doaField.getText(),
                     genderField.getText(), gradeField.getText(), parentNameField.getText(), nicField.getText(), phoneField.getText(), addressField.getText());
 
-            if(AdNo1 == null) {
+            if(AdNo1.getText().isEmpty()) {
 
                 int moveStudent = StudentController.moveStudent(s);
                 if (moveStudent > 0) {
 
-                    int deleteStudent2 = StudentController.deleteStudent(adNo);
-                    if (deleteStudent2 > 0) {
+                    int deleteStudent = StudentController.deleteStudent(adNo);
+                    if (deleteStudent > 0) {
 
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Delete Student");
@@ -155,6 +155,12 @@ public class ManageStudentsController implements Initializable {
                         alert.setContentText("There is an error deleting Student");
                         alert.showAndWait();
                     }
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Delete Student");
+                    alert.setHeaderText(null);
+                    alert.setContentText("There is an error deleting Student");
+                    alert.showAndWait();
                 }
             }
             else{
