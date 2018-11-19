@@ -4,7 +4,6 @@
     <root id="archive" name="School Management System.jar">
       <element id="module-output" name="School Management System" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfoenix-9.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.46.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/fontawesomefx-8.9.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jasper/commons-beanutils-1.9.3.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jasper/commons-collections-3.2.2.jar" path-in-jar="/" />
@@ -13,6 +12,7 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jasper/jasperreports-6.3.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jasper/jasperreports-javaflow-6.3.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jasper/jdt-compiler-3.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.46.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

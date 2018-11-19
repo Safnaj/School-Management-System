@@ -322,7 +322,7 @@ public class ManageStaffsController implements Initializable {
 
             JRDesignQuery query = new JRDesignQuery();
 
-            if(empNoOld.getText().isEmpty()){       //Some Corrections need to be done
+            if(empNoOld.getText().isEmpty()){
 
                 JasperDesign jd = JRXmlLoader.load(report1);
                 query.setText("select * from staffs where empNo = '" + empNo + "'");
@@ -330,7 +330,7 @@ public class ManageStaffsController implements Initializable {
                 ReportViewController r = new ReportViewController();
                 r.viewReport(jd);
             }
-            else if(empNoOld != null){
+            else{
 
                 JasperDesign jd2 = JRXmlLoader.load(report2);
                 query.setText("select * from oldstaffs where empNo = '" + empNo + "'");
