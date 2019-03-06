@@ -9,7 +9,7 @@ And also used UI and UX concepts and  [jfoenix](http://www.jfoenix.com/)
 
 ## Technologies Used
 * JavaFX
-* Jfoenix Materical Design
+* Jfoenix Material Design
 * Jasper Reports
 * MySQL
 * IntelliJ Idea Ultimate (IDE)
