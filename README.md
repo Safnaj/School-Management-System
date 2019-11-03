@@ -19,13 +19,13 @@ And also used UI and UX concepts and  [jfoenix](http://www.jfoenix.com/)
 
 ## Contributing
 
-* **Ahamed Safnaj** - *Developer* - [Website](https://ahamedsafnaj.blogspot.com)
+* **Ahamed Safnaj** - *Developer* - [Website](https://www.ahamedsafnaj.com)
 
 See also the list of [contributors](https://github.com/Safnaj/School-Management-System/graphs/contributors) who participated in this project.
 
 ## Authors
 
-* **Ahamed Safnaj** - *Developer* Who's the author of those contents - [Safnaj](https://ahamedsafnaj.blogspot.com)
+* **Ahamed Safnaj** - *Developer* Who's the author of those contents - [Safnaj](https://www.ahamedsafnaj.com)
 
 ## License
 
